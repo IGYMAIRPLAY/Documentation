@@ -1,4 +1,4 @@
-baseURL = 'https://www.igymairplay.github.io/Documentation/'
+baseURL = 'https://zingy-clafoutis-4054b3.netlify.app'
 languageCode = 'en-us'
 title = 'Airplay-Wiki'
 publishDir = 'public'
