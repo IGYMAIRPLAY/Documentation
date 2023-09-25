@@ -1,1 +1,2 @@
-https://master--airplay-wiki.netlify.app/posts/home/
+# Documentation
+https://airplay-wiki.netlify.app/posts/home/
