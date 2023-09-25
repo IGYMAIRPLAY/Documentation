@@ -25,7 +25,7 @@ Folder structure
 * [Resources]({{< ref "/resources" >}})
 * [RosMessages]({{< ref "/rosmessages" >}})
 * [Scenes]({{< ref "/scenes" >}})
-* [Scripts]
+* [Scripts]({{< ref "/folderstructure" >}})
 
 ## Contact 
 helloigym@umich.edu

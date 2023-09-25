@@ -8,8 +8,6 @@
   </url><url>
     <loc>https://airplay.org/categories/</loc>
   </url><url>
-    <loc>https://airplay.org/posts/folderstructure/</loc>
-  </url><url>
     <loc>https://airplay.org/posts/gamescene/</loc>
   </url><url>
     <loc>https://airplay.org/posts/home/</loc>
@@ -25,6 +23,8 @@
     <loc>https://airplay.org/posts/rosmessages/</loc>
   </url><url>
     <loc>https://airplay.org/posts/scenes/</loc>
+  </url><url>
+    <loc>https://airplay.org/posts/folderstructure/</loc>
   </url><url>
     <loc>https://airplay.org/posts/shapecatcher/</loc>
   </url><url>

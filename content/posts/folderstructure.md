@@ -1,5 +1,5 @@
 ---
-title: "Folder Structure"
+title: "Scripts"
 ---
 # Folder Structure
 * **Air Hockey**
