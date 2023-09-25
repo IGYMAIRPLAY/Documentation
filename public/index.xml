@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Airplay-Wiki</title>
+    <link>https://airplay.org/</link>
+    <description>Recent content on Airplay-Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://airplay.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Air Hockey</title>
+      <link>https://airplay.org/posts/airhockey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://airplay.org/posts/airhockey/</guid>
+      <description>Overview Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to virtually kick the ball. The peripersonal boundaries can either be expanded by extending their limbs, or by pressing a Bluetooth kick button if they have limited mobility.
+Rules After going through the quick tutorials, the game begins when the moderator starts the timer.</description>
+    </item>
+    
+    <item>
+      <title>Folder Structure</title>
+      <link>https://airplay.org/posts/folderstructure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://airplay.org/posts/folderstructure/</guid>
+      <description>Folder Structure Air Hockey Goal Control - plays victorious goal sound effect if hockey hits either of the two goals Wall Control - plays boundary sound effect if hockey hits the wall Hockey Ctr - if debug is checked in the inspector, can use keyboard input to move hockey and test game mechanics (for playtesting on PC only) Instructions - loads tutorial scene corresponding to number keys [0-8] (for playtesting only) Game Manager - handles game rules including scores, winning / losing, timer Shapes Catcher Emitter - spawns random shapes at a specified time interval in random directions to both sides of the field Shape Class - defines the three different shapes (Circle, Square, Triangle) Shape Behavior - shape disappears after specified time passes or collides with player and handles player score Switch Shape - uses keyboard input for switching shape (for playtesting only) Timer - handles timer and game logic when timer stops Shapes Game Manager - handles game rules including scores, winning / losing, timer Pos Message SC - seperate posmessage script for shapes catcher game, may need to change later so there is better architecture Camera Adjust - calibrates camera position Pos Message - reads player position input and draws a peripersonal boundary around players based on radius and position (currently only specific to air hockey game) Start Up - runs player detection code and starts up ROS connection before loading the game scene </description>
+    </item>
+    
+    <item>
+      <title>Game Scene</title>
+      <link>https://airplay.org/posts/gamescene/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://airplay.org/posts/gamescene/</guid>
+      <description>Scene Objects Cameras Calibrates camera position
+Left Camera - displays the left side of the field Right Camera - displays the right side of the field Controller Reads position and updates player peripersonal boundary Handles kick button logic Field Draws field lines using LineRenderer Canvas Displays UI including timer and score AudioManager Handles audio logic including: Boundary Goal Win Start GameManager Handles game logic Starts up Unity-ROS connection and runs player detection code </description>
+    </item>
+    
+    <item>
+      <title>Home</title>
+      <link>https://airplay.org/posts/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://airplay.org/posts/home/</guid>
+      <description>Introduction Welcome to the ros-test-out wiki! ros-test-out is the repository for the Unity part of the entire iGYM system. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.</description>
+    </item>
+    
+    <item>
+      <title>Materials</title>
+      <link>https://airplay.org/posts/materials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://airplay.org/posts/materials/</guid>
+      <description>Physics: Each game has its own different 2D physics material that dictate the motion of the GameObjects.
+ball_physics: A 2D physics material applied to the ball object for the Air Hockey game. Its friction is set to 0.4 and bounciness to 0.8 shapesPhysics: A 2D physics material applied to the shapes for the Shapes Catcher game. Its friction is set to 0 and bounciness to 0.8 </description>
+    </item>
+    
+    <item>
+      <title>Prefabs</title>
+      <link>https://airplay.org/posts/prefabs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://airplay.org/posts/prefabs/</guid>
+      <description>Air Hockey Circle1: The ball for the Air Hockey game Field: The playing field for the Air Hockey game Shapes Catcher Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game.</description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>https://airplay.org/posts/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://airplay.org/posts/resources/</guid>
+      <description>Air Hockey Audio: Boundary Goal Jubilance Kick Opening svg file: ball.svg crown.svg hockeySolid.svg line.svg net.svg Group3crown.svg loading.png kisspng-computer-icons-apng-clip-art-5b37ade1d168f9.8881650915303756498578.png kindpng_3926418.png Shapes Catcher Audio: heart.mp3 shape.mp3 winner.mp3 Circle_Contour.png Heart.png Square_Contour.png Triangle.png Triangle_Contour.png Other Resources GeometryCompassSettings.asset Player.prefab: The GameObject of the player Poppins-Bold.ttf: The font used in tutorials ROSConnectionPrefab.prefab: The GameObject establishing a connection between Unity and ROS </description>
+    </item>
+    
+    <item>
+      <title>ROS Messages</title>
+      <link>https://airplay.org/posts/rosmessages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://airplay.org/posts/rosmessages/</guid>
+      <description>The files in this folder were generated by Unity-ROS MessageGeneration. They should not be modified.</description>
+    </item>
+    
+    <item>
+      <title>Scenes</title>
+      <link>https://airplay.org/posts/scenes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://airplay.org/posts/scenes/</guid>
+      <description>Scenes AirHockey
+AirHockey - The main game scene for the Air Hockey game TutorialScenes - A folder containing all the tutorial scenes. Some of these scenes must be run before the main game scene in order for the player detection code to work. Look at Tutorial Scenes for more details. ShapeCatcher
+ShapeCatcher - The main game scene for the Shape Catcher game. </description>
+    </item>
+    
+    <item>
+      <title>Shapes Catcher</title>
+      <link>https://airplay.org/posts/shapecatcher/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://airplay.org/posts/shapecatcher/</guid>
+      <description>Overview A virtual emitter in the center of the field constantly emits random shapes (e.g. circle, square, triangle) towards both halves of the field. Players on both sides compete to collect shapes that match their peripersonal boundary to earn points. Players can change their boundary shape by having a partner click on a keyboard button.
+Rules The game begins when the moderator starts the timer. Two timers will be correspondingly displayed at the center of the field.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Scenes</title>
+      <link>https://airplay.org/posts/tutorialscenes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://airplay.org/posts/tutorialscenes/</guid>
+      <description>There are multiple scenes that have been created to guide first-time users of the system. Each scene corresponds to their own keyboard input so the moderator can freely skip between them as they see fit.
+Blank - This is an empty scene used to activate and adjust the cameras so that the game field is accurately displayed. This scene corresponds to the keyboard input 0.
+Easy - Shows the speed and size of the ball for the easy mode.</description>
+    </item>
+    
+  </channel>
+</rss>

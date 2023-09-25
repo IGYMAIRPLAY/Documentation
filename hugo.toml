@@ -1,0 +1,4 @@
+baseURL = 'https://airplay.org/'
+languageCode = 'en-us'
+title = 'Airplay-Wiki'
+theme = 'ananke'
