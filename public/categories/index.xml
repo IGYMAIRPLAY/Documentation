@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Airplay-Wiki</title>
-    <link>https://igymairplay.github.io/Documentation/categories/</link>
-    <description>Recent content in Categories on Airplay-Wiki</description>
+    <title>Categories on Hello Friend</title>
+    
+    
+    
+    <link>https://airplay-wiki.netlify.app/categories/</link>
+    <description>Recent content in Categories on Hello Friend</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://igymairplay.github.io/Documentation/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    
+	<atom:link href="https://airplay-wiki.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
   </channel>
 </rss>
