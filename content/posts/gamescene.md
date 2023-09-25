@@ -5,10 +5,9 @@ title: "Game Scene"
 * Cameras 
     * Calibrates camera position
     * Left Camera - displays the left side of the field
-    ![Yellow Duck](/gamescene_pic1.png)
-
+    ![Left Camera](/gamescene_pic1.png)
     * Right Camera - displays the right side of the field
-    <img width="500" alt="Right Camera View" src="https://github.com/helloigym/ros-test-out/assets/62974319/69617848-6436-4960-b756-61567f2327cb">
+    ![Right Camera](/gamescene_pic2.png)
 * Controller 
     * Reads position and updates player peripersonal boundary 
     * Handles kick button logic 
