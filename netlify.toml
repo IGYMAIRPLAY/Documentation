@@ -28,7 +28,3 @@
   from   = "/npmjs/*"
   to     = "/npmjs/"
   status = 200
-
-[module]
-  [[module.imports]]
-    path = "gitlab.com/kaushalmodi/hugo-mwe-theme"

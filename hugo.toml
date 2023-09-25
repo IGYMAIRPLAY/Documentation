@@ -1,4 +1,5 @@
-baseURL = 'https://igymairplay.github.io/Documentation/'
+baseURL = 'https://www.igymairplay.github.io/Documentation/'
 languageCode = 'en-us'
 title = 'Airplay-Wiki'
 publishDir = 'public'
+theme = 'ananke'
