@@ -7,25 +7,54 @@ Welcome to the ros2-emulation wiki! ros2-emulation is the repository for the ROS
 
 The code in this repository is responsible for implementing the player detection in the iGYM system using OpenCV.
 
-The current most up-to-date branch that is used for the onsite play field is the 0309 branch.
+The current most up-to-date branch that is used for the onsite play field is the OnsiteVersion branch.
 
 This section is still in progress...
 
-## System Requirements
-* Unity Editor 2020.3.16f1
+## Requirements
 * Windows 10
+* ROS2 foxy
+
+## Installation
+
+### ROS2 foxy
+
+### Button
+
+## Overview
+
+Player detection:
+
+Kick Button: 
 
 ## Development
-Branches
+
+### Branches
+
 * **0309**: This branch is for testing the system on-site at Packard's Field.
 * **3_09_video_test**: This branch is for testing the system with the video recordings taken from on-site. Please make sure the file path to the video is adjusted correctly.
 * **table-demo**: This branch is for testing the system on our table demo. There is no button logic for the table-demo branch.
 
-Scripts
+### Running procedure
+
+### Folder structure
+
+Our folder structure follows the structure of standard [ROS2 workspace](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html) 
+
+![ROS2 Folder structure](/ROS2FolderStructure.png)
+
+### Add dependencies
+
+### Key Scripts
+
 * [player_detection.cpp]({{< ref "/player-detection-script" >}})
+
 * [button.cpp]({{< ref "/button-script" >}})
 
-Latency Tests
+  
+
+### Latency Tests
+
 * **pub_diff**: We measured the time difference between every two publishing messages. This file can be found in the first src folder.
 * **detect_duration**: We measured the latency for player detection code. This file can be found in the first src folder.
 * The implementation of these latency tests can be found in [player_detection.cpp]({{< ref "/player-detection-script" >}}).
