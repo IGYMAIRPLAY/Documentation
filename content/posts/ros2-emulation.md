@@ -16,9 +16,19 @@ This section is still in progress...
 * Windows 10
 
 ## Development
-* [Branches]({{< ref "/ros2-emulation-branches" >}})
-* [player_detection.cpp]({{< ref "/player-detection-script" >}})
+Branches
+* **0309**: This branch is for testing the system on-site at Packard's Field.
+* **3_09_video_test**: This branch is for testing the system with the video recordings taken from on-site. Please make sure the file path to the video is adjusted correctly.
+* **table-demo**: This branch is for testing the system on our table demo. There is no button logic for the table-demo branch.
 
+Scripts
+* [player_detection.cpp]({{< ref "/player-detection-script" >}})
+* [button.cpp]({{< ref "/button-script" >}})
+
+Latency Tests
+* **pub_diff**: We measured the time difference between every two publishing messages. This file can be found in the first src folder.
+* **detect_duration**: We measured the latency for player detection code. This file can be found in the first src folder.
+* The implementation of these latency tests can be found in [player_detection.cpp]({{< ref "/player-detection-script" >}}).
 
 ## Contact 
 helloigym@umich.edu

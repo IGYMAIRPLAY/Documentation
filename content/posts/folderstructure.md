@@ -15,7 +15,8 @@ title: "Scripts"
     * **Switch Shape** - uses keyboard input for switching shape (for playtesting only)
     * **Timer** - handles timer and game logic when timer stops
     * **Shapes Game Manager** - handles game rules including scores, winning / losing, timer
-    * **Pos Message SC** - seperate posmessage script for shapes catcher game, may need to change later so there is better architecture
+    * **Pos Message SC** - separate posmessage script for shapes catcher game, may need to change later so there is better architecture; when player presses the bluetooth button, only the boundary of the player on the left field switches shape
 * **Camera Adjust** - calibrates camera position
-* **Pos Message** - reads player position input and draws a peripersonal boundary around players based on radius and position (currently only specific to air hockey game)
+* **Pos Message** - reads player position input and draws a peripersonal boundary around players based on radius and position (currently only specific to air hockey game); when player presses the bluetooth button, only the boundary of the player on the left field expands to a specified radius
 * **Start Up** - runs player detection code and starts up ROS connection before loading the game scene
+    * [Link to Reference](https://stackoverflow.com/questions/1469764/run-command-prompt-commands)
