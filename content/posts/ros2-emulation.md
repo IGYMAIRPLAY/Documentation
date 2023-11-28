@@ -54,7 +54,7 @@ Kick Button:
 ### Branches
 
 * **OnsiteVersion**: This branch is for testing the system on-site at Packard's Field.
-* **3_09_video_test**: This branch is for testing the system with the video recordings taken from on-site. Please make sure the file path to the video is adjusted correctly.
+* **3_09_video_test**: This branch is for testing the system with the video recordings taken from on-site. Due to the video's size exceeding the maximum size to push to GitHub, make sure to download the video from this (link)[https://drive.google.com/file/d/1uPAa-w7rQWaxT7_s6YWcZ-Tj5pzy42DI/view?usp=drive_link], and store it in the /ap_interfaces/test_video/ directory before running the program.
 * **table-demo**: This branch is for testing the system on our table demo. There is no button logic for the table-demo branch.
 
 ### Running procedure
