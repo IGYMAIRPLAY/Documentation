@@ -16,11 +16,9 @@ Welcome to the documentation website for AiRPlay! iGYM aims to build games that 
     * [Link to Github Repo](https://github.com/IGYMAIRPLAY/AIRPLAY-frontend)
     * [Link to Documentation]({{< ref "/frontend" >}})
 
-- Kick Button
-
-  - [Link to Github Repo](https://github.com/IGYMAIRPLAY/Airplay_KickButton)
-
-  - [Link to Documentation](https://github.com/IGYMAIRPLAY/Airplay_KickButton)
+* Kick Button
+    * [Link to Github Repo](https://github.com/IGYMAIRPLAY/Airplay_KickButton)
+    * [Link to Documentation](https://github.com/IGYMAIRPLAY/Airplay_KickButton)
 
 ## Onboarding
 
