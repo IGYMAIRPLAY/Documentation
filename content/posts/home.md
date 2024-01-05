@@ -6,15 +6,21 @@ title: "Home"
 Welcome to the documentation website for AiRPlay! iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.
 
 ## Repositories
-* ros-test-out 
+* ros-test-out （Unity Part）
     * [Link to Github Repo](https://github.com/IGYMAIRPLAY/ros-test-out)
     * [Link to Documentation]({{< ref "/ros-test-out-doc" >}})
-* ros2_emulation
+* ros2_emulation (ROS2 Part)
     * [Link to Github Repo](https://github.com/IGYMAIRPLAY/ros2_emulation)
     * [Link to Documentation]({{< ref "/ros2-emulation" >}})
 * AIRPLAY-frontend
     * [Link to Github Repo](https://github.com/IGYMAIRPLAY/AIRPLAY-frontend)
     * [Link to Documentation]({{< ref "/frontend" >}})
+
+- Kick Button
+
+  - [Link to Github Repo](https://github.com/IGYMAIRPLAY/Airplay_KickButton)
+
+  - [Link to Documentation](https://github.com/IGYMAIRPLAY/Airplay_KickButton)
 
 ## Onboarding
 
@@ -32,7 +38,7 @@ Welcome to the documentation website for AiRPlay! iGYM aims to build games that 
 
 After being familiar with ROS2 and Unity, let's try the video version code:
 
-switch both ros2_emulation and ros-test-out to the branch named 'video_test'.  Then open the Unity and follow the running procedure in the [README](https://github.com/IGYMAIRPLAY/ros-test-out). 
+switch both ros2_emulation and ros-test-out to the branch named 'video_test'.  Then open the Unity and follow the running procedure in the [ros2_emulation documentation]({{< ref "/ros2-emulation" >}}). 
 
 ## Contact 
 helloigym@umich.edu
