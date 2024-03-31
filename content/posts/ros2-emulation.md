@@ -65,7 +65,9 @@ Open another terminal (for connection with Unity):
 `ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:='your ip address' -p ROS_TCP_PORT:=10000` You can use ipconfig to check the available ip address you can choose. Then copy the ipv4 address into the ROS_IP.
 
 Open Unity Repo:
+
 1, Go to the ROS Settings and change the corresponding ROS IP address there. You can follow the official instruction [here](https://github.com/Unity-Technologies/Unity-Robotics-Hub/blob/main/tutorials/ros_unity_integration/setup.md#-unity-setup), just do Step 3.
+
 2，Open the 'Airplay' scene and hit running. Then rerun the player_detection node, you will see players' blob shown on the unity editor.
 
 
