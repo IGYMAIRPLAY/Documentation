@@ -27,35 +27,18 @@ This section is still in progress...
 
 ## Overview
 
-Player detection:
-
-![cv1](/CV1.png)
-
-![cv2](/CV2.png)
-
-![cv3](/CV3.png)
-
-![cv4](/CV4.png)
-
-![cv5](/CV5.png)
-
-![cv6](/CV6.png)
-
-![cv7](/CV7.png)
-
-![cv8](/CV8.png)
-
-Kick Button: 
-
-
+The system overview is written in [here](https://docs.google.com/presentation/d/1leWxa7IAV4V9gBXjTLt8Q2WAHMvET5B8hrSyY8mlWHI/edit?usp=drive_link). The numbers at the end means the latest modification date. 
 
 ## Development
 
 ### Branches
 
-* **OnsiteVersion**: This branch is for testing the system on-site at Packard's Field.
-* **video_test**: This branch is for testing the system with the video recordings taken from on-site. Due to the video's size exceeding the maximum size to push to GitHub, make sure to download the video from this [link](https://drive.google.com/file/d/1uPAa-w7rQWaxT7_s6YWcZ-Tj5pzy42DI/view?usp=drive_link), and store it in the /ap_interfaces/test_video/ directory before running the program. There is no button logic for the table-demo branch.
-* **table-demo**: This branch is for testing the system on our table demo. There is no button logic for the table-demo branch.
+* **OnsiteVersionCuda_Multithreads** (Currently using): This branch is for testing the system **WITH GPU** and Multithread for Grabbing frames on-site at Packard's Field.
+* **OnsiteVersionCuda**: This branch is for testing the system **WITH GPU** on-site at Packard's Field.
+* **OnsiteVersion**: This branch is for testing the system **WITH CPU** on-site at Packard's Field.
+* **video_test**: This branch is for testing the system with the video recordings taken from on-site **WITH CPU**. Due to the video's size exceeding the maximum size to push to GitHub, make sure to download the video from this [link](https://drive.google.com/file/d/1uPAa-w7rQWaxT7_s6YWcZ-Tj5pzy42DI/view?usp=drive_link), and store it in the /ap_interfaces/test_video/ directory before running the program. There is no button logic for all video test branches.
+* **video_testGPU**: This branch is for testing the system with the video recordings taken from on-site **WITH GPU**. Before running the procedure, please install OpenCV_CUDA 4.9 within this [link](https://drive.google.com/file/d/1fTxBHLDgS5kJSOQfCRs_7UuPasXRqUHW/view?usp=drive_link).It would take at least 1 hour to complete the installation. Due to the video's size exceeding the maximum size to push to GitHub, make sure to download the video from this [link](https://drive.google.com/file/d/1uPAa-w7rQWaxT7_s6YWcZ-Tj5pzy42DI/view?usp=drive_link), and store it in the /ap_interfaces/test_video/ directory before running the program. There is no button logic for all video test branches.
+* **table-demo**(Currently unavailable since we don't have two computers to deal with the latency issue for table demo): This branch is for testing the system on our table demo. There is no button logic for the table-demo branch.
 
 ### Running procedure
 
@@ -79,13 +62,17 @@ Open another terminal (for connection with Unity):
 
 `call install\setup.bat` Source the workspace
 
-`ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:='your ip address' -p ROS_TCP_PORT:=10000`
+`ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:='your ip address' -p ROS_TCP_PORT:=10000` You can use ipconfig to check the available ip address you can choose. Then copy the ipv4 address into the ROS_IP.
+
+Open Unity Repo:
+1, Go to the ROS Settings and change the corresponding ROS IP address there. You can follow the official instruction [here](https://github.com/Unity-Technologies/Unity-Robotics-Hub/blob/main/tutorials/ros_unity_integration/setup.md#-unity-setup), just do Step 3.
+2，Open the 'Airplay' scene and hit running. Then rerun the player_detection node, you will see players' blob shown on the unity editor.
 
 
 
 Note:
 
-This part is only for development use. In regular procedure, we have start-up script that help us run this part automatically in Unity.
+This part is only for development use. In regular procedure, we have start-up script that help us run this part automatically onsite.
 
 ### Folder structure
 

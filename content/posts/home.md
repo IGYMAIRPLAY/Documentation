@@ -29,8 +29,8 @@ Welcome to the documentation website for AiRPlay! iGYM aims to build games that 
 **ROS2**：
 
 - [Here](https://www.youtube.com/watch?v=7TVWlADXwRw) is a brief introduction to ROS2
-- [Here]([Windows (binary) — ROS 2 Documentation: Foxy documentation](https://docs.ros.org/en/foxy/Installation/Windows-Install-Binary.html))  is the ROS2 foxy official document to install (You might encounter some problems while creating a workspace)
-- [Here](https://ms-iot.github.io/ROSOnWindows/GettingStarted/SetupRos2.html) is an alternative way to install (only in disk C) (recommended)
+- [Here]([Windows (binary) — ROS 2 Documentation: Foxy documentation](https://docs.ros.org/en/foxy/Installation/Windows-Install-Binary.html))  is the ROS2 foxy official document to install (Choose release version 7)
+- [Here](https://ms-iot.github.io/ROSOnWindows/GettingStarted/SetupRos2.html) is an alternative way to install (only in disk C) 
 - To get a better understanding on ROS2, you can follow the [two beginner tutorials](https://docs.ros.org/en/foxy/Tutorials.html) (Beginner: CLI tools and Beginner: Client libraries) in the official documentation
 
 After being familiar with ROS2 and Unity, let's try the video version code:
