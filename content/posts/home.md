@@ -18,6 +18,11 @@ Welcome to the documentation website for AiRPlay! iGYM aims to build games that 
 * Kick Button
     * [Link to Github Repo](https://github.com/IGYMAIRPLAY/Airplay_KickButton)
     * [Link to Documentation](https://github.com/IGYMAIRPLAY/Airplay_KickButton)
+* UWB (For player identification)
+    * [Link to Github Repo](https://github.com/IGYMAIRPLAY/UWB)
+    * [Link to Documentation](https://github.com/IGYMAIRPLAY/UWB)(Please refer to the README)
+
+
 
 ## Onboarding
 

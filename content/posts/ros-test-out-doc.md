@@ -16,7 +16,8 @@ Currently, we have two games that are implemented:
 ## Development
 Branches
 * **main**: This is the most up-to-date branch used for on-site testing at Packard's Field.
-* **table-demo**: This branch is used for our table-demo at Roland's Office. There is no button logic for the table-demo branch.
+* **table-demo**(Currently, this branch is not working since we use two PC to address the latency issue): This branch is used for our table-demo at Roland's Office. There is no button logic for the table-demo branch.
+* **UWBtest**: This branch is used for UWBtest only.
 
 Game structure
 * [Tutorial scenes]({{< ref "/tutorialscenes" >}})
