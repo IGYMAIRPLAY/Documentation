@@ -101,6 +101,7 @@ One button startup procedure at Packard facility:
 
 Extra notes:
 - the script's find ip address method under "==== Get IP Address ====" doesn't always work, so please set the ip address manually if it doesn't work (ip address can be found by running ipconfig and then pick the ipv4 address).
+- the local script (run_system.bat) rebuilds the packages everytime it is run. The demo script for the Packard facility (run_main_system.bat) does not rebuild the packages, so if changes are made to ros2_emulation, make sure to rebuild!
 
 ### Folder structure
 
