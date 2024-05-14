@@ -81,6 +81,27 @@ This part is only for development use. In regular procedure, we have start-up sc
 
 TO-DO: 1, add the start-up scripts in the current active branches 2, write a description of the code here.
 
+Startup scripts: (TODO: Add where the startup scripts are located!).
+
+run_system.bat - this is a Windows Batch startup script that can be used when running the system locally on your laptop. Make sure to set the environment variables under "===== SET ENVIRONMENT VARIABLES =====" for your local system. The script can find the ros2_emulation directory automatically as long as this batch script is kept in the same directory that the ros2_emulation directory is located.
+
+run_main_system.bat - this is the startup script that is used to demo the system at the Packard facility. 
+
+The startup Batch scripts runs all the commands needed to to get the system running. Any line that starts with "REM" is a comment.
+
+One button startup procedure on local system:
+1. Run the Unity game (ros-test-out). Ensure that the ip-address has been configured in the ROS2 settings in Unity.
+2. Double-click the startup script. Now, the system should be running.
+
+One button startup procedure at Packard facility:
+1. Run the Unity game executable (i.e. build the game) on the rightmost computer.
+2. Double-click the startup script on the leftmost computer.
+3. Minimize all the terminal winsows that pop up on the leftmost computer except for the VITE server.
+4. Enter the third link on the VITE server terminal into your phone's browser to access the web app to control the system.
+
+Extra notes:
+- the script's find ip address method under "==== Get IP Address ====" doesn't always work, so please set the ip address manually if it doesn't work (ip address can be found by running ipconfig and then pick the ipv4 address).
+
 ### Folder structure
 
 Our folder structure follows the structure of standard [ROS2 workspace](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html) 
