@@ -79,9 +79,7 @@ This part is only for development use. In regular procedure, we have start-up sc
 
 ### One Button Start-Up
 
-TO-DO: 1, add the start-up scripts in the current active branches 2, write a description of the code here.
-
-Startup scripts: (TODO: Add where the startup scripts are located!).
+The startup scripts are located in [this](https://drive.google.com/drive/folders/1dst3uxRbtqcubARKFlGByCg3i5g69zFd?usp=drive_link) google drive shared folder.
 
 run_system.bat - this is a Windows Batch startup script that can be used when running the system locally on your laptop. Make sure to set the environment variables under "===== SET ENVIRONMENT VARIABLES =====" for your local system. The script can find the ros2_emulation directory automatically as long as this batch script is kept in the same directory that the ros2_emulation directory is located.
 
