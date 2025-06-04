@@ -1,234 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>
-        Prefabs ::
-        AiRPlay Wiki — A simple theme for Hugo
-      </title>
+    <title>Prefabs | AiRPlay Wiki</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Air Hockey
+
+Circle1: The ball for the Air Hockey game
+Field: The playing field for the Air Hockey game
+
+Shapes Catcher
+
+Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point.
+Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point.
+Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point.
+Heart_Shape: The heart shaped GameObject for the Shapes Catcher game. Grants the player 5 points.
+">
+    <meta name="generator" content="Hugo 0.147.7">
     
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta
-  name="description"
-  content="Air Hockey # Circle1: The ball for the Air Hockey game Field: The playing field for the Air Hockey game Shapes Catcher # Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game."
-/>
-<meta
-  name="keywords"
-  content=""
-/>
-<meta name="robots" content="noodp" />
-<link rel="canonical" href="https://airplay-wiki.netlify.app/posts/prefabs/" />
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
 
 
 
+    
+    
+    
+      
 
+    
 
+    
+    
+    <meta property="og:url" content="http://localhost:1313/posts/prefabs/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="Prefabs">
+  <meta property="og:description" content="Air Hockey Circle1: The ball for the Air Hockey game Field: The playing field for the Air Hockey game Shapes Catcher Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game. Grants the player 5 points.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
 
+  <meta itemprop="name" content="Prefabs">
+  <meta itemprop="description" content="Air Hockey Circle1: The ball for the Air Hockey game Field: The playing field for the Air Hockey game Shapes Catcher Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game. Grants the player 5 points.">
+  <meta itemprop="wordCount" content="81">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Prefabs">
+  <meta name="twitter:description" content="Air Hockey Circle1: The ball for the Air Hockey game Field: The playing field for the Air Hockey game Shapes Catcher Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game. Grants the player 5 points.">
 
-<link rel="stylesheet" href="/css/style.css" />
-
-<link rel="stylesheet" href="https://airplay-wiki.netlify.app/style.css" />
-
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://airplay-wiki.netlify.app/img/apple-touch-icon-144-precomposed.png" />
-<link rel="shortcut icon" href="https://airplay-wiki.netlify.app/img/favicon.png" />
-
-
-<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Prefabs"/>
-<meta name="twitter:description" content="Air Hockey # Circle1: The ball for the Air Hockey game Field: The playing field for the Air Hockey game Shapes Catcher # Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game."/>
-
-
-
-<meta property="og:title" content="Prefabs" />
-<meta property="og:description" content="Air Hockey # Circle1: The ball for the Air Hockey game Field: The playing field for the Air Hockey game Shapes Catcher # Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://airplay-wiki.netlify.app/posts/prefabs/" /><meta property="article:section" content="posts" />
-
-
-
-
-
-
-
-
+	
   </head>
-  <body class="dark-theme">
-    <div class="container">
-      <header class="header">
-  <span class="header__inner">
-    <a
-  href="/posts/home/"
-  class="logo"
-  style="text-decoration: none;"
->
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
-</svg>
-</span>
-    <span class="logo__text"
-      >airplay wiki</span
-    >
-    <span class="logo__cursor"></span>
-  
-</a>
 
-    <span class="header__right">
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
       
-      <span class="theme-toggle">
-        <svg
-  class="theme-toggler"
-  width="24"
-  height="24"
-  viewBox="0 0 48 48"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
-  />
-</svg>
-
-      </span>
-    </span>
-  </span>
-</header>
-
-
-      <div class="content">
-        
-  
-  
-
-  <article class="post">
-    <h1 class="post-title">Prefabs</h1>
-    <div class="post-meta">
+        AiRPlay Wiki
+      
+    </a>
+    <div class="flex-l items-center">
       
 
       
-
-
       
+<div class="ananke-socials">
+  
+</div>
+
     </div>
+  </div>
+</nav>
 
-    
+    </div>
+  </header>
 
-    
 
-    <div class="post-content">
+
+    <main class="pb7" role="main">
       
-      <h2 id="air-hockey">
-  Air Hockey
-  <a href="#air-hockey" class="h-anchor" aria-hidden="true">#</a>
-</h2>
+
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+  <header class="mt4 w-100">
+    <aside class="instapaper_ignoref b helvetica tracked">
+      
+      POSTS
+    </aside>
+    
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+    <h1 class="f1 athelas mt3 mb1">Prefabs</h1>
+    
+    
+    
+
+    
+    
+  </header>
+  <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="air-hockey">Air Hockey</h2>
 <ul>
 <li>Circle1: The ball for the Air Hockey game</li>
 <li>Field: The playing field for the Air Hockey game</li>
 </ul>
-<h2 id="shapes-catcher">
-  Shapes Catcher
-  <a href="#shapes-catcher" class="h-anchor" aria-hidden="true">#</a>
-</h2>
+<h2 id="shapes-catcher">Shapes Catcher</h2>
 <ul>
 <li>Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point.</li>
 <li>Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point.</li>
 <li>Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point.</li>
 <li>Heart_Shape: The heart shaped GameObject for the Shapes Catcher game. Grants the player 5 points.</li>
 </ul>
-
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
     </div>
-    
-      
-        <div class="pagination">
-          <div class="pagination__title">
-            <span class="pagination__title-h"
-              >Read other posts</span
-            >
-            <hr />
-          </div>
-          <div class="pagination__buttons">
-            
-              <span class="button previous">
-                <a href="https://airplay-wiki.netlify.app/posts/materials/">
-                  <span class="button__icon">←</span>
-                  <span class="button__text">Materials</span>
-                </a>
-              </span>
-            
-            
-              <span class="button next">
-                <a href="https://airplay-wiki.netlify.app/posts/resources/">
-                  <span class="button__text">Resources</span>
-                  <span class="button__icon">→</span>
-                </a>
-              </span>
-            
-          </div>
-        </div>
-      
-    
+  </div>
 
-    
-      
-        
+  <aside class="w-30-l mt6-l">
 
-      
-    
-  </article>
 
-      </div>
 
-      
-        <footer class="footer">
-  <div class="footer__inner">
-    
-      <a
-  href="/posts/home/"
-  class="logo"
-  style="text-decoration: none;"
->
+
+</aside>
+
+</article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy;  AiRPlay Wiki 2025 
+  </a>
+    <div>
+<div class="ananke-socials">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
-</svg>
-</span>
-    <span class="logo__text"
-      >airplay wiki</span
-    >
-    <span class="logo__cursor"></span>
-  
-</a>
-
-      <div class="copyright">
-        <span>© 2023 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
-        <span><a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
-      </div>
-    
+</div>
+</div>
   </div>
 </footer>
 
-
-
-
-
-<script type="text/javascript" src="/bundle.min.js"></script>
-
-
-      
-    </div>
-
-    
   </body>
 </html>

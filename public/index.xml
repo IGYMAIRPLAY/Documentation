@@ -2,243 +2,122 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AiRPlay Wiki</title>
-    
-    
-    
-    <link>https://airplay-wiki.netlify.app/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on AiRPlay Wiki</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    
-	<atom:link href="https://airplay-wiki.netlify.app/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Air Hockey</title>
-      <link>https://airplay-wiki.netlify.app/posts/airhockey/</link>
+      <link>http://localhost:1313/posts/airhockey/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://airplay-wiki.netlify.app/posts/airhockey/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Overview # Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to virtually kick the ball. The peripersonal boundaries can either be expanded by extending their limbs, or by pressing a Bluetooth kick button if they have limited mobility.
-Rules # After going through the quick tutorials, the game begins when the moderator starts the timer.
-          
-        
-        </description>
+      <guid>http://localhost:1313/posts/airhockey/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to virtually kick the ball. The peripersonal boundaries can either be expanded by extending their limbs, or by pressing a Bluetooth kick button if they have limited mobility.&lt;/p&gt;&#xA;&lt;h2 id=&#34;rules&#34;&gt;Rules&lt;/h2&gt;&#xA;&lt;p&gt;After going through the quick tutorials, the game begins when the moderator starts the timer. A timer will be correspondingly displayed at the center of the field. Players with the kick button should be assigned to the left side of the field and all players should try to stay on their side of the field. This is because the algorithm is programmed to only expand peripersonal boundaries on the left side of the field. By kicking the ball into the goal on the other side, the player scores a point. At the end of the timer, the winner, or the side with the most points, will have a crown displayed on their field.&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>airplay-frontend Documentation</title>
+      <link>http://localhost:1313/posts/frontend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/frontend/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Welcome to the AIRPLAY-frontend wiki! AIRPLAY-frontend is the repository for the frontend part of the entire &lt;a href=&#34;https://www.igym.solutions/&#34;&gt;iGYM system&lt;/a&gt;. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Button Script</title>
+      <link>http://localhost:1313/posts/button-script/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/button-script/</guid>
+      <description>&lt;h2 id=&#34;buttoncpp&#34;&gt;button.cpp&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Handles button connection to the game&lt;/li&gt;&#xA;&lt;li&gt;Currently, player must press the button on startup of the game so it can connect successfully&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>Game Scene</title>
-      <link>https://airplay-wiki.netlify.app/posts/gamescene/</link>
+      <link>http://localhost:1313/posts/gamescene/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://airplay-wiki.netlify.app/posts/gamescene/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-           Scene Objects # Cameras Calibrates camera position Left Camera - displays the left side of the field Right Camera - displays the right side of the field Controller Reads position and updates player peripersonal boundary Handles kick button logic Field Draws field lines using LineRenderer Canvas Displays UI including timer and score AudioManager Handles audio logic including: Boundary Goal Win Start GameManager Handles game logic Starts up Unity-ROS connection and runs player detection code 
-          
-        
-        </description>
+      <guid>http://localhost:1313/posts/gamescene/</guid>
+      <description>&lt;h2 id=&#34;scene-objects&#34;&gt;Scene Objects&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cameras&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Calibrates camera position&lt;/li&gt;&#xA;&lt;li&gt;Left Camera - displays the left side of the field&#xA;&lt;img src=&#34;http://localhost:1313/gamescene_pic1.png&#34; alt=&#34;Left Camera&#34;&gt;&lt;/li&gt;&#xA;&lt;li&gt;Right Camera - displays the right side of the field&#xA;&lt;img src=&#34;http://localhost:1313/gamescene_pic2.png&#34; alt=&#34;Right Camera&#34;&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Controller&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Reads position and updates player peripersonal boundary&lt;/li&gt;&#xA;&lt;li&gt;Handles kick button logic&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Field&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Draws field lines using LineRenderer&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Canvas&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Displays UI including timer and score&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;AudioManager&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Handles audio logic including:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Boundary&lt;/li&gt;&#xA;&lt;li&gt;Goal&lt;/li&gt;&#xA;&lt;li&gt;Win&lt;/li&gt;&#xA;&lt;li&gt;Start&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;GameManager&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Handles game logic&lt;/li&gt;&#xA;&lt;li&gt;Starts up Unity-ROS connection and runs player detection code&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Home</title>
-      <link>https://airplay-wiki.netlify.app/posts/home/</link>
+      <link>http://localhost:1313/posts/home/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://airplay-wiki.netlify.app/posts/home/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Introduction # Welcome to the ros-test-out wiki! ros-test-out is the repository for the Unity part of the entire iGYM system. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.
-          
-        
-        </description>
+      <guid>http://localhost:1313/posts/home/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Welcome to the documentation website for AiRPlay! iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.&lt;/p&gt;&#xA;&lt;h2 id=&#34;repositories&#34;&gt;Repositories&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;ros-test-out （Unity Part）&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/IGYMAIRPLAY/ros-test-out&#34;&gt;Link to Github Repo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/ros-test-out-doc/&#34;&gt;Link to Documentation&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;ros2_emulation (ROS2 Part)&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/IGYMAIRPLAY/ros2_emulation&#34;&gt;Link to Github Repo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/ros2-emulation/&#34;&gt;Link to Documentation&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;AIRPLAY-frontend&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/IGYMAIRPLAY/AIRPLAY-frontend&#34;&gt;Link to Github Repo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/frontend/&#34;&gt;Link to Documentation&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Kick Button&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/IGYMAIRPLAY/Airplay_KickButton&#34;&gt;Link to Github Repo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/IGYMAIRPLAY/Airplay_KickButton&#34;&gt;Link to Documentation&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;UWB (For player identification)&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/IGYMAIRPLAY/UWB&#34;&gt;Link to Github Repo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/IGYMAIRPLAY/UWB&#34;&gt;Link to Documentation&lt;/a&gt;(Please refer to the README)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;onboarding&#34;&gt;Onboarding&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Unity&lt;/strong&gt;：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Materials</title>
-      <link>https://airplay-wiki.netlify.app/posts/materials/</link>
+      <link>http://localhost:1313/posts/materials/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://airplay-wiki.netlify.app/posts/materials/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-           Physics: # Each game has its own different 2D physics material that dictate the motion of the GameObjects.
-ball_physics: A 2D physics material applied to the ball object for the Air Hockey game. Its friction is set to 0.4 and bounciness to 0.8 shapesPhysics: A 2D physics material applied to the shapes for the Shapes Catcher game. Its friction is set to 0 and bounciness to 0.8 
-          
-        
-        </description>
+      <guid>http://localhost:1313/posts/materials/</guid>
+      <description>&lt;h2 id=&#34;physics&#34;&gt;Physics:&lt;/h2&gt;&#xA;&lt;p&gt;Each game has its own different 2D physics material that dictate the motion of the GameObjects.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ball_physics: A 2D physics material applied to the ball object for the Air Hockey game. Its friction is set to 0.4 and bounciness to 0.8&#xA;&lt;img src=&#34;http://localhost:1313/materials_pic1.png&#34; alt=&#34;Ball Physics&#34;&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;shapesPhysics: A 2D physics material applied to the shapes for the Shapes Catcher game. Its friction is set to 0 and bounciness to 0.8&#xA;&lt;img src=&#34;http://localhost:1313/materials_pic2.png&#34; alt=&#34;Shapes Physics&#34;&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
+    <item>
+      <title>Player Detection Code</title>
+      <link>http://localhost:1313/posts/player-detection-script/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/player-detection-script/</guid>
+      <description>&lt;h2 id=&#34;player_detectioncpp&#34;&gt;player_detection.cpp&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;init_background() Function&lt;/strong&gt;: This function initializes the background image. It can either capture the initial frame as a background (when enable_flag is set to 1) or load a background image from a file.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;background_subtraction() Function&lt;/strong&gt;: The background_subtraction() function takes the current frame and the background image as input and performs background subtraction.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;average_frame() Function&lt;/strong&gt;: This function computes the average of a sequence of frames.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;detect_pos() Function&lt;/strong&gt;: This function handles object detection and tracking. It captures frames from a camera, performs background subtraction, and then identifies and tracks objects in the scene.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Publisher Node (PublisherNode)&lt;/strong&gt;: The published data includes the number of detected objects, their positions (x and y coordinates), and sizes. Timing information is also included for performance evaluation.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Subscriber Node (SingleThreadedNode)&lt;/strong&gt;: This is a simple subscriber node that listens for control messages. (Currently is not used)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>Prefabs</title>
-      <link>https://airplay-wiki.netlify.app/posts/prefabs/</link>
+      <link>http://localhost:1313/posts/prefabs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://airplay-wiki.netlify.app/posts/prefabs/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Air Hockey # Circle1: The ball for the Air Hockey game Field: The playing field for the Air Hockey game Shapes Catcher # Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game.
-          
-        
-        </description>
+      <guid>http://localhost:1313/posts/prefabs/</guid>
+      <description>&lt;h2 id=&#34;air-hockey&#34;&gt;Air Hockey&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Circle1: The ball for the Air Hockey game&lt;/li&gt;&#xA;&lt;li&gt;Field: The playing field for the Air Hockey game&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;shapes-catcher&#34;&gt;Shapes Catcher&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point.&lt;/li&gt;&#xA;&lt;li&gt;Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point.&lt;/li&gt;&#xA;&lt;li&gt;Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point.&lt;/li&gt;&#xA;&lt;li&gt;Heart_Shape: The heart shaped GameObject for the Shapes Catcher game. Grants the player 5 points.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Resources</title>
-      <link>https://airplay-wiki.netlify.app/posts/resources/</link>
+      <link>http://localhost:1313/posts/resources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://airplay-wiki.netlify.app/posts/resources/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-           Air Hockey # Audio: Boundary Goal Jubilance Kick Opening svg file: ball.svg crown.svg hockeySolid.svg line.svg net.svg Group3crown.svg loading.png kisspng-computer-icons-apng-clip-art-5b37ade1d168f9.8881650915303756498578.png kindpng_3926418.png Shapes Catcher # Audio: heart.mp3 shape.mp3 winner.mp3 Circle_Contour.png Heart.png Square_Contour.png Triangle.png Triangle_Contour.png Other Resources # GeometryCompassSettings.asset Player.prefab: The GameObject of the player Poppins-Bold.ttf: The font used in tutorials ROSConnectionPrefab.prefab: The GameObject establishing a connection between Unity and ROS 
-          
-        
-        </description>
+      <guid>http://localhost:1313/posts/resources/</guid>
+      <description>&lt;h2 id=&#34;air-hockey&#34;&gt;Air Hockey&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Audio:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Boundary&lt;/li&gt;&#xA;&lt;li&gt;Goal&lt;/li&gt;&#xA;&lt;li&gt;Jubilance&lt;/li&gt;&#xA;&lt;li&gt;Kick&lt;/li&gt;&#xA;&lt;li&gt;Opening&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;svg file:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;ball.svg&lt;/li&gt;&#xA;&lt;li&gt;crown.svg&lt;/li&gt;&#xA;&lt;li&gt;hockeySolid.svg&lt;/li&gt;&#xA;&lt;li&gt;line.svg&lt;/li&gt;&#xA;&lt;li&gt;net.svg&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Group3crown.svg&lt;/li&gt;&#xA;&lt;li&gt;loading.png&lt;/li&gt;&#xA;&lt;li&gt;kisspng-computer-icons-apng-clip-art-5b37ade1d168f9.8881650915303756498578.png&lt;/li&gt;&#xA;&lt;li&gt;kindpng_3926418.png&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;shapes-catcher&#34;&gt;Shapes Catcher&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Audio:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;heart.mp3&lt;/li&gt;&#xA;&lt;li&gt;shape.mp3&lt;/li&gt;&#xA;&lt;li&gt;winner.mp3&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Circle_Contour.png&lt;/li&gt;&#xA;&lt;li&gt;Heart.png&lt;/li&gt;&#xA;&lt;li&gt;Square_Contour.png&lt;/li&gt;&#xA;&lt;li&gt;Triangle.png&lt;/li&gt;&#xA;&lt;li&gt;Triangle_Contour.png&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;other-resources&#34;&gt;Other Resources&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;GeometryCompassSettings.asset&lt;/li&gt;&#xA;&lt;li&gt;Player.prefab: The GameObject of the player&lt;/li&gt;&#xA;&lt;li&gt;Poppins-Bold.ttf: The font used in tutorials&lt;/li&gt;&#xA;&lt;li&gt;ROSConnectionPrefab.prefab: The GameObject establishing a connection between Unity and ROS&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>ROS Messages</title>
-      <link>https://airplay-wiki.netlify.app/posts/rosmessages/</link>
+      <link>http://localhost:1313/posts/rosmessages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://airplay-wiki.netlify.app/posts/rosmessages/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          The files in this folder were generated by Unity-ROS MessageGeneration. They should not be modified.
-          
-        
-        </description>
+      <guid>http://localhost:1313/posts/rosmessages/</guid>
+      <description>&lt;p&gt;The files in this folder were generated by Unity-ROS MessageGeneration. They should not be modified.&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>ros-test-out Documentation</title>
+      <link>http://localhost:1313/posts/ros-test-out-doc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ros-test-out-doc/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Welcome to the ros-test-out wiki! ros-test-out is the repository for the Unity part of the entire &lt;a href=&#34;https://www.igym.solutions/&#34;&gt;iGYM system&lt;/a&gt;. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ros2-emulation Documentation</title>
+      <link>http://localhost:1313/posts/ros2-emulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ros2-emulation/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Welcome to the ros2-emulation wiki! ros2-emulation is the repository for the ROS2 part of the entire &lt;a href=&#34;https://www.igym.solutions/&#34;&gt;iGYM system&lt;/a&gt;. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Scenes</title>
-      <link>https://airplay-wiki.netlify.app/posts/scenes/</link>
+      <link>http://localhost:1313/posts/scenes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://airplay-wiki.netlify.app/posts/scenes/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-           Scenes # AirHockey
-AirHockey - The main game scene for the Air Hockey game TutorialScenes - A folder containing all the tutorial scenes. Some of these scenes must be run before the main game scene in order for the player detection code to work. Look at Tutorial Scenes for more details. ShapeCatcher
-ShapeCatcher - The main game scene for the Shape Catcher game. 
-          
-        
-        </description>
+      <guid>http://localhost:1313/posts/scenes/</guid>
+      <description>&lt;h2 id=&#34;scenes&#34;&gt;Scenes&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;AirHockey&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;AirHockey&lt;/strong&gt; - The main game scene for the &lt;a href=&#34;http://localhost:1313/posts/airhockey/&#34;&gt;Air Hockey&lt;/a&gt; game&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;TutorialScenes&lt;/strong&gt; - A folder containing all the tutorial scenes. Some of these scenes must be run before the main game scene in order for the player detection code to work. Look at &lt;a href=&#34;http://localhost:1313/posts/tutorialscenes/&#34;&gt;Tutorial Scenes&lt;/a&gt; for more details.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;ShapeCatcher&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;ShapeCatcher&lt;/strong&gt; - The main game scene for the &lt;a href=&#34;http://localhost:1313/posts/shapecatcher/&#34;&gt;Shape Catcher&lt;/a&gt; game.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Scripts</title>
-      <link>https://airplay-wiki.netlify.app/posts/folderstructure/</link>
+      <link>http://localhost:1313/posts/folderstructure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://airplay-wiki.netlify.app/posts/folderstructure/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-           Folder Structure # Air Hockey Goal Control - plays victorious goal sound effect if hockey hits either of the two goals Wall Control - plays boundary sound effect if hockey hits the wall Hockey Ctr - if debug is checked in the inspector, can use keyboard input to move hockey and test game mechanics (for playtesting on PC only) Instructions - loads tutorial scene corresponding to number keys [0-8] (for playtesting only) Game Manager - handles game rules including scores, winning / losing, timer Shapes Catcher Emitter - spawns random shapes at a specified time interval in random directions to both sides of the field Shape Class - defines the three different shapes (Circle, Square, Triangle) Shape Behavior - shape disappears after specified time passes or collides with player and handles player score Switch Shape - uses keyboard input for switching shape (for playtesting only) Timer - handles timer and game logic when timer stops Shapes Game Manager - handles game rules including scores, winning / losing, timer Pos Message SC - seperate posmessage script for shapes catcher game, may need to change later so there is better architecture Camera Adjust - calibrates camera position Pos Message - reads player position input and draws a peripersonal boundary around players based on radius and position (currently only specific to air hockey game) Start Up - runs player detection code and starts up ROS connection before loading the game scene 
-          
-        
-        </description>
+      <guid>http://localhost:1313/posts/folderstructure/</guid>
+      <description>&lt;h1 id=&#34;folder-structure&#34;&gt;Folder Structure&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Air Hockey&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Goal Control&lt;/strong&gt; - plays victorious goal sound effect if hockey hits either of the two goals&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Wall Control&lt;/strong&gt; - plays boundary sound effect if hockey hits the wall&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Hockey Ctr&lt;/strong&gt; - if debug is checked in the inspector, can use keyboard input to move hockey and test game mechanics (for playtesting on PC only)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Instructions&lt;/strong&gt; - loads tutorial scene corresponding to number keys [0-8] (for playtesting only)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Game Manager&lt;/strong&gt; - handles game rules including scores, winning / losing, timer&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Shapes Catcher&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Emitter&lt;/strong&gt; - spawns random shapes at a specified time interval in random directions to both sides of the field&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Shape Class&lt;/strong&gt; - defines the three different shapes (Circle, Square, Triangle)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Shape Behavior&lt;/strong&gt; - shape disappears after specified time passes or collides with player and handles player score&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Switch Shape&lt;/strong&gt; - uses keyboard input for switching shape (for playtesting only)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Timer&lt;/strong&gt; - handles timer and game logic when timer stops&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Shapes Game Manager&lt;/strong&gt; - handles game rules including scores, winning / losing, timer&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Pos Message SC&lt;/strong&gt; - separate posmessage script for shapes catcher game, may need to change later so there is better architecture; when player presses the bluetooth button, only the boundary of the player on the left field switches shape&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Camera Adjust&lt;/strong&gt; - calibrates camera position&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Pos Message&lt;/strong&gt; - reads player position input and draws a peripersonal boundary around players based on radius and position (currently only specific to air hockey game); when player presses the bluetooth button, only the boundary of the player on the left field expands to a specified radius&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Start Up&lt;/strong&gt; - runs player detection code and starts up ROS connection before loading the game scene&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/1469764/run-command-prompt-commands&#34;&gt;Link to Reference&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Shapes Catcher</title>
-      <link>https://airplay-wiki.netlify.app/posts/shapecatcher/</link>
+      <link>http://localhost:1313/posts/shapecatcher/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://airplay-wiki.netlify.app/posts/shapecatcher/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Overview # A virtual emitter in the center of the field constantly emits random shapes (e.g. circle, square, triangle) towards both halves of the field. Players on both sides compete to collect shapes that match their peripersonal boundary to earn points. Players can change their boundary shape by having a partner click on a keyboard button.
-Rules # The game begins when the moderator starts the timer. Two timers will be correspondingly displayed at the center of the field.
-          
-        
-        </description>
+      <guid>http://localhost:1313/posts/shapecatcher/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;A virtual emitter in the center of the field constantly emits random shapes (e.g. circle, square, triangle) towards both halves of the field. Players on both sides compete to collect shapes that match their peripersonal boundary to earn points. Players can change their boundary shape by having a partner click on a keyboard button.&lt;/p&gt;&#xA;&lt;h2 id=&#34;rules&#34;&gt;Rules&lt;/h2&gt;&#xA;&lt;p&gt;The game begins when the moderator starts the timer. Two timers will be correspondingly displayed at the center of the field. A player scores a point by contacting a shape that matches their peripersonal boundary. Players with the kick button should be assigned to the left side of the field. All players should try to stay on their side of the field because a player&amp;rsquo;s score is added to the field they are currently on. In other words, by being on the opponent&amp;rsquo;s field, a player is helping their opponent collect their shapes. At the end of the timer, the winner, or the side with the most points, will have a crown displayed on their field.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Tutorial Scenes</title>
-      <link>https://airplay-wiki.netlify.app/posts/tutorialscenes/</link>
+      <link>http://localhost:1313/posts/tutorialscenes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://airplay-wiki.netlify.app/posts/tutorialscenes/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          There are multiple scenes that have been created to guide first-time users of the system. Each scene corresponds to their own keyboard input so the moderator can freely skip between them as they see fit.
-Blank - This is an empty scene used to activate and adjust the cameras so that the game field is accurately displayed. This scene corresponds to the keyboard input 0.
-Easy - Shows the speed and size of the ball for the easy mode.
-          
-        
-        </description>
+      <guid>http://localhost:1313/posts/tutorialscenes/</guid>
+      <description>&lt;p&gt;There are multiple scenes that have been created to guide first-time users of the system. Each scene corresponds to their own keyboard input so the moderator can freely skip between them as they see fit.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Blank - This is an empty scene used to activate and adjust the cameras so that the game field is accurately displayed. This scene corresponds to the keyboard input 0.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Easy - Shows the speed and size of the ball for the easy mode. This scene corresponds to the keyboard input 1.&#xA;&lt;img src=&#34;http://localhost:1313/tutorialscenes_pic1.png&#34; alt=&#34;Tutorial Scene 1&#34;&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

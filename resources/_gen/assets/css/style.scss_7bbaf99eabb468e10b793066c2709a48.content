@@ -1089,5 +1089,3 @@ div.code-toolbar > .toolbar span:focus {
     line-height: 0; }
   .collapsable-code .code-toolbar {
     margin: 0; }
-
-/*# sourceMappingURL=style.css.map */

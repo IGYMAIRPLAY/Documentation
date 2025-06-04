@@ -121,15 +121,15 @@ We use [this officially supported Repo](https://github.com/Unity-Technologies/Un
 
 ### Key Scripts
 
-* [player_detection.cpp]({{< ref "/player-detection-script" >}})
+* [player_detection.cpp]({{< ref "/posts/player-detection-script" >}})
 
-* [button.cpp]({{< ref "/button-script" >}})
+* [button.cpp]({{< ref "/posts/button-script" >}})
 
 ### Latency Tests
 
 * **pub_diff**: We measured the time difference between every two publishing messages. This file can be found in the first src folder.
 * **detect_duration**: We measured the latency for player detection code. This file can be found in the first src folder.
-* The implementation of these latency tests can be found in [player_detection.cpp]({{< ref "/player-detection-script" >}}).
+* The implementation of these latency tests can be found in [player_detection.cpp]({{< ref "/posts/player-detection-script" >}}).
 
 ## Contact 
 helloigym@umich.edu

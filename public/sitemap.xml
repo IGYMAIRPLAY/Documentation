@@ -2,34 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://airplay-wiki.netlify.app/posts/airhockey/</loc>
+    <loc>http://localhost:1313/posts/airhockey/</loc>
   </url><url>
-    <loc>https://airplay-wiki.netlify.app/</loc>
+    <loc>http://localhost:1313/</loc>
   </url><url>
-    <loc>https://airplay-wiki.netlify.app/categories/</loc>
+    <loc>http://localhost:1313/posts/frontend/</loc>
   </url><url>
-    <loc>https://airplay-wiki.netlify.app/posts/gamescene/</loc>
+    <loc>http://localhost:1313/posts/button-script/</loc>
   </url><url>
-    <loc>https://airplay-wiki.netlify.app/posts/home/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://airplay-wiki.netlify.app/posts/materials/</loc>
+    <loc>http://localhost:1313/posts/gamescene/</loc>
   </url><url>
-    <loc>https://airplay-wiki.netlify.app/posts/</loc>
+    <loc>http://localhost:1313/posts/home/</loc>
   </url><url>
-    <loc>https://airplay-wiki.netlify.app/posts/prefabs/</loc>
+    <loc>http://localhost:1313/posts/materials/</loc>
   </url><url>
-    <loc>https://airplay-wiki.netlify.app/posts/resources/</loc>
+    <loc>http://localhost:1313/posts/player-detection-script/</loc>
   </url><url>
-    <loc>https://airplay-wiki.netlify.app/posts/rosmessages/</loc>
+    <loc>http://localhost:1313/posts/</loc>
   </url><url>
-    <loc>https://airplay-wiki.netlify.app/posts/scenes/</loc>
+    <loc>http://localhost:1313/posts/prefabs/</loc>
   </url><url>
-    <loc>https://airplay-wiki.netlify.app/posts/folderstructure/</loc>
+    <loc>http://localhost:1313/posts/resources/</loc>
   </url><url>
-    <loc>https://airplay-wiki.netlify.app/posts/shapecatcher/</loc>
+    <loc>http://localhost:1313/posts/rosmessages/</loc>
   </url><url>
-    <loc>https://airplay-wiki.netlify.app/tags/</loc>
+    <loc>http://localhost:1313/posts/ros-test-out-doc/</loc>
   </url><url>
-    <loc>https://airplay-wiki.netlify.app/posts/tutorialscenes/</loc>
+    <loc>http://localhost:1313/posts/ros2-emulation/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/scenes/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/folderstructure/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/shapecatcher/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/tutorialscenes/</loc>
   </url>
 </urlset>

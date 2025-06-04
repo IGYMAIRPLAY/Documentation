@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ros2-emulation Documentation | AiRPlay Wiki</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Introduction
+Welcome to the ros2-emulation wiki! ros2-emulation is the repository for the ROS2 part of the entire iGYM system. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.">
+    <meta name="generator" content="Hugo 0.147.7">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:url" content="http://localhost:1313/posts/ros2-emulation/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="ros2-emulation Documentation">
+  <meta property="og:description" content="Introduction Welcome to the ros2-emulation wiki! ros2-emulation is the repository for the ROS2 part of the entire iGYM system. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+  <meta itemprop="name" content="ros2-emulation Documentation">
+  <meta itemprop="description" content="Introduction Welcome to the ros2-emulation wiki! ros2-emulation is the repository for the ROS2 part of the entire iGYM system. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.">
+  <meta itemprop="wordCount" content="1142">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ros2-emulation Documentation">
+  <meta name="twitter:description" content="Introduction Welcome to the ros2-emulation wiki! ros2-emulation is the repository for the ROS2 part of the entire iGYM system. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        AiRPlay Wiki
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+  <header class="mt4 w-100">
+    <aside class="instapaper_ignoref b helvetica tracked">
+      
+      POSTS
+    </aside>
+    
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+    <h1 class="f1 athelas mt3 mb1">ros2-emulation Documentation</h1>
+    
+    
+    
+
+    
+    
+  </header>
+  <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="introduction">Introduction</h2>
+<p>Welcome to the ros2-emulation wiki! ros2-emulation is the repository for the ROS2 part of the entire <a href="https://www.igym.solutions/">iGYM system</a>. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.</p>
+<p>The code in this repository is responsible for implementing the player detection in the iGYM system using OpenCV.</p>
+<p>The current most up-to-date branch that is used for the onsite play field is the OnsiteVersion branch.</p>
+<p>This section is still in progress&hellip;</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Windows 10</li>
+<li>ROS2 foxy</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<h3 id="ros2-foxy">ROS2 foxy</h3>
+<p>[Here](<a href="https://docs.ros.org/en/foxy/Installation/Windows-Install-Binary.html">Windows (binary) — ROS 2 Documentation: Foxy documentation</a>) is the installation for ROS2 foxy official document (You might encounter some errors later while building the workspace)</p>
+<p><a href="https://ms-iot.github.io/ROSOnWindows/GettingStarted/SetupRos2.html">Here</a> is an alternative way to install (only in disk C) (recommended)</p>
+<h3 id="button">Button</h3>
+<h2 id="overview">Overview</h2>
+<p>The system overview is written in <a href="https://docs.google.com/presentation/d/1leWxa7IAV4V9gBXjTLt8Q2WAHMvET5B8hrSyY8mlWHI/edit?usp=drive_link">here</a>. The numbers at the end means the latest modification date.</p>
+<h2 id="development">Development</h2>
+<h3 id="branches">Branches</h3>
+<ul>
+<li><strong>OnsiteVersionCuda_Multithreads</strong> (Currently using): This branch is for testing the system <strong>WITH GPU</strong> and Multithread for Grabbing frames on-site at Packard&rsquo;s Field.</li>
+<li><strong>OnsiteVersionCuda</strong>: This branch is for testing the system <strong>WITH GPU</strong> on-site at Packard&rsquo;s Field.</li>
+<li><strong>OnsiteVersion</strong>: This branch is for testing the system <strong>WITH CPU</strong> on-site at Packard&rsquo;s Field.</li>
+<li><strong>video_test</strong>: This branch is for testing the system with the video recordings taken from on-site <strong>WITH CPU</strong>. Due to the video&rsquo;s size exceeding the maximum size to push to GitHub, make sure to download the video from this <a href="https://drive.google.com/file/d/1uPAa-w7rQWaxT7_s6YWcZ-Tj5pzy42DI/view?usp=drive_link">link</a>, and store it in the /ap_interfaces/test_video/ directory before running the program. There is no button logic for all video test branches.</li>
+<li><strong>video_testGPU</strong>: This branch is for testing the system with the video recordings taken from on-site <strong>WITH GPU</strong>. Before running the procedure, please install OpenCV_CUDA 4.9 within this <a href="https://drive.google.com/file/d/1fTxBHLDgS5kJSOQfCRs_7UuPasXRqUHW/view?usp=drive_link">link</a>.It would take at least 1 hour to complete the installation. Due to the video&rsquo;s size exceeding the maximum size to push to GitHub, make sure to download the video from this <a href="https://drive.google.com/file/d/1uPAa-w7rQWaxT7_s6YWcZ-Tj5pzy42DI/view?usp=drive_link">link</a>, and store it in the /ap_interfaces/test_video/ directory before running the program. There is no button logic for all video test branches.</li>
+<li><strong>OnsiteVersionCuda_Multithreads_UWB</strong> (Testing branch for UWB): this branch is used for testing UWB localization. Please refer to the <a href="https://github.com/IGYMAIRPLAY/UWB">UWB repo</a> for details.</li>
+<li><strong>table-demo</strong>(Currently unavailable since we don&rsquo;t have two computers to deal with the latency issue for table demo): This branch is for testing the system on our table demo. There is no button logic for the table-demo branch.</li>
+</ul>
+<h3 id="running-procedure">Running procedure</h3>
+<p>Open a terminal:</p>
+<p><code>c:\opt\ros\foxy\x64\setup.bat</code>  Source the setup file</p>
+<p><code>cd C:\[Path To The Repo]\ros2_emulation\src</code></p>
+<p><code>colcon build --merge-install --packages-select ap_interfaces</code> only build ap_interfaces or if you want to build all: <code>colcon build --merge-install</code>Everytime you made a change you need to build it.</p>
+<p><code>call install\setup.bat</code> Source the workspace</p>
+<p><code>ros2 launch ap_interfaces airplay_launch.py</code> to run the button and player_detection node or <code>ros2 run ap_interfaces player_detection</code> to run merely the player_detection node</p>
+<p>Open another terminal (for connection with Unity):</p>
+<p><code>c:\opt\ros\foxy\x64\setup.bat</code>  Source the setup file</p>
+<p><code>cd C:\[Path To The Repo]\ros2_emulation\src</code></p>
+<p><code>call install\setup.bat</code> Source the workspace</p>
+<p><code>ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:='your ip address' -p ROS_TCP_PORT:=10000</code> You can use ipconfig to check the available ip address you can choose. Then copy the ipv4 address into the ROS_IP.</p>
+<p>Open Unity Repo:</p>
+<p>1, Go to the ROS Settings and change the corresponding ROS IP address there. You can follow the official instruction <a href="https://github.com/Unity-Technologies/Unity-Robotics-Hub/blob/main/tutorials/ros_unity_integration/setup.md#-unity-setup">here</a>, just do Step 3.</p>
+<p>2，Open the &lsquo;Airplay&rsquo; scene and hit running. Then rerun the player_detection node, you will see players&rsquo; blob shown on the unity editor.</p>
+<p>Note:</p>
+<p>This part is only for development use. In regular procedure, we have start-up script that help us run this part automatically onsite.</p>
+<h3 id="one-button-start-up">One Button Start-Up</h3>
+<p>The startup scripts are located in <a href="https://drive.google.com/drive/folders/1dst3uxRbtqcubARKFlGByCg3i5g69zFd?usp=drive_link">this</a> google drive shared folder.</p>
+<p>run_system.bat - this is a Windows Batch startup script that can be used when running the system locally on your laptop. Make sure to set the environment variables under &ldquo;===== SET ENVIRONMENT VARIABLES =====&rdquo; for your local system. The script can find the ros2_emulation directory automatically as long as this batch script is kept in the same directory that the ros2_emulation directory is located.</p>
+<p>run_main_system.bat - this is the startup script that is used to demo the system at the Packard facility.</p>
+<p>The startup Batch scripts runs all the commands needed to to get the system running. Any line that starts with &ldquo;REM&rdquo; is a comment.</p>
+<p>One button startup procedure on local system:</p>
+<ol>
+<li>Run the Unity game (ros-test-out). Ensure that the ip-address has been configured in the ROS2 settings in Unity.</li>
+<li>Double-click the startup script. Now, the system should be running.</li>
+</ol>
+<p>One button startup procedure at Packard facility:</p>
+<ol>
+<li>Run the Unity game executable (i.e. build the game) on the rightmost computer.</li>
+<li>Double-click the startup script on the leftmost computer.</li>
+<li>Minimize all the terminal winsows that pop up on the leftmost computer except for the VITE server.</li>
+<li>Enter the third link on the VITE server terminal into your phone&rsquo;s browser to access the web app to control the system.</li>
+</ol>
+<p>Extra notes:</p>
+<ul>
+<li>the script&rsquo;s find ip address method under &ldquo;==== Get IP Address ====&rdquo; doesn&rsquo;t always work, so please set the ip address manually if it doesn&rsquo;t work (ip address can be found by running ipconfig and then pick the ipv4 address).</li>
+<li>the local script (run_system.bat) rebuilds the packages everytime it is run. The demo script for the Packard facility (run_main_system.bat) does not rebuild the packages, so if changes are made to ros2_emulation, make sure to rebuild!</li>
+</ul>
+<h3 id="folder-structure">Folder structure</h3>
+<p>Our folder structure follows the structure of standard <a href="https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html">ROS2 workspace</a></p>
+<p><img src="/ROS2FolderStructure.png" alt="ROS2 Folder structure"></p>
+<h3 id="add-dependencies">Add dependencies</h3>
+<p>In ROS2, we usually add dependencies in CmakeLists.txt and Package.xml. In general, these two files tell what dependencies the package needs.</p>
+<p>For some build-in package, like &lsquo;rclcpp&rsquo;, &lsquo;std_msgs&rsquo;,  we just simply add them by <code>find_package(package REQUIRED)</code> in CmakeLists.txt and <code>&lt;depend&gt;package&lt;/depend&gt;</code> `  in Package.xml</p>
+<p>For other non-build-in package, like &lsquo;Spinnaker&rsquo; for FLIR camera and &lsquo;Simple-ble&rsquo; for kick button. We have to manually add the dependencies with cmake command and link the library. You can follow the steps <a href="https://docs.ros.org/en/foxy/How-To-Guides/Ament-CMake-Documentation.html?highlight=library">here</a>. Note that for &lsquo;Spinnaker&rsquo;, this doesn&rsquo;t work so we used another way to add the dependency. You can check it in CmakeLists.txt as well as ap_interfaces/cmake/FindSpinnaker.cmake for details. (If you want to use the FLIR camera in a new PC, you need to <strong>change the address in FindSpinnaer.cmake</strong>. I hard coded this part.)</p>
+<h2 id="ros2-unity-bridge">ROS2-Unity Bridge</h2>
+<p>We use <a href="https://github.com/Unity-Technologies/Unity-Robotics-Hub/tree/main">this officially supported Repo</a> for the connection between ROS2 and Unity part.</p>
+<h3 id="key-scripts">Key Scripts</h3>
+<ul>
+<li>
+<p><a href="http://localhost:1313/posts/player-detection-script/">player_detection.cpp</a></p>
+</li>
+<li>
+<p><a href="http://localhost:1313/posts/button-script/">button.cpp</a></p>
+</li>
+</ul>
+<h3 id="latency-tests">Latency Tests</h3>
+<ul>
+<li><strong>pub_diff</strong>: We measured the time difference between every two publishing messages. This file can be found in the first src folder.</li>
+<li><strong>detect_duration</strong>: We measured the latency for player detection code. This file can be found in the first src folder.</li>
+<li>The implementation of these latency tests can be found in <a href="http://localhost:1313/posts/player-detection-script/">player_detection.cpp</a>.</li>
+</ul>
+<h2 id="contact">Contact</h2>
+<p><a href="mailto:helloigym@umich.edu">helloigym@umich.edu</a></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+    </div>
+  </div>
+
+  <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+</article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy;  AiRPlay Wiki 2025 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

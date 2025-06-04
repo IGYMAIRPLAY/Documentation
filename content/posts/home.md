@@ -8,13 +8,13 @@ Welcome to the documentation website for AiRPlay! iGYM aims to build games that 
 ## Repositories
 * ros-test-out （Unity Part）
     * [Link to Github Repo](https://github.com/IGYMAIRPLAY/ros-test-out)
-    * [Link to Documentation]({{< ref "/ros-test-out-doc" >}})
+    * [Link to Documentation]({{< ref "/posts/ros-test-out-doc" >}})
 * ros2_emulation (ROS2 Part)
     * [Link to Github Repo](https://github.com/IGYMAIRPLAY/ros2_emulation)
-    * [Link to Documentation]({{< ref "/ros2-emulation" >}})
+    * [Link to Documentation]({{< ref "/posts/ros2-emulation" >}})
 * AIRPLAY-frontend
     * [Link to Github Repo](https://github.com/IGYMAIRPLAY/AIRPLAY-frontend)
-    * [Link to Documentation]({{< ref "/frontend" >}})
+    * [Link to Documentation]({{< ref "/posts/frontend" >}})
 * Kick Button
     * [Link to Github Repo](https://github.com/IGYMAIRPLAY/Airplay_KickButton)
     * [Link to Documentation](https://github.com/IGYMAIRPLAY/Airplay_KickButton)
@@ -40,7 +40,7 @@ Welcome to the documentation website for AiRPlay! iGYM aims to build games that 
 
 After being familiar with ROS2 and Unity, let's try the video version code:
 
-switch both ros2_emulation and ros-test-out to the branch named 'video_test'.  Then open the Unity and follow the running procedure in the [ros2_emulation documentation]({{< ref "/ros2-emulation" >}}). 
+switch both ros2_emulation and ros-test-out to the branch named 'video_test'.  Then open the Unity and follow the running procedure in the [ros2_emulation documentation]({{< ref "/posts/ros2-emulation" >}}). 
 
 ## Contact 
 helloigym@umich.edu
