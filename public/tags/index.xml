@@ -5,12 +5,12 @@
     
     
     
-    <link>https://airplay-wiki.netlify.app/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on AiRPlay Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
     
-	<atom:link href="https://airplay-wiki.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         Prefabs ::
-        AiRPlay Wiki — A simple theme for Hugo
+        AiRPlay Wiki
       </title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Air Hockey # Circle1: The ball for the Air Hockey game Field: The playing field for the Air Hockey game Shapes Catcher # Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game."
+  content="Air Hockey#Ball (Circle1): The ball for the Air Hockey game. Contains hockeyctr (ball controller), HockeyNetworkTransform (network position sync), and Rigidbody2D (server-authoritative physics). This is a NetworkObject owned by the server. Paddle (CircleController): Player paddle prefab. A client-owned NetworkObject with CircleController for collision/hit detection, NetworkTransform for position sync, and display name NetworkVariable. Field: The playing field for the Air Hockey game. Shapes Catcher#Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game. Grants the player 5 points. "
 />
 <meta
   name="keywords"
   content=""
 />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://airplay-wiki.netlify.app/posts/prefabs/" />
+<link rel="canonical" href="http://localhost:1313/posts/prefabs/" />
 
 
 
@@ -28,11 +28,11 @@
 
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://airplay-wiki.netlify.app/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://airplay-wiki.netlify.app/img/apple-touch-icon-144-precomposed.png" />
-<link rel="shortcut icon" href="https://airplay-wiki.netlify.app/img/favicon.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
 
 
 <link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
@@ -43,18 +43,20 @@
 <link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Prefabs"/>
-<meta name="twitter:description" content="Air Hockey # Circle1: The ball for the Air Hockey game Field: The playing field for the Air Hockey game Shapes Catcher # Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game."/>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Prefabs">
+  <meta name="twitter:description" content="Air Hockey#Ball (Circle1): The ball for the Air Hockey game. Contains hockeyctr (ball controller), HockeyNetworkTransform (network position sync), and Rigidbody2D (server-authoritative physics). This is a NetworkObject owned by the server. Paddle (CircleController): Player paddle prefab. A client-owned NetworkObject with CircleController for collision/hit detection, NetworkTransform for position sync, and display name NetworkVariable. Field: The playing field for the Air Hockey game. Shapes Catcher#Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game. Grants the player 5 points.">
 
 
 
-<meta property="og:title" content="Prefabs" />
-<meta property="og:description" content="Air Hockey # Circle1: The ball for the Air Hockey game Field: The playing field for the Air Hockey game Shapes Catcher # Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://airplay-wiki.netlify.app/posts/prefabs/" /><meta property="article:section" content="posts" />
-
-
+<meta property="og:url" content="http://localhost:1313/posts/prefabs/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="Prefabs">
+  <meta property="og:description" content="Air Hockey#Ball (Circle1): The ball for the Air Hockey game. Contains hockeyctr (ball controller), HockeyNetworkTransform (network position sync), and Rigidbody2D (server-authoritative physics). This is a NetworkObject owned by the server. Paddle (CircleController): Player paddle prefab. A client-owned NetworkObject with CircleController for collision/hit detection, NetworkTransform for position sync, and display name NetworkVariable. Field: The playing field for the Air Hockey game. Shapes Catcher#Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game. Grants the player 5 points.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
 
 
 
@@ -134,8 +136,9 @@
   <a href="#air-hockey" class="h-anchor" aria-hidden="true">#</a>
 </h2>
 <ul>
-<li>Circle1: The ball for the Air Hockey game</li>
-<li>Field: The playing field for the Air Hockey game</li>
+<li><strong>Ball (Circle1)</strong>: The ball for the Air Hockey game. Contains hockeyctr (ball controller), HockeyNetworkTransform (network position sync), and Rigidbody2D (server-authoritative physics). This is a NetworkObject owned by the server.</li>
+<li><strong>Paddle (CircleController)</strong>: Player paddle prefab. A client-owned NetworkObject with CircleController for collision/hit detection, NetworkTransform for position sync, and display name NetworkVariable.</li>
+<li><strong>Field</strong>: The playing field for the Air Hockey game.</li>
 </ul>
 <h2 id="shapes-catcher">
   Shapes Catcher
@@ -161,15 +164,15 @@
           <div class="pagination__buttons">
             
               <span class="button previous">
-                <a href="https://airplay-wiki.netlify.app/posts/materials/">
+                <a href="http://localhost:1313/posts/player-detection-script/">
                   <span class="button__icon">←</span>
-                  <span class="button__text">Materials</span>
+                  <span class="button__text">Player Detection Code</span>
                 </a>
               </span>
             
             
               <span class="button next">
-                <a href="https://airplay-wiki.netlify.app/posts/resources/">
+                <a href="http://localhost:1313/posts/resources/">
                   <span class="button__text">Resources</span>
                   <span class="button__icon">→</span>
                 </a>
@@ -212,7 +215,7 @@
 </a>
 
       <div class="copyright">
-        <span>© 2023 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>© 2026 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
         <span><a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
       </div>
     
@@ -229,6 +232,5 @@
       
     </div>
 
-    
   </body>
 </html>

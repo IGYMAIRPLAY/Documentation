@@ -2,6 +2,7 @@ baseURL = 'https://airplay-wiki.netlify.app'
 languageCode = 'en-us'
 title = 'Airplay-Wiki'
 publishDir = 'public'
+refLinksErrorLevel = 'WARNING'
 
 theme = "hello-friend"
 paginate = 5

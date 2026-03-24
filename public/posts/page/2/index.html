@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         Posts ::
-        AiRPlay Wiki — A simple theme for Hugo
+        AiRPlay Wiki
       </title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -18,7 +18,7 @@
   content=""
 />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://airplay-wiki.netlify.app/posts/" />
+<link rel="canonical" href="http://localhost:1313/posts/" />
 
 
 
@@ -28,11 +28,11 @@
 
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://airplay-wiki.netlify.app/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://airplay-wiki.netlify.app/img/apple-touch-icon-144-precomposed.png" />
-<link rel="shortcut icon" href="https://airplay-wiki.netlify.app/img/favicon.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
 
 
 <link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
@@ -43,16 +43,17 @@
 <link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content=""/>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Posts">
 
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://airplay-wiki.netlify.app/posts/" />
+<meta property="og:url" content="http://localhost:1313/posts/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="Posts">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
 
 
 
@@ -111,7 +112,7 @@
   <div class="posts">
     
       <article class="post on-list">
-        <h1 class="post-title"><a href="https://airplay-wiki.netlify.app/posts/airhockey/">Air Hockey</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/posts/airhockey/">Air Hockey</a></h1>
         <div class="post-meta">
           
           
@@ -127,8 +128,11 @@
         <div class="post-content">
           
             
-              Overview # Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to virtually kick the ball. The peripersonal boundaries can either be expanded by extending their limbs, or by pressing a Bluetooth kick button if they have limited mobility.
-Rules # After going through the quick tutorials, the game begins when the moderator starts the timer.
+              <h2 id="overview">
+  Overview
+  <a href="#overview" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to hit the ball by physically moving into it — the boundaries expand as they extend their limbs. Bluetooth kick buttons were an earlier input method for players with limited mobility but have not been used in a long time and are untested with the current networking architecture.</p>
             
           
         </div>
@@ -142,7 +146,83 @@ Rules # After going through the quick tutorials, the game begins when the modera
       </article>
     
       <article class="post on-list">
-        <h1 class="post-title"><a href="https://airplay-wiki.netlify.app/posts/gamescene/">Game Scene</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/posts/frontend/">airplay-frontend Documentation</a></h1>
+        <div class="post-meta">
+          
+          
+
+
+          
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+          
+            
+              <h2 id="introduction">
+  Introduction
+  <a href="#introduction" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Welcome to the AIRPLAY-frontend wiki! AIRPLAY-frontend is the repository for the frontend part of the entire <a href="https://www.igym.solutions/">iGYM system</a>. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.</p>
+            
+          
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/posts/frontend/"
+              >Read more →</a
+            >
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title"><a href="http://localhost:1313/posts/button-script/">Button Script</a></h1>
+        <div class="post-meta">
+          
+          
+
+
+          
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+          
+            
+              <blockquote>
+<p><strong>Note:</strong> The kick button system has not been used in a long time and is untested with the current networking architecture. This documentation is preserved for reference but the feature should be considered unsupported until verified.</p>
+</blockquote>
+<h2 id="buttoncpp">
+  button.cpp
+  <a href="#buttoncpp" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The button node handles Bluetooth Low Energy (BLE) wireless kick controller input for the iGYM system.</p>
+<h3 id="how-it-works">
+  How It Works
+  <a href="#how-it-works" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The node scans for and connects to SimpleBLE devices (2 BLE clickers identified by MAC address). It reads button press state from a specific BLE characteristic and publishes the state to the <code>kick_size</code> topic.</p>
+            
+          
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/posts/button-script/"
+              >Read more →</a
+            >
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title"><a href="http://localhost:1313/posts/gamescene/">Game Scene</a></h1>
         <div class="post-meta">
           
           
@@ -170,7 +250,7 @@ Rules # After going through the quick tutorials, the game begins when the modera
       </article>
     
       <article class="post on-list">
-        <h1 class="post-title"><a href="https://airplay-wiki.netlify.app/posts/home/">Home</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/posts/home/">Home</a></h1>
         <div class="post-meta">
           
           
@@ -186,7 +266,16 @@ Rules # After going through the quick tutorials, the game begins when the modera
         <div class="post-content">
           
             
-              Introduction # Welcome to the ros-test-out wiki! ros-test-out is the repository for the Unity part of the entire iGYM system. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.
+              <h2 id="introduction">
+  Introduction
+  <a href="#introduction" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Welcome to the documentation website for AiRPlay! iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.</p>
+<h2 id="system-architecture">
+  System Architecture
+  <a href="#system-architecture" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The iGYM system consists of three main layers:</p>
             
           
         </div>
@@ -200,7 +289,7 @@ Rules # After going through the quick tutorials, the game begins when the modera
       </article>
     
       <article class="post on-list">
-        <h1 class="post-title"><a href="https://airplay-wiki.netlify.app/posts/materials/">Materials</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/posts/materials/">Materials</a></h1>
         <div class="post-meta">
           
           
@@ -215,6 +304,20 @@ Rules # After going through the quick tutorials, the game begins when the modera
 
         <div class="post-content">
           
+            
+              <h2 id="physics">
+  Physics:
+  <a href="#physics" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Each game has its own different 2D physics material that dictate the motion of the GameObjects.</p>
+<ul>
+<li>
+<p>ball_physics: A 2D physics material applied to the ball object for the Air Hockey game. Its friction is set to 0.4 and bounciness to 0.8
+<img src="/materials_pic1.png" alt="Ball Physics"></p>
+</li>
+<li>
+<p>shapesPhysics: A 2D physics material applied to the shapes for the Shapes Catcher game. Its friction is set to 0 and bounciness to 0.8
+<img src="/materials_pic2.png" alt="Shapes Physics"></p>
             
           
         </div>
@@ -228,7 +331,7 @@ Rules # After going through the quick tutorials, the game begins when the modera
       </article>
     
       <article class="post on-list">
-        <h1 class="post-title"><a href="https://airplay-wiki.netlify.app/posts/prefabs/">Prefabs</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/posts/networking/">Networking Architecture</a></h1>
         <div class="post-meta">
           
           
@@ -244,7 +347,112 @@ Rules # After going through the quick tutorials, the game begins when the modera
         <div class="post-content">
           
             
-              Air Hockey # Circle1: The ball for the Air Hockey game Field: The playing field for the Air Hockey game Shapes Catcher # Circle_Shape: The circle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Square_Shape: The square shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Triangle_Shape: The triangle shaped GameObject for the Shapes Catcher game. Grants the player 1 point. Heart_Shape: The heart shaped GameObject for the Shapes Catcher game.
+              <h2 id="overview">
+  Overview
+  <a href="#overview" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The iGYM games use a <strong>dedicated server architecture</strong> built on <strong>Unity Netcode for GameObjects (NGO)</strong>. The system separates networking into two planes:</p>
+<ul>
+<li><strong>Control Plane</strong> — A Python FastAPI lobby server handles matchmaking, room management, and dedicated server orchestration via REST API</li>
+<li><strong>Game Plane</strong> — Unity Netcode for GameObjects handles real-time gameplay networking (physics, state sync, RPCs)</li>
+</ul>
+<p><strong>Transport</strong>: UnityTransport (UDP) for direct connections, with optional Unity Relay Service for online play</p>
+            
+          
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/posts/networking/"
+              >Read more →</a
+            >
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title"><a href="http://localhost:1313/posts/player-detection-script/">Player Detection Code</a></h1>
+        <div class="post-meta">
+          
+          
+
+
+          
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+          
+            
+              <h2 id="player_detectioncpp">
+  player_detection.cpp
+  <a href="#player_detectioncpp" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The player detection node is the core computer vision component that detects and tracks players on the physical game field. It uses background subtraction, contour detection, and Kalman filtering to produce real-time player positions.</p>
+<h3 id="multi-threaded-architecture">
+  Multi-Threaded Architecture
+  <a href="#multi-threaded-architecture" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The node uses three concurrent threads for maximum throughput:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Thread</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Capture Thread</strong></td>
+          <td>Reads frames from camera (FLIR Spinnaker or USB/OpenCV)</td>
+      </tr>
+      <tr>
+          <td><strong>Detection Thread</strong></td>
+          <td>Processes frames: background subtraction → contour detection → Kalman tracking</td>
+      </tr>
+      <tr>
+          <td><strong>Publisher Thread</strong></td>
+          <td>Publishes tracking results to <code>pos_raw</code> topic</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="pipeline-functions">
+  Pipeline Functions
+  <a href="#pipeline-functions" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>init_background()</strong> — Initializes the background image. Can either capture the initial frame as background (when <code>enable_flag</code> is set to 1) or load a background image from a file.</p>
+            
+          
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/posts/player-detection-script/"
+              >Read more →</a
+            >
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title"><a href="http://localhost:1313/posts/prefabs/">Prefabs</a></h1>
+        <div class="post-meta">
+          
+          
+
+
+          
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+          
             
           
         </div>
@@ -258,7 +466,7 @@ Rules # After going through the quick tutorials, the game begins when the modera
       </article>
     
       <article class="post on-list">
-        <h1 class="post-title"><a href="https://airplay-wiki.netlify.app/posts/resources/">Resources</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/posts/resources/">Resources</a></h1>
         <div class="post-meta">
           
           
@@ -286,7 +494,7 @@ Rules # After going through the quick tutorials, the game begins when the modera
       </article>
     
       <article class="post on-list">
-        <h1 class="post-title"><a href="https://airplay-wiki.netlify.app/posts/rosmessages/">ROS Messages</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/posts/rosmessages/">ROS Messages</a></h1>
         <div class="post-meta">
           
           
@@ -302,6 +510,68 @@ Rules # After going through the quick tutorials, the game begins when the modera
         <div class="post-content">
           
             
+              <h2 id="custom-message-definitions">
+  Custom Message Definitions
+  <a href="#custom-message-definitions" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The iGYM system defines custom ROS2 messages in the <code>ap_interfaces</code> package for communication between the CV/hardware nodes and Unity.</p>
+<h3 id="ap_interfacespos">
+  ap_interfaces/Pos
+  <a href="#ap_interfacespos" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>Used by the <code>player_detection</code> node to publish player positions on the <code>pos_raw</code> topic.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>total</code></td>
+          <td>int8</td>
+          <td>Number of detected players</td>
+      </tr>
+      <tr>
+          <td><code>timestamp</code></td>
+          <td>uint64</td>
+          <td>Capture timestamp in milliseconds</td>
+      </tr>
+      <tr>
+          <td><code>x</code></td>
+          <td>float64[32]</td>
+          <td>X positions of up to 32 players</td>
+      </tr>
+      <tr>
+          <td><code>y</code></td>
+          <td>float64[32]</td>
+          <td>Y positions</td>
+      </tr>
+      <tr>
+          <td><code>player_id</code></td>
+          <td>int8[32]</td>
+          <td>Unique player tracking IDs</td>
+      </tr>
+      <tr>
+          <td><code>tag_id</code></td>
+          <td>string[32]</td>
+          <td>RFID tag identifiers</td>
+      </tr>
+      <tr>
+          <td><code>size</code></td>
+          <td>float64[32]</td>
+          <td>Player blob radius/size</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="ap_interfacesbutton">
+  ap_interfaces/Button
+  <a href="#ap_interfacesbutton" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>Used by the <code>button</code> node to publish kick button states on the <code>kick_size</code> topic.</p>
+            
           
         </div>
         
@@ -314,7 +584,41 @@ Rules # After going through the quick tutorials, the game begins when the modera
       </article>
     
       <article class="post on-list">
-        <h1 class="post-title"><a href="https://airplay-wiki.netlify.app/posts/scenes/">Scenes</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/posts/ros2-emulation/">ros2-emulation Documentation</a></h1>
+        <div class="post-meta">
+          
+          
+
+
+          
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+          
+            
+              <h2 id="introduction">
+  Introduction
+  <a href="#introduction" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Welcome to the ros2-emulation wiki! ros2-emulation is the repository for the ROS2 part of the entire <a href="https://www.igym.solutions/">iGYM system</a>. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.</p>
+            
+          
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/posts/ros2-emulation/"
+              >Read more →</a
+            >
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title"><a href="http://localhost:1313/posts/scenes/">Scenes</a></h1>
         <div class="post-meta">
           
           
@@ -342,7 +646,7 @@ Rules # After going through the quick tutorials, the game begins when the modera
       </article>
     
       <article class="post on-list">
-        <h1 class="post-title"><a href="https://airplay-wiki.netlify.app/posts/folderstructure/">Scripts</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/posts/folderstructure/">Scripts</a></h1>
         <div class="post-meta">
           
           
@@ -370,7 +674,7 @@ Rules # After going through the quick tutorials, the game begins when the modera
       </article>
     
       <article class="post on-list">
-        <h1 class="post-title"><a href="https://airplay-wiki.netlify.app/posts/shapecatcher/">Shapes Catcher</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/posts/shapecatcher/">Shapes Catcher</a></h1>
         <div class="post-meta">
           
           
@@ -386,8 +690,12 @@ Rules # After going through the quick tutorials, the game begins when the modera
         <div class="post-content">
           
             
-              Overview # A virtual emitter in the center of the field constantly emits random shapes (e.g. circle, square, triangle) towards both halves of the field. Players on both sides compete to collect shapes that match their peripersonal boundary to earn points. Players can change their boundary shape by having a partner click on a keyboard button.
-Rules # The game begins when the moderator starts the timer. Two timers will be correspondingly displayed at the center of the field.
+              <h2 id="overview">
+  Overview
+  <a href="#overview" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>A virtual emitter in the center of the field constantly emits random shapes (e.g. circle, square, triangle) towards both halves of the field. Players on both sides compete to collect shapes that match their peripersonal boundary to earn points. Players can change their boundary shape by having a partner click on a keyboard button.</p>
+<p><strong>Note</strong>: Shapes Catcher currently runs in legacy single-machine mode and has not yet been migrated to the networked dedicated server architecture. The Air Hockey game serves as the reference implementation for networked gameplay.</p>
             
           
         </div>
@@ -401,7 +709,7 @@ Rules # The game begins when the moderator starts the timer. Two timers will be 
       </article>
     
       <article class="post on-list">
-        <h1 class="post-title"><a href="https://airplay-wiki.netlify.app/posts/tutorialscenes/">Tutorial Scenes</a></h1>
+        <h1 class="post-title"><a href="http://localhost:1313/posts/parameters/">Tunable Parameters</a></h1>
         <div class="post-meta">
           
           
@@ -417,15 +725,81 @@ Rules # The game begins when the moderator starts the timer. Two timers will be 
         <div class="post-content">
           
             
-              There are multiple scenes that have been created to guide first-time users of the system. Each scene corresponds to their own keyboard input so the moderator can freely skip between them as they see fit.
-Blank - This is an empty scene used to activate and adjust the cameras so that the game field is accurately displayed. This scene corresponds to the keyboard input 0.
-Easy - Shows the speed and size of the ball for the easy mode.
+              <p>This page documents every configurable parameter in the iGYM system. Parameters are grouped by what they affect rather than by script file. <strong>Inspector</strong> means the value is visible and editable in the Unity Inspector. <strong>Static</strong> means it is a global flag set at runtime, not in the Inspector.</p>
+<hr>
+<h2 id="ball-physics--difficulty">
+  Ball Physics &amp; Difficulty
+  <a href="#ball-physics--difficulty" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>These parameters live in <code>gameMgr.cs</code> and are applied by <code>ApplyMode()</code> when the server syncs <code>syncedMode</code>.</p>
+            
+          
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/posts/parameters/"
+              >Read more →</a
+            >
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title"><a href="http://localhost:1313/posts/tutorialscenes/">Tutorial Scenes</a></h1>
+        <div class="post-meta">
+          
+          
+
+
+          
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+          
             
           
         </div>
         
           <div>
             <a class="read-more button" href="/posts/tutorialscenes/"
+              >Read more →</a
+            >
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title"><a href="http://localhost:1313/posts/ros-test-out-doc/">unity-networking Documentation</a></h1>
+        <div class="post-meta">
+          
+          
+
+
+          
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+          
+            
+              <h2 id="introduction">
+  Introduction
+  <a href="#introduction" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Welcome to the unity-networking documentation! This is the repository for the Unity part of the <a href="https://www.igym.solutions/">iGYM system</a>. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.</p>
+            
+          
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/posts/ros-test-out-doc/"
               >Read more →</a
             >
           </div>
@@ -442,13 +816,6 @@ Easy - Shows the speed and size of the ball for the easy mode.
         </a>
       </span>
     
-    
-      <span class="button next">
-        <a href="/posts/page/3/">
-          <span class="button__text">Older posts</span>
-          <span class="button__icon">→</span>
-        </a>
-      </span>
     
   </div>
 </div>
@@ -479,7 +846,7 @@ Easy - Shows the speed and size of the ball for the easy mode.
 </a>
 
       <div class="copyright">
-        <span>© 2023 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>© 2026 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
         <span><a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
       </div>
     
@@ -496,6 +863,5 @@ Easy - Shows the speed and size of the ball for the easy mode.
       
     </div>
 
-    
   </body>
 </html>

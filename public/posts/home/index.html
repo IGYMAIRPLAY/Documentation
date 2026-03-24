@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         Home ::
-        AiRPlay Wiki — A simple theme for Hugo
+        AiRPlay Wiki
       </title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Introduction # Welcome to the ros-test-out wiki! ros-test-out is the repository for the Unity part of the entire iGYM system. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers."
+  content="Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.
+📧 Contact: helloigym@umich.edu
+Getting Started#New to the project? Start here:
+System Setup Guide (Windows) — Install all dependencies and get the system running ROS2 Emulation Documentation — Running the ROS2 vision and input layer Unity Networking Project — The main Unity game project System Architecture#The iGYM system has three main layers:
+"
 />
 <meta
   name="keywords"
   content=""
 />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://airplay-wiki.netlify.app/posts/home/" />
+<link rel="canonical" href="http://localhost:1313/posts/home/" />
 
 
 
@@ -28,11 +32,11 @@
 
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://airplay-wiki.netlify.app/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://airplay-wiki.netlify.app/img/apple-touch-icon-144-precomposed.png" />
-<link rel="shortcut icon" href="https://airplay-wiki.netlify.app/img/favicon.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
 
 
 <link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
@@ -43,18 +47,26 @@
 <link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Home"/>
-<meta name="twitter:description" content="Introduction # Welcome to the ros-test-out wiki! ros-test-out is the repository for the Unity part of the entire iGYM system. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers."/>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Home">
+  <meta name="twitter:description" content="Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.
+📧 Contact: helloigym@umich.edu
+Getting Started#New to the project? Start here:
+System Setup Guide (Windows) — Install all dependencies and get the system running ROS2 Emulation Documentation — Running the ROS2 vision and input layer Unity Networking Project — The main Unity game project System Architecture#The iGYM system has three main layers:">
 
 
 
-<meta property="og:title" content="Home" />
-<meta property="og:description" content="Introduction # Welcome to the ros-test-out wiki! ros-test-out is the repository for the Unity part of the entire iGYM system. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://airplay-wiki.netlify.app/posts/home/" /><meta property="article:section" content="posts" />
-
-
+<meta property="og:url" content="http://localhost:1313/posts/home/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="Home">
+  <meta property="og:description" content="Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.
+📧 Contact: helloigym@umich.edu
+Getting Started#New to the project? Start here:
+System Setup Guide (Windows) — Install all dependencies and get the system running ROS2 Emulation Documentation — Running the ROS2 vision and input layer Unity Networking Project — The main Unity game project System Architecture#The iGYM system has three main layers:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
 
 
 
@@ -129,47 +141,149 @@
 
     <div class="post-content">
       
-      <h2 id="introduction">
-  Introduction
-  <a href="#introduction" class="h-anchor" aria-hidden="true">#</a>
+      <p>Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.</p>
+<p>📧 Contact: <a href="mailto:helloigym@umich.edu">helloigym@umich.edu</a></p>
+<hr>
+<h2 id="getting-started">
+  Getting Started
+  <a href="#getting-started" class="h-anchor" aria-hidden="true">#</a>
 </h2>
-<p>Welcome to the ros-test-out wiki! ros-test-out is the repository for the Unity part of the entire <a href="https://www.igym.solutions/">iGYM system</a>. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.</p>
-<p>Currently, we have two games that are implemented:</p>
+<p>New to the project? Start here:</p>
 <ul>
-<li><a href="https://airplay-wiki.netlify.app/posts/airhockey/">Air Hockey</a></li>
-<li><a href="https://airplay-wiki.netlify.app/posts/shapecatcher/">Shape Catcher</a></li>
+<li><a href="/posts/setup/"><strong>System Setup Guide (Windows)</strong></a> — Install all dependencies and get the system running</li>
+<li><a href="/posts/ros2-emulation/"><strong>ROS2 Emulation Documentation</strong></a> — Running the ROS2 vision and input layer</li>
+<li><a href="/posts/ros-test-out-doc/"><strong>Unity Networking Project</strong></a> — The main Unity game project</li>
 </ul>
-<h2 id="system-requirements">
-  System Requirements
-  <a href="#system-requirements" class="h-anchor" aria-hidden="true">#</a>
+<hr>
+<h2 id="system-architecture">
+  System Architecture
+  <a href="#system-architecture" class="h-anchor" aria-hidden="true">#</a>
 </h2>
-<ul>
-<li>Unity Editor 2020.3.16f1</li>
-<li>Windows 10</li>
-</ul>
-<h2 id="development">
-  Development
-  <a href="#development" class="h-anchor" aria-hidden="true">#</a>
+<p>The iGYM system has three main layers:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Layer</th>
+          <th>Technology</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Computer Vision &amp; Hardware</td>
+          <td>ROS2</td>
+          <td>Camera-based player detection, Kalman filtering</td>
+      </tr>
+      <tr>
+          <td>Networking &amp; Game Server</td>
+          <td>Unity Netcode for GameObjects</td>
+          <td>Dedicated server, client-side prediction, lobby system</td>
+      </tr>
+      <tr>
+          <td>Game Client</td>
+          <td>Unity</td>
+          <td>Rendering, input, local prediction</td>
+      </tr>
+  </tbody>
+</table>
+<p>Players connect through a lobby system that spawns a dedicated server. The server runs authoritative physics while clients predict locally and reconcile with server state.</p>
+<hr>
+<h2 id="documentation">
+  Documentation
+  <a href="#documentation" class="h-anchor" aria-hidden="true">#</a>
 </h2>
-<p>Game structure</p>
+<h3 id="unity-game-networked">
+  Unity Game (Networked)
+  <a href="#unity-game-networked" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <ul>
-<li><a href="https://airplay-wiki.netlify.app/posts/tutorialscenes/">Tutorial scenes</a></li>
-<li><a href="https://airplay-wiki.netlify.app/posts/gamescene/">Game scene</a></li>
+<li><a href="/posts/airhockey/">Air Hockey</a> — Game rules, networking, hit system, and diagnostics</li>
+<li><a href="/posts/networking/">Networking Architecture</a> — Dedicated server model, prediction, reconciliation</li>
+<li><a href="/posts/scenes/">Scenes Overview</a> — Scene structure and flow</li>
+<li><a href="/posts/gamescene/">Game Scene</a> — Main game scene details</li>
+<li><a href="/posts/tutorialscenes/">Tutorial Scenes</a> — Non-networked tutorial content</li>
+<li><a href="/posts/prefabs/">Prefabs</a> — Prefab reference</li>
+<li><a href="/posts/folderstructure/">Folder Structure</a> — Project layout</li>
 </ul>
-<p>Folder structure</p>
+<h3 id="ros2-system">
+  ROS2 System
+  <a href="#ros2-system" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <ul>
-<li><a href="https://airplay-wiki.netlify.app/posts/materials/">Materials</a></li>
-<li><a href="https://airplay-wiki.netlify.app/posts/prefabs/">Prefabs</a></li>
-<li><a href="https://airplay-wiki.netlify.app/posts/resources/">Resources</a></li>
-<li><a href="https://airplay-wiki.netlify.app/posts/rosmessages/">RosMessages</a></li>
-<li><a href="https://airplay-wiki.netlify.app/posts/scenes/">Scenes</a></li>
-<li><a href="https://airplay-wiki.netlify.app/posts/folderstructure/">Scripts</a></li>
+<li><a href="/posts/ros2-emulation/">ROS2 Emulation</a> — Full ROS2 setup, nodes, and launch process</li>
+<li><a href="/posts/player-detection-script/">Player Detection Script</a> — Camera-based detection pipeline</li>
+<li><a href="/posts/rosmessages/">ROS Messages</a> — Custom message types</li>
+<li><a href="/posts/shapecatcher/">Shape Catcher</a> — Shape detection node</li>
+<li><a href="/posts/parameters/">Parameters</a> — Configurable system parameters</li>
+<li><a href="/posts/button-script/">Button Script</a> — BLE kick button node <em>(legacy, untested with current networking)</em></li>
 </ul>
-<h2 id="contact">
-  Contact
-  <a href="#contact" class="h-anchor" aria-hidden="true">#</a>
+<h3 id="other">
+  Other
+  <a href="#other" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><a href="/posts/frontend/">Frontend</a> — Web control interface <em>(not used with networked version)</em></li>
+<li><a href="/posts/materials/">Materials</a> — Unity materials reference</li>
+<li><a href="/posts/resources/">Resources</a> — Additional resources</li>
+</ul>
+<hr>
+<h2 id="repositories">
+  Repositories
+  <a href="#repositories" class="h-anchor" aria-hidden="true">#</a>
 </h2>
-<p><a href="mailto:helloigym@umich.edu">helloigym@umich.edu</a></p>
+<table>
+  <thead>
+      <tr>
+          <th>Repo</th>
+          <th>Description</th>
+          <th>Links</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/unity-networking">unity-networking</a></td>
+          <td>Main networked Unity game</td>
+          <td><a href="/posts/ros-test-out-doc/">Docs</a></td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/ros2_emulation">ros2_emulation</a></td>
+          <td>ROS2 vision &amp; input layer</td>
+          <td><a href="/posts/ros2-emulation/">Docs</a></td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/AIRPLAY-frontend">AIRPLAY-frontend</a></td>
+          <td>Web control interface (legacy)</td>
+          <td><a href="/posts/frontend/">Docs</a></td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/Airplay_KickButton">Airplay_KickButton</a></td>
+          <td>BLE kick button (legacy)</td>
+          <td>README</td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/UWB">UWB</a></td>
+          <td>Player identification via UWB</td>
+          <td>README</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="onboarding">
+  Onboarding
+  <a href="#onboarding" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p><strong>New to Unity?</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=XtQMytORBmM">Flappy Bird tutorial</a> — good intro to Unity basics</li>
+<li>Familiarity with NetworkManager, NetworkVariables, and RPCs is recommended for the networked project</li>
+</ul>
+<p><strong>New to ROS2?</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=7TVWlADXwRw">Brief ROS2 intro video</a></li>
+<li><a href="https://docs.ros.org/en/foxy/Tutorials.html">Official ROS2 Foxy beginner tutorials</a> — complete CLI tools + Client libraries sections</li>
+<li><a href="/posts/setup/">System Setup Guide</a> — covers the full Windows install</li>
+</ul>
+<p><strong>First hands-on step:</strong> Switch <code>ros2_emulation</code> to the <code>video_test</code> branch and follow the <a href="/posts/ros2-emulation/">ROS2 Emulation docs</a> to run the video version.</p>
 
     </div>
     
@@ -184,7 +298,7 @@
           <div class="pagination__buttons">
             
               <span class="button previous">
-                <a href="https://airplay-wiki.netlify.app/posts/gamescene/">
+                <a href="http://localhost:1313/posts/gamescene/">
                   <span class="button__icon">←</span>
                   <span class="button__text">Game Scene</span>
                 </a>
@@ -192,8 +306,8 @@
             
             
               <span class="button next">
-                <a href="https://airplay-wiki.netlify.app/posts/materials/">
-                  <span class="button__text">Materials</span>
+                <a href="http://localhost:1313/posts/setup/">
+                  <span class="button__text">iGym System Setup Guide (Windows)</span>
                   <span class="button__icon">→</span>
                 </a>
               </span>
@@ -235,7 +349,7 @@
 </a>
 
       <div class="copyright">
-        <span>© 2023 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>© 2026 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
         <span><a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
       </div>
     
@@ -252,6 +366,5 @@
       
     </div>
 
-    
   </body>
 </html>

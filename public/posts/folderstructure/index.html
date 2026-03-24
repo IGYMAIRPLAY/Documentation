@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         Scripts ::
-        AiRPlay Wiki — A simple theme for Hugo
+        AiRPlay Wiki
       </title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content=" Folder Structure # Air Hockey Goal Control - plays victorious goal sound effect if hockey hits either of the two goals Wall Control - plays boundary sound effect if hockey hits the wall Hockey Ctr - if debug is checked in the inspector, can use keyboard input to move hockey and test game mechanics (for playtesting on PC only) Instructions - loads tutorial scene corresponding to number keys [0-8] (for playtesting only) Game Manager - handles game rules including scores, winning / losing, timer Shapes Catcher Emitter - spawns random shapes at a specified time interval in random directions to both sides of the field Shape Class - defines the three different shapes (Circle, Square, Triangle) Shape Behavior - shape disappears after specified time passes or collides with player and handles player score Switch Shape - uses keyboard input for switching shape (for playtesting only) Timer - handles timer and game logic when timer stops Shapes Game Manager - handles game rules including scores, winning / losing, timer Pos Message SC - seperate posmessage script for shapes catcher game, may need to change later so there is better architecture Camera Adjust - calibrates camera position Pos Message - reads player position input and draws a peripersonal boundary around players based on radius and position (currently only specific to air hockey game) Start Up - runs player detection code and starts up ROS connection before loading the game scene "
+  content="Folder Structure#Air Hockey#Goal Control — Detects ball collision with goal colliders (&ldquo;leftgoal&rdquo;, &ldquo;rightgoal&rdquo;), plays goal sound effect Wall Control — Plays boundary sound effect when the ball hits a wall Hockey Ctr (hockeyctr.cs) — Core ball controller: server-authoritative physics, client-side prediction, server reconciliation with exponential blending, snapshot buffering for interpolation, and metrics logging Hockey Network Transform — Extends NetworkTransform to provide position-update callbacks to hockeyctr for snapshot buffering Game Manager — Networked match lifecycle: start/stop, score tracking (NetworkVariable), countdown timer, difficulty mode sync, room owner tracking Dedicated Server Lifecycle — DS process management: heartbeat reporting to lobby (5s interval), idle shutdown (10s with no players), lobby status updates Paddle Spawn Bridge — Server-authoritative paddle spawning/despawning via RPCs Instructions — Loads tutorial scene corresponding to number keys [0-8] (for playtesting only) Player Control — Player input and control management Lock Rotation 2D — Constrains 2D rotation on game objects Networking#Simple Lobby Manager — HTTP lobby integration using the network-api SDK: room creation/joining, connection approval with token validation, UI state management Relay Manager — Toggles between Unity Relay Service (online) and LAN direct mode (UnityTransport) Network Latency UI — RTT measurement via ping/pong RPCs, updated every 1 second, accessible via NetworkLatencyUI.CurrentRTT Network Manager UI — UI for starting/joining network sessions Lobby List Single UI — UI component for displaying a single room in the lobby list Lobby Player Single UI — UI component for displaying a player in the room Networked Circle Controller — Abstract base class for paddle position sources (mouse or ROS) Pos Message Networked — ROS-based paddle position input for production hardware (extends NetworkedCircleController) Paddle &amp; Input#Circle Controller — Paddle representation: collision detection with ball, hit velocity calculation, cooldown enforcement (1 RTT between hits), display name sync via NetworkVariable Position Simulator — Mouse-based paddle input for testing (extends NetworkedCircleController) Position Source Applier — Applies position from selected source to paddle transform Position Source Toggle UI — UI for switching between position input sources Trace &amp; Replay#Trace Session — Manager for recording/replaying game inputs as CSV Trace Recorder — Writes per-tick trace commands (paddle positions, hits, resets) to disk Trace Input Provider — Static helper to get/record/replay inputs Trace Replayer — Replays recorded trace data for deterministic playback Debug &amp; Features#Network Features Controller — Runtime toggles for enabling/disabling client-side prediction and snapshot interpolation Shared / Utility#Camera Adjust — Calibrates camera position for projector display Audio Manager — Handles audio logic (boundary, goal, win, start sounds) CV Dimensions Override — Override computer vision field dimensions gameMgr — Non-networked game parameters (ball speed, radius, friction, goal sizes per difficulty mode) Shapes Catcher (Legacy — not yet networked)#Emitter — Spawns random shapes at a specified time interval in random directions to both sides of the field Shape Class — Defines the three different shapes (Circle, Square, Triangle) Shape Behavior — Shape disappears after specified time passes or collides with player and handles player score Switch Shape — Uses keyboard input for switching shape (for playtesting only) Timer — Handles timer and game logic when timer stops Shapes Game Manager — Handles game rules including scores, winning / losing, timer Pos Message SC — Separate position message script for Shapes Catcher game "
 />
 <meta
   name="keywords"
   content=""
 />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://airplay-wiki.netlify.app/posts/folderstructure/" />
+<link rel="canonical" href="http://localhost:1313/posts/folderstructure/" />
 
 
 
@@ -28,11 +28,11 @@
 
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://airplay-wiki.netlify.app/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://airplay-wiki.netlify.app/img/apple-touch-icon-144-precomposed.png" />
-<link rel="shortcut icon" href="https://airplay-wiki.netlify.app/img/favicon.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
 
 
 <link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
@@ -43,18 +43,20 @@
 <link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Scripts"/>
-<meta name="twitter:description" content=" Folder Structure # Air Hockey Goal Control - plays victorious goal sound effect if hockey hits either of the two goals Wall Control - plays boundary sound effect if hockey hits the wall Hockey Ctr - if debug is checked in the inspector, can use keyboard input to move hockey and test game mechanics (for playtesting on PC only) Instructions - loads tutorial scene corresponding to number keys [0-8] (for playtesting only) Game Manager - handles game rules including scores, winning / losing, timer Shapes Catcher Emitter - spawns random shapes at a specified time interval in random directions to both sides of the field Shape Class - defines the three different shapes (Circle, Square, Triangle) Shape Behavior - shape disappears after specified time passes or collides with player and handles player score Switch Shape - uses keyboard input for switching shape (for playtesting only) Timer - handles timer and game logic when timer stops Shapes Game Manager - handles game rules including scores, winning / losing, timer Pos Message SC - seperate posmessage script for shapes catcher game, may need to change later so there is better architecture Camera Adjust - calibrates camera position Pos Message - reads player position input and draws a peripersonal boundary around players based on radius and position (currently only specific to air hockey game) Start Up - runs player detection code and starts up ROS connection before loading the game scene "/>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Scripts">
+  <meta name="twitter:description" content="Folder Structure#Air Hockey#Goal Control — Detects ball collision with goal colliders (“leftgoal”, “rightgoal”), plays goal sound effect Wall Control — Plays boundary sound effect when the ball hits a wall Hockey Ctr (hockeyctr.cs) — Core ball controller: server-authoritative physics, client-side prediction, server reconciliation with exponential blending, snapshot buffering for interpolation, and metrics logging Hockey Network Transform — Extends NetworkTransform to provide position-update callbacks to hockeyctr for snapshot buffering Game Manager — Networked match lifecycle: start/stop, score tracking (NetworkVariable), countdown timer, difficulty mode sync, room owner tracking Dedicated Server Lifecycle — DS process management: heartbeat reporting to lobby (5s interval), idle shutdown (10s with no players), lobby status updates Paddle Spawn Bridge — Server-authoritative paddle spawning/despawning via RPCs Instructions — Loads tutorial scene corresponding to number keys [0-8] (for playtesting only) Player Control — Player input and control management Lock Rotation 2D — Constrains 2D rotation on game objects Networking#Simple Lobby Manager — HTTP lobby integration using the network-api SDK: room creation/joining, connection approval with token validation, UI state management Relay Manager — Toggles between Unity Relay Service (online) and LAN direct mode (UnityTransport) Network Latency UI — RTT measurement via ping/pong RPCs, updated every 1 second, accessible via NetworkLatencyUI.CurrentRTT Network Manager UI — UI for starting/joining network sessions Lobby List Single UI — UI component for displaying a single room in the lobby list Lobby Player Single UI — UI component for displaying a player in the room Networked Circle Controller — Abstract base class for paddle position sources (mouse or ROS) Pos Message Networked — ROS-based paddle position input for production hardware (extends NetworkedCircleController) Paddle &amp; Input#Circle Controller — Paddle representation: collision detection with ball, hit velocity calculation, cooldown enforcement (1 RTT between hits), display name sync via NetworkVariable Position Simulator — Mouse-based paddle input for testing (extends NetworkedCircleController) Position Source Applier — Applies position from selected source to paddle transform Position Source Toggle UI — UI for switching between position input sources Trace &amp; Replay#Trace Session — Manager for recording/replaying game inputs as CSV Trace Recorder — Writes per-tick trace commands (paddle positions, hits, resets) to disk Trace Input Provider — Static helper to get/record/replay inputs Trace Replayer — Replays recorded trace data for deterministic playback Debug &amp; Features#Network Features Controller — Runtime toggles for enabling/disabling client-side prediction and snapshot interpolation Shared / Utility#Camera Adjust — Calibrates camera position for projector display Audio Manager — Handles audio logic (boundary, goal, win, start sounds) CV Dimensions Override — Override computer vision field dimensions gameMgr — Non-networked game parameters (ball speed, radius, friction, goal sizes per difficulty mode) Shapes Catcher (Legacy — not yet networked)#Emitter — Spawns random shapes at a specified time interval in random directions to both sides of the field Shape Class — Defines the three different shapes (Circle, Square, Triangle) Shape Behavior — Shape disappears after specified time passes or collides with player and handles player score Switch Shape — Uses keyboard input for switching shape (for playtesting only) Timer — Handles timer and game logic when timer stops Shapes Game Manager — Handles game rules including scores, winning / losing, timer Pos Message SC — Separate position message script for Shapes Catcher game">
 
 
 
-<meta property="og:title" content="Scripts" />
-<meta property="og:description" content=" Folder Structure # Air Hockey Goal Control - plays victorious goal sound effect if hockey hits either of the two goals Wall Control - plays boundary sound effect if hockey hits the wall Hockey Ctr - if debug is checked in the inspector, can use keyboard input to move hockey and test game mechanics (for playtesting on PC only) Instructions - loads tutorial scene corresponding to number keys [0-8] (for playtesting only) Game Manager - handles game rules including scores, winning / losing, timer Shapes Catcher Emitter - spawns random shapes at a specified time interval in random directions to both sides of the field Shape Class - defines the three different shapes (Circle, Square, Triangle) Shape Behavior - shape disappears after specified time passes or collides with player and handles player score Switch Shape - uses keyboard input for switching shape (for playtesting only) Timer - handles timer and game logic when timer stops Shapes Game Manager - handles game rules including scores, winning / losing, timer Pos Message SC - seperate posmessage script for shapes catcher game, may need to change later so there is better architecture Camera Adjust - calibrates camera position Pos Message - reads player position input and draws a peripersonal boundary around players based on radius and position (currently only specific to air hockey game) Start Up - runs player detection code and starts up ROS connection before loading the game scene " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://airplay-wiki.netlify.app/posts/folderstructure/" /><meta property="article:section" content="posts" />
-
-
+<meta property="og:url" content="http://localhost:1313/posts/folderstructure/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="Scripts">
+  <meta property="og:description" content="Folder Structure#Air Hockey#Goal Control — Detects ball collision with goal colliders (“leftgoal”, “rightgoal”), plays goal sound effect Wall Control — Plays boundary sound effect when the ball hits a wall Hockey Ctr (hockeyctr.cs) — Core ball controller: server-authoritative physics, client-side prediction, server reconciliation with exponential blending, snapshot buffering for interpolation, and metrics logging Hockey Network Transform — Extends NetworkTransform to provide position-update callbacks to hockeyctr for snapshot buffering Game Manager — Networked match lifecycle: start/stop, score tracking (NetworkVariable), countdown timer, difficulty mode sync, room owner tracking Dedicated Server Lifecycle — DS process management: heartbeat reporting to lobby (5s interval), idle shutdown (10s with no players), lobby status updates Paddle Spawn Bridge — Server-authoritative paddle spawning/despawning via RPCs Instructions — Loads tutorial scene corresponding to number keys [0-8] (for playtesting only) Player Control — Player input and control management Lock Rotation 2D — Constrains 2D rotation on game objects Networking#Simple Lobby Manager — HTTP lobby integration using the network-api SDK: room creation/joining, connection approval with token validation, UI state management Relay Manager — Toggles between Unity Relay Service (online) and LAN direct mode (UnityTransport) Network Latency UI — RTT measurement via ping/pong RPCs, updated every 1 second, accessible via NetworkLatencyUI.CurrentRTT Network Manager UI — UI for starting/joining network sessions Lobby List Single UI — UI component for displaying a single room in the lobby list Lobby Player Single UI — UI component for displaying a player in the room Networked Circle Controller — Abstract base class for paddle position sources (mouse or ROS) Pos Message Networked — ROS-based paddle position input for production hardware (extends NetworkedCircleController) Paddle &amp; Input#Circle Controller — Paddle representation: collision detection with ball, hit velocity calculation, cooldown enforcement (1 RTT between hits), display name sync via NetworkVariable Position Simulator — Mouse-based paddle input for testing (extends NetworkedCircleController) Position Source Applier — Applies position from selected source to paddle transform Position Source Toggle UI — UI for switching between position input sources Trace &amp; Replay#Trace Session — Manager for recording/replaying game inputs as CSV Trace Recorder — Writes per-tick trace commands (paddle positions, hits, resets) to disk Trace Input Provider — Static helper to get/record/replay inputs Trace Replayer — Replays recorded trace data for deterministic playback Debug &amp; Features#Network Features Controller — Runtime toggles for enabling/disabling client-side prediction and snapshot interpolation Shared / Utility#Camera Adjust — Calibrates camera position for projector display Audio Manager — Handles audio logic (boundary, goal, win, start sounds) CV Dimensions Override — Override computer vision field dimensions gameMgr — Non-networked game parameters (ball speed, radius, friction, goal sizes per difficulty mode) Shapes Catcher (Legacy — not yet networked)#Emitter — Spawns random shapes at a specified time interval in random directions to both sides of the field Shape Class — Defines the three different shapes (Circle, Square, Triangle) Shape Behavior — Shape disappears after specified time passes or collides with player and handles player score Switch Shape — Uses keyboard input for switching shape (for playtesting only) Timer — Handles timer and game logic when timer stops Shapes Game Manager — Handles game rules including scores, winning / losing, timer Pos Message SC — Separate position message script for Shapes Catcher game">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
 
 
 
@@ -133,30 +135,85 @@
   Folder Structure
   <a href="#folder-structure" class="h-anchor" aria-hidden="true">#</a>
 </h1>
+<h2 id="air-hockey">
+  Air Hockey
+  <a href="#air-hockey" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <ul>
-<li><strong>Air Hockey</strong>
-<ul>
-<li><strong>Goal Control</strong> - plays victorious goal sound effect if hockey hits either of the two goals</li>
-<li><strong>Wall Control</strong> - plays boundary sound effect if hockey hits the wall</li>
-<li><strong>Hockey Ctr</strong> - if debug is checked in the inspector, can use keyboard input to move hockey and test game mechanics (for playtesting on PC only)</li>
-<li><strong>Instructions</strong> - loads tutorial scene corresponding to number keys [0-8] (for playtesting only)</li>
-<li><strong>Game Manager</strong> - handles game rules including scores, winning / losing, timer</li>
+<li><strong>Goal Control</strong> — Detects ball collision with goal colliders (&ldquo;leftgoal&rdquo;, &ldquo;rightgoal&rdquo;), plays goal sound effect</li>
+<li><strong>Wall Control</strong> — Plays boundary sound effect when the ball hits a wall</li>
+<li><strong>Hockey Ctr (hockeyctr.cs)</strong> — Core ball controller: server-authoritative physics, client-side prediction, server reconciliation with exponential blending, snapshot buffering for interpolation, and metrics logging</li>
+<li><strong>Hockey Network Transform</strong> — Extends NetworkTransform to provide position-update callbacks to hockeyctr for snapshot buffering</li>
+<li><strong>Game Manager</strong> — Networked match lifecycle: start/stop, score tracking (NetworkVariable), countdown timer, difficulty mode sync, room owner tracking</li>
+<li><strong>Dedicated Server Lifecycle</strong> — DS process management: heartbeat reporting to lobby (5s interval), idle shutdown (10s with no players), lobby status updates</li>
+<li><strong>Paddle Spawn Bridge</strong> — Server-authoritative paddle spawning/despawning via RPCs</li>
+<li><strong>Instructions</strong> — Loads tutorial scene corresponding to number keys [0-8] (for playtesting only)</li>
+<li><strong>Player Control</strong> — Player input and control management</li>
+<li><strong>Lock Rotation 2D</strong> — Constrains 2D rotation on game objects</li>
 </ul>
-</li>
-<li><strong>Shapes Catcher</strong>
+<h2 id="networking">
+  Networking
+  <a href="#networking" class="h-anchor" aria-hidden="true">#</a>
+</h2>
 <ul>
-<li><strong>Emitter</strong> - spawns random shapes at a specified time interval in random directions to both sides of the field</li>
-<li><strong>Shape Class</strong> - defines the three different shapes (Circle, Square, Triangle)</li>
-<li><strong>Shape Behavior</strong> - shape disappears after specified time passes or collides with player and handles player score</li>
-<li><strong>Switch Shape</strong> - uses keyboard input for switching shape (for playtesting only)</li>
-<li><strong>Timer</strong> - handles timer and game logic when timer stops</li>
-<li><strong>Shapes Game Manager</strong> - handles game rules including scores, winning / losing, timer</li>
-<li><strong>Pos Message SC</strong> - seperate posmessage script for shapes catcher game, may need to change later so there is better architecture</li>
+<li><strong>Simple Lobby Manager</strong> — HTTP lobby integration using the network-api SDK: room creation/joining, connection approval with token validation, UI state management</li>
+<li><strong>Relay Manager</strong> — Toggles between Unity Relay Service (online) and LAN direct mode (UnityTransport)</li>
+<li><strong>Network Latency UI</strong> — RTT measurement via ping/pong RPCs, updated every 1 second, accessible via <code>NetworkLatencyUI.CurrentRTT</code></li>
+<li><strong>Network Manager UI</strong> — UI for starting/joining network sessions</li>
+<li><strong>Lobby List Single UI</strong> — UI component for displaying a single room in the lobby list</li>
+<li><strong>Lobby Player Single UI</strong> — UI component for displaying a player in the room</li>
+<li><strong>Networked Circle Controller</strong> — Abstract base class for paddle position sources (mouse or ROS)</li>
+<li><strong>Pos Message Networked</strong> — ROS-based paddle position input for production hardware (extends NetworkedCircleController)</li>
 </ul>
-</li>
-<li><strong>Camera Adjust</strong> - calibrates camera position</li>
-<li><strong>Pos Message</strong> - reads player position input and draws a peripersonal boundary around players based on radius and position (currently only specific to air hockey game)</li>
-<li><strong>Start Up</strong> - runs player detection code and starts up ROS connection before loading the game scene</li>
+<h2 id="paddle--input">
+  Paddle &amp; Input
+  <a href="#paddle--input" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<ul>
+<li><strong>Circle Controller</strong> — Paddle representation: collision detection with ball, hit velocity calculation, cooldown enforcement (1 RTT between hits), display name sync via NetworkVariable</li>
+<li><strong>Position Simulator</strong> — Mouse-based paddle input for testing (extends NetworkedCircleController)</li>
+<li><strong>Position Source Applier</strong> — Applies position from selected source to paddle transform</li>
+<li><strong>Position Source Toggle UI</strong> — UI for switching between position input sources</li>
+</ul>
+<h2 id="trace--replay">
+  Trace &amp; Replay
+  <a href="#trace--replay" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<ul>
+<li><strong>Trace Session</strong> — Manager for recording/replaying game inputs as CSV</li>
+<li><strong>Trace Recorder</strong> — Writes per-tick trace commands (paddle positions, hits, resets) to disk</li>
+<li><strong>Trace Input Provider</strong> — Static helper to get/record/replay inputs</li>
+<li><strong>Trace Replayer</strong> — Replays recorded trace data for deterministic playback</li>
+</ul>
+<h2 id="debug--features">
+  Debug &amp; Features
+  <a href="#debug--features" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<ul>
+<li><strong>Network Features Controller</strong> — Runtime toggles for enabling/disabling client-side prediction and snapshot interpolation</li>
+</ul>
+<h2 id="shared--utility">
+  Shared / Utility
+  <a href="#shared--utility" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<ul>
+<li><strong>Camera Adjust</strong> — Calibrates camera position for projector display</li>
+<li><strong>Audio Manager</strong> — Handles audio logic (boundary, goal, win, start sounds)</li>
+<li><strong>CV Dimensions Override</strong> — Override computer vision field dimensions</li>
+<li><strong>gameMgr</strong> — Non-networked game parameters (ball speed, radius, friction, goal sizes per difficulty mode)</li>
+</ul>
+<h2 id="shapes-catcher-legacy--not-yet-networked">
+  Shapes Catcher (Legacy — not yet networked)
+  <a href="#shapes-catcher-legacy--not-yet-networked" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<ul>
+<li><strong>Emitter</strong> — Spawns random shapes at a specified time interval in random directions to both sides of the field</li>
+<li><strong>Shape Class</strong> — Defines the three different shapes (Circle, Square, Triangle)</li>
+<li><strong>Shape Behavior</strong> — Shape disappears after specified time passes or collides with player and handles player score</li>
+<li><strong>Switch Shape</strong> — Uses keyboard input for switching shape (for playtesting only)</li>
+<li><strong>Timer</strong> — Handles timer and game logic when timer stops</li>
+<li><strong>Shapes Game Manager</strong> — Handles game rules including scores, winning / losing, timer</li>
+<li><strong>Pos Message SC</strong> — Separate position message script for Shapes Catcher game</li>
 </ul>
 
     </div>
@@ -172,7 +229,7 @@
           <div class="pagination__buttons">
             
               <span class="button previous">
-                <a href="https://airplay-wiki.netlify.app/posts/scenes/">
+                <a href="http://localhost:1313/posts/scenes/">
                   <span class="button__icon">←</span>
                   <span class="button__text">Scenes</span>
                 </a>
@@ -180,7 +237,7 @@
             
             
               <span class="button next">
-                <a href="https://airplay-wiki.netlify.app/posts/shapecatcher/">
+                <a href="http://localhost:1313/posts/shapecatcher/">
                   <span class="button__text">Shapes Catcher</span>
                   <span class="button__icon">→</span>
                 </a>
@@ -223,7 +280,7 @@
 </a>
 
       <div class="copyright">
-        <span>© 2023 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>© 2026 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
         <span><a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
       </div>
     
@@ -240,6 +297,5 @@
       
     </div>
 
-    
   </body>
 </html>

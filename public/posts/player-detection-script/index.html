@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+      <title>
+        Player Detection Code ::
+        AiRPlay Wiki
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="player_detection.cpp#The player detection node is the core computer vision component that detects and tracks players on the physical game field. It uses background subtraction, contour detection, and Kalman filtering to produce real-time player positions.
+Multi-Threaded Architecture#The node uses three concurrent threads for maximum throughput:
+Thread Purpose Capture Thread Reads frames from camera (FLIR Spinnaker or USB/OpenCV) Detection Thread Processes frames: background subtraction → contour detection → Kalman tracking Publisher Thread Publishes tracking results to pos_raw topic Pipeline Functions#init_background() — Initializes the background image. Can either capture the initial frame as background (when enable_flag is set to 1) or load a background image from a file.
+"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/posts/player-detection-script/" />
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.css" />
+
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
+
+
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Player Detection Code">
+  <meta name="twitter:description" content="player_detection.cpp#The player detection node is the core computer vision component that detects and tracks players on the physical game field. It uses background subtraction, contour detection, and Kalman filtering to produce real-time player positions.
+Multi-Threaded Architecture#The node uses three concurrent threads for maximum throughput:
+Thread Purpose Capture Thread Reads frames from camera (FLIR Spinnaker or USB/OpenCV) Detection Thread Processes frames: background subtraction → contour detection → Kalman tracking Publisher Thread Publishes tracking results to pos_raw topic Pipeline Functions#init_background() — Initializes the background image. Can either capture the initial frame as background (when enable_flag is set to 1) or load a background image from a file.">
+
+
+
+<meta property="og:url" content="http://localhost:1313/posts/player-detection-script/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="Player Detection Code">
+  <meta property="og:description" content="player_detection.cpp#The player detection node is the core computer vision component that detects and tracks players on the physical game field. It uses background subtraction, contour detection, and Kalman filtering to produce real-time player positions.
+Multi-Threaded Architecture#The node uses three concurrent threads for maximum throughput:
+Thread Purpose Capture Thread Reads frames from camera (FLIR Spinnaker or USB/OpenCV) Detection Thread Processes frames: background subtraction → contour detection → Kalman tracking Publisher Thread Publishes tracking results to pos_raw topic Pipeline Functions#init_background() — Initializes the background image. Can either capture the initial frame as background (when enable_flag is set to 1) or load a background image from a file.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/posts/home/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >airplay wiki</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <article class="post">
+    <h1 class="post-title">Player Detection Code</h1>
+    <div class="post-meta">
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <h2 id="player_detectioncpp">
+  player_detection.cpp
+  <a href="#player_detectioncpp" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The player detection node is the core computer vision component that detects and tracks players on the physical game field. It uses background subtraction, contour detection, and Kalman filtering to produce real-time player positions.</p>
+<h3 id="multi-threaded-architecture">
+  Multi-Threaded Architecture
+  <a href="#multi-threaded-architecture" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The node uses three concurrent threads for maximum throughput:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Thread</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Capture Thread</strong></td>
+          <td>Reads frames from camera (FLIR Spinnaker or USB/OpenCV)</td>
+      </tr>
+      <tr>
+          <td><strong>Detection Thread</strong></td>
+          <td>Processes frames: background subtraction → contour detection → Kalman tracking</td>
+      </tr>
+      <tr>
+          <td><strong>Publisher Thread</strong></td>
+          <td>Publishes tracking results to <code>pos_raw</code> topic</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="pipeline-functions">
+  Pipeline Functions
+  <a href="#pipeline-functions" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>init_background()</strong> — Initializes the background image. Can either capture the initial frame as background (when <code>enable_flag</code> is set to 1) or load a background image from a file.</p>
+</li>
+<li>
+<p><strong>background_subtraction()</strong> — Takes the current frame and the background image as input and performs background subtraction to isolate foreground objects (players).</p>
+</li>
+<li>
+<p><strong>average_frame()</strong> — Computes the average of a sequence of frames for noise reduction.</p>
+</li>
+<li>
+<p><strong>detect_pos()</strong> — Main detection and tracking pipeline:</p>
+<ol>
+<li>Captures frames from camera</li>
+<li>Performs background subtraction</li>
+<li>Detects contours in the foreground mask</li>
+<li><strong>Kalman filtering</strong> — Tracks each player with a 4D state vector (x, y, velocity_x, velocity_y) for smooth position estimation</li>
+<li><strong>Hungarian algorithm</strong> — Associates new detections with existing player tracks using optimal assignment</li>
+<li><strong>Forward prediction</strong> — Accounts for camera latency (~25ms) by predicting positions ahead</li>
+</ol>
+</li>
+</ul>
+<h3 id="published-topic">
+  Published Topic
+  <a href="#published-topic" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p><strong><code>pos_raw</code></strong> (message type: <code>ap_interfaces/Pos</code>):</p>
+<ul>
+<li><code>total</code> — Number of detected players</li>
+<li><code>timestamp</code> — Capture timestamp in ms</li>
+<li><code>x[32]</code>, <code>y[32]</code> — Player positions</li>
+<li><code>player_id[32]</code> — Unique player IDs maintained across frames</li>
+<li><code>tag_id[32]</code> — RFID tag IDs (when available)</li>
+<li><code>size[32]</code> — Player blob radius/size</li>
+</ul>
+<h3 id="subscribed-topic">
+  Subscribed Topic
+  <a href="#subscribed-topic" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p><strong><code>control</code></strong> (<code>std_msgs/String</code>): Control messages for configuring the detection node at runtime. (Currently not actively used)</p>
+<h3 id="camera-support">
+  Camera Support
+  <a href="#camera-support" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><strong>FLIR Camera</strong>: Uses Spinnaker SDK for high-performance industrial camera input</li>
+<li><strong>USB Camera</strong>: Falls back to OpenCV VideoCapture for standard webcams</li>
+</ul>
+<h3 id="performance-logging">
+  Performance Logging
+  <a href="#performance-logging" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The node logs performance metrics to CSV files for latency analysis:</p>
+<ul>
+<li>Frame capture timing</li>
+<li>Detection processing duration</li>
+<li>Publishing intervals</li>
+</ul>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="http://localhost:1313/posts/networking/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Networking Architecture</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="http://localhost:1313/posts/prefabs/">
+                  <span class="button__text">Prefabs</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </article>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/posts/home/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >airplay wiki</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2026 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span><a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+      
+    </div>
+
+  </body>
+</html>

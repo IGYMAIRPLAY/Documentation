@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+      <title>
+        Networking Architecture ::
+        AiRPlay Wiki
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Overview#The iGYM games use a dedicated server architecture built on Unity Netcode for GameObjects (NGO). The system separates networking into two planes:
+Control Plane — A Python FastAPI lobby server handles matchmaking, room management, and dedicated server orchestration via REST API Game Plane — Unity Netcode for GameObjects handles real-time gameplay networking (physics, state sync, RPCs) Transport: UnityTransport (UDP) for direct connections, with optional Unity Relay Service for online play
+"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/posts/networking/" />
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.css" />
+
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
+
+
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Networking Architecture">
+  <meta name="twitter:description" content="Overview#The iGYM games use a dedicated server architecture built on Unity Netcode for GameObjects (NGO). The system separates networking into two planes:
+Control Plane — A Python FastAPI lobby server handles matchmaking, room management, and dedicated server orchestration via REST API Game Plane — Unity Netcode for GameObjects handles real-time gameplay networking (physics, state sync, RPCs) Transport: UnityTransport (UDP) for direct connections, with optional Unity Relay Service for online play">
+
+
+
+<meta property="og:url" content="http://localhost:1313/posts/networking/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="Networking Architecture">
+  <meta property="og:description" content="Overview#The iGYM games use a dedicated server architecture built on Unity Netcode for GameObjects (NGO). The system separates networking into two planes:
+Control Plane — A Python FastAPI lobby server handles matchmaking, room management, and dedicated server orchestration via REST API Game Plane — Unity Netcode for GameObjects handles real-time gameplay networking (physics, state sync, RPCs) Transport: UnityTransport (UDP) for direct connections, with optional Unity Relay Service for online play">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/posts/home/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >airplay wiki</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <article class="post">
+    <h1 class="post-title">Networking Architecture</h1>
+    <div class="post-meta">
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <h2 id="overview">
+  Overview
+  <a href="#overview" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The iGYM games use a <strong>dedicated server architecture</strong> built on <strong>Unity Netcode for GameObjects (NGO)</strong>. The system separates networking into two planes:</p>
+<ul>
+<li><strong>Control Plane</strong> — A Python FastAPI lobby server handles matchmaking, room management, and dedicated server orchestration via REST API</li>
+<li><strong>Game Plane</strong> — Unity Netcode for GameObjects handles real-time gameplay networking (physics, state sync, RPCs)</li>
+</ul>
+<p><strong>Transport</strong>: UnityTransport (UDP) for direct connections, with optional Unity Relay Service for online play</p>
+<p><strong>Tick Rate</strong>: 30 Hz (configurable via NetworkManager)</p>
+<hr>
+<h2 id="lobby-system-network-api">
+  Lobby System (network-api)
+  <a href="#lobby-system-network-api" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The lobby is a <strong>Python FastAPI</strong> REST server that manages rooms and spawns dedicated server processes. The Unity client and dedicated server each have their own C# SDK for communicating with the lobby.</p>
+<h3 id="client-facing-endpoints">
+  Client-Facing Endpoints
+  <a href="#client-facing-endpoints" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Method</th>
+          <th>Endpoint</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>GET</td>
+          <td><code>/rooms?game_id=&lt;id&gt;</code></td>
+          <td>List all rooms for a game (public info only)</td>
+      </tr>
+      <tr>
+          <td>POST</td>
+          <td><code>/rooms</code></td>
+          <td>Create a new room</td>
+      </tr>
+      <tr>
+          <td>POST</td>
+          <td><code>/rooms/{room_id}/join</code></td>
+          <td>Join an existing room</td>
+      </tr>
+      <tr>
+          <td>POST</td>
+          <td><code>/rooms/{room_id}/leave</code></td>
+          <td>Leave a room</td>
+      </tr>
+      <tr>
+          <td>POST</td>
+          <td><code>/rooms/{room_id}/kick</code></td>
+          <td>Kick a player (owner only)</td>
+      </tr>
+      <tr>
+          <td>GET</td>
+          <td><code>/rooms/{room_id}</code></td>
+          <td>Get full room state</td>
+      </tr>
+      <tr>
+          <td>POST</td>
+          <td><code>/rooms/{room_id}/start</code></td>
+          <td>Start room and spawn DS (owner only)</td>
+      </tr>
+      <tr>
+          <td>POST</td>
+          <td><code>/rooms/{room_id}/connect</code></td>
+          <td>Get DS connection info (IP/port/token)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="dedicated-server-endpoints">
+  Dedicated Server Endpoints
+  <a href="#dedicated-server-endpoints" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Method</th>
+          <th>Endpoint</th>
+          <th>Purpose</th>
+          <th>Auth</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>POST</td>
+          <td><code>/rooms/{room_id}/ds/started</code></td>
+          <td>DS reports it started listening</td>
+          <td>Bearer token</td>
+      </tr>
+      <tr>
+          <td>POST</td>
+          <td><code>/rooms/{room_id}/ds/heartbeat</code></td>
+          <td>DS sends periodic heartbeat</td>
+          <td>Bearer token</td>
+      </tr>
+      <tr>
+          <td>POST</td>
+          <td><code>/rooms/{room_id}/ds/ended</code></td>
+          <td>DS reports shutdown</td>
+          <td>Bearer token</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="admin-endpoints">
+  Admin Endpoints
+  <a href="#admin-endpoints" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Method</th>
+          <th>Endpoint</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>POST</td>
+          <td><code>/rooms/{room_id}/end</code></td>
+          <td>Force-end a room (owner only)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="room-lifecycle">
+  Room Lifecycle
+  <a href="#room-lifecycle" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>Rooms progress through the following states:</p>
+<pre class="mermaid">
+stateDiagram-v2
+    [*] --> Waiting : POST /rooms
+    Waiting --> Starting : POST /rooms/{id}/start\n(owner only)
+    Starting --> Ready : DS sends /ds/started
+    Starting --> Error : DS crash or heartbeat timeout
+    Ready --> Error : Heartbeat timeout (20s)
+    Ready --> Ended : POST /ds/ended
+    Error --> [*]
+    Ended --> [*]
+
+</pre>
+
+
+  
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark',
+      themeVariables: {
+        darkMode: true,
+        background: '#1a1a1a',
+        primaryColor: '#3b82f6',
+        primaryTextColor: '#f0f0f0',
+        primaryBorderColor: '#60a5fa',
+        lineColor: '#9ca3af',
+        secondaryColor: '#1e293b',
+        tertiaryColor: '#0f172a'
+      }
+    });
+  </script>
+
+
+<h3 id="room-management-flow">
+  Room Management Flow
+  <a href="#room-management-flow" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p><strong>Create Room:</strong></p>
+<pre tabindex="0"><code>POST /rooms
+{ &#34;game_id&#34;: &#34;igym_ar&#34;, &#34;name&#34;: &#34;Squad Battle&#34;, &#34;capacity&#34;: 4, &#34;private&#34;: false }
+→ { &#34;room_id&#34;: &#34;a1b2c3d4&#34; }
+</code></pre><p><strong>Join Room:</strong></p>
+<pre tabindex="0"><code>POST /rooms/a1b2c3d4/join
+{ &#34;client_guid&#34;: &#34;device-uuid-12345678&#34;, &#34;display_name&#34;: &#34;Player One&#34; }
+→ RoomStateResp (includes player_id, token)
+</code></pre><p><strong>Start Room (Owner Only):</strong></p>
+<pre tabindex="0"><code>POST /rooms/a1b2c3d4/start
+{ &#34;owner_player_id&#34;: &#34;12a3b4c5&#34; }
+→ ReadyConnectInfo with status=&#34;starting&#34;
+</code></pre><p><strong>Poll for Ready:</strong></p>
+<pre tabindex="0"><code>POST /rooms/a1b2c3d4/connect
+{ &#34;client_guid&#34;: &#34;device-uuid-12345678&#34; }
+→ ReadyConnectInfo (status=&#34;ready&#34;, server_ip, server_port, token)
+</code></pre><h3 id="authentication">
+  Authentication
+  <a href="#authentication" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p><strong>Client Identity:</strong></p>
+<ul>
+<li><code>client_guid</code> — Stable 8–128 character identifier per app install</li>
+<li>Idempotent joins: same <code>client_guid</code> always maps to the same <code>player_id</code> in a room</li>
+<li><code>player_id</code> — 8-char hex, generated per join, unique within room</li>
+</ul>
+<p><strong>Player Token:</strong></p>
+<ul>
+<li>Format: <code>{SHARED_SECRET}:{room_id}:{player_id}</code></li>
+<li>Returned in join/connect responses</li>
+<li>Client passes this token to the DS during connection approval</li>
+<li>DS validates the token without needing a database lookup</li>
+</ul>
+<p><strong>DS Authentication:</strong></p>
+<ul>
+<li>Random 24-char URL-safe bearer token (<code>ds_secret</code>)</li>
+<li>Sent as <code>Authorization: Bearer &lt;ds_secret&gt;</code> header on all DS→lobby calls</li>
+<li>Generated by lobby at room start time</li>
+</ul>
+<h3 id="supported-games">
+  Supported Games
+  <a href="#supported-games" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The lobby maintains a game registry with executable paths and launch configs:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Game ID</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>igym_ar</code></td>
+          <td>iGYM AR Air Hockey</td>
+      </tr>
+      <tr>
+          <td><code>igym_vr</code></td>
+          <td>iGYM VR variant</td>
+      </tr>
+      <tr>
+          <td><code>wordplay</code></td>
+          <td>WordPlay game</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="dedicated-server-spawning--lifecycle">
+  Dedicated Server Spawning &amp; Lifecycle
+  <a href="#dedicated-server-spawning--lifecycle" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>When the room owner calls <code>POST /rooms/{id}/start</code>, the lobby:</p>
+<ol>
+<li>Allocates a unique UDP port (starting from 7777, auto-increment)</li>
+<li>Generates a random <code>ds_secret</code> bearer token</li>
+<li>Spawns the Unity DS process with command-line arguments:</li>
+</ol>
+<table>
+  <thead>
+      <tr>
+          <th>Argument</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>-port</code></td>
+          <td>UDP port to listen on</td>
+      </tr>
+      <tr>
+          <td><code>-roomId</code></td>
+          <td>Room identifier</td>
+      </tr>
+      <tr>
+          <td><code>-maxPlayers</code></td>
+          <td>Player capacity (2, 4, or 8)</td>
+      </tr>
+      <tr>
+          <td><code>-ownerPlayerId</code></td>
+          <td>Room owner&rsquo;s player ID</td>
+      </tr>
+      <tr>
+          <td><code>-lobbyUrl</code></td>
+          <td>Lobby callback URL for heartbeat/status</td>
+      </tr>
+      <tr>
+          <td><code>-dsSecret</code></td>
+          <td>Bearer token for lobby API auth</td>
+      </tr>
+      <tr>
+          <td><code>-idleShutdownSeconds</code></td>
+          <td>Seconds with no players before auto-quit (default: 10)</td>
+      </tr>
+      <tr>
+          <td><code>-logFile</code></td>
+          <td>Path for DS log output</td>
+      </tr>
+  </tbody>
+</table>
+<ol start="4">
+<li>DS starts, binds to port, calls <code>POST /rooms/{id}/ds/started</code></li>
+<li>Lobby marks room as <code>ready</code></li>
+</ol>
+<h3 id="ds-lifecycle">
+  DS Lifecycle
+  <a href="#ds-lifecycle" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<pre class="mermaid">
+stateDiagram-v2
+    direction TB
+    [*] --> Spawned : DS process launched\nwith CLI args
+    Spawned --> WaitingForPlayers : POST /ds/started\n(binds to UDP port)
+    WaitingForPlayers --> Running : Owner starts game
+    Running --> GameOver : Timer expires
+    GameOver --> IdleTimeout : All clients disconnect
+    IdleTimeout --> [*] : POST /ds/ended\nreason = empty_timeout
+
+    note right of WaitingForPlayers
+        Sends heartbeat every 5s
+        Lobby marks room = ready
+    end note
+    note right of IdleTimeout
+        10s grace period with\nzero connected clients
+    end note
+
+</pre>
+
+
+
+<p><strong>Heartbeat</strong> (every 5 seconds):</p>
+<pre tabindex="0"><code>POST /rooms/{room_id}/ds/heartbeat
+{ &#34;port&#34;: 7777, &#34;player_count&#34;: 2, &#34;match_running&#34;: true, &#34;time_remaining&#34;: 450.5, &#34;ts&#34;: ... }
+</code></pre><p><strong>Heartbeat Timeout:</strong> 20 seconds with no heartbeat → room marked <code>error</code>, lobby kills DS process</p>
+<p><strong>Shutdown Reasons:</strong> <code>empty_timeout</code>, <code>quit</code>, <code>error</code></p>
+<h3 id="background-watcher">
+  Background Watcher
+  <a href="#background-watcher" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The lobby runs a daemon thread (every 2 seconds) that:</p>
+<ul>
+<li>Checks DS heartbeat timeouts</li>
+<li>Cleans up stale rooms (TTL: 1 hour)</li>
+<li>Detects DS process crashes</li>
+<li>Frees ports from ended rooms</li>
+</ul>
+<hr>
+<h2 id="connection-approval">
+  Connection Approval
+  <a href="#connection-approval" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>When a client connects to the DS via Netcode, it sends a <code>ConnectPayload</code>:</p>
+<pre tabindex="0"><code>ConnectPayload {
+    sessionId   : string
+    playerId    : string
+    token       : string    // format: {SHARED_SECRET}:{room_id}:{player_id}
+    displayName : string
+    ts          : long      // timestamp
+}
+</code></pre><p>The server validates:</p>
+<ul>
+<li>Token matches the expected <code>{secret}:{roomId}:{playerId}</code> format</li>
+<li>Player belongs to the room</li>
+<li>Server capacity is not exceeded</li>
+<li>Caches room owner identity for GameManager</li>
+</ul>
+<hr>
+<h2 id="game-state-synchronization">
+  Game State Synchronization
+  <a href="#game-state-synchronization" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<h3 id="networkvariables-server--clients">
+  NetworkVariables (Server → Clients)
+  <a href="#networkvariables-server--clients" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>Game-level state is pushed via NetworkVariables (write permission: server only):</p>
+<table>
+  <thead>
+      <tr>
+          <th>Variable</th>
+          <th>Type</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>GameManager.isRunning</code></td>
+          <td>bool</td>
+          <td>Match active flag</td>
+      </tr>
+      <tr>
+          <td><code>GameManager.syncedTime</code></td>
+          <td>float</td>
+          <td>Countdown timer</td>
+      </tr>
+      <tr>
+          <td><code>GameManager.syncedMode</code></td>
+          <td>int</td>
+          <td>Difficulty: 0=Easy, 1=Medium, 2=Hard</td>
+      </tr>
+      <tr>
+          <td><code>GameManager.syncedScoreLeft</code></td>
+          <td>int</td>
+          <td>Left team score</td>
+      </tr>
+      <tr>
+          <td><code>GameManager.syncedScoreRight</code></td>
+          <td>int</td>
+          <td>Right team score</td>
+      </tr>
+      <tr>
+          <td><code>GameManager.roomOwnerClientId</code></td>
+          <td>ulong</td>
+          <td>Owner identity</td>
+      </tr>
+      <tr>
+          <td><code>CircleController.displayName</code></td>
+          <td>string</td>
+          <td>Player display name</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="ball-position-sync">
+  Ball Position Sync
+  <a href="#ball-position-sync" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>Ball position is synced via <strong>HockeyNetworkTransform</strong> (extends NetworkTransform):</p>
+<ul>
+<li>Server pushes authoritative position/rotation each tick</li>
+<li>Custom callback <code>OnNetworkTransformPositionUpdated()</code> feeds data into the snapshot buffer</li>
+<li>Clients interpolate between snapshots for smooth rendering</li>
+</ul>
+<h3 id="paddle-position-sync">
+  Paddle Position Sync
+  <a href="#paddle-position-sync" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>Paddles are <strong>client-owned NetworkObjects</strong>:</p>
+<ul>
+<li>Position driven by mouse input (PositionSimulator) or ROS/CV (PosMessageNetworked)</li>
+<li>NetworkTransform interpolation disabled on owned paddles to prevent input lag</li>
+<li>Spawned/despawned via PaddleSpawnBridge RPCs (server-authoritative)</li>
+</ul>
+<hr>
+<h2 id="client-side-prediction--reconciliation">
+  Client-Side Prediction &amp; Reconciliation
+  <a href="#client-side-prediction--reconciliation" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<h3 id="ball-visual-states">
+  Ball Visual States
+  <a href="#ball-visual-states" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The ball controller (<code>hockeyctr.cs</code>) operates in three visual states:</p>
+<pre class="mermaid">
+flowchart TD
+    A(["Authority\n(following server)"])
+    P(["Predicting\n(simulating locally)"])
+    R(["Reconciling\n(blending to server)"])
+
+    A -->|"Paddle hits ball"| P
+    P -->|"Server ACK, error < 0.05"| A
+    P -->|"Server ACK, error ≥ 0.05"| R
+    R -->|"Error drops below 0.05"| A
+
+    P2["Sends ApplyVelocityServerRpc\nSets prediction gate ~1 RTT"]
+    R2["Exponential blend, half-life 80ms\nMax correction speed 20 units/sec"]
+
+    P -.- P2
+    R -.- R2
+
+</pre>
+
+
+
+<h3 id="prediction-flow">
+  Prediction Flow
+  <a href="#prediction-flow" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<pre tabindex="0"><code>[Paddle Collision Detected]
+        ↓
+[Calculate hit velocity from paddle movement]
+        ↓
+[PredictHit(velocity)]
+  - Set state = Predicting
+  - Store predicted velocity and position
+  - Set prediction gate (block server updates for ~1 RTT)
+        ↓
+[Send ApplyVelocityServerRpc(velocity, hitId)]
+        ↓
+[Server applies: _rb.linearVelocity = velocity]
+  - Broadcasts position via NetworkTransform
+  - Sends AcknowledgeHitClientRpc(hitId)
+        ↓
+[Client receives server updates]
+  - If predicted ≈ true position → snap to Authority
+  - If diverged → enter Reconciling state
+</code></pre><h3 id="reconciliation-parameters">
+  Reconciliation Parameters
+  <a href="#reconciliation-parameters" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>reconcileSnapThreshold</code></td>
+          <td>0.05 units</td>
+          <td>Snap to authority below this distance</td>
+      </tr>
+      <tr>
+          <td><code>reconcileHalfLifeSec</code></td>
+          <td>0.08 s</td>
+          <td>Exponential blend half-life</td>
+      </tr>
+      <tr>
+          <td><code>reconcileMaxSpeed</code></td>
+          <td>20 units/s</td>
+          <td>Max correction speed</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="interpolation-snapshot-buffer">
+  Interpolation (Snapshot Buffer)
+  <a href="#interpolation-snapshot-buffer" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>For rendering the ball between server updates:</p>
+<ul>
+<li>Circular buffer stores up to 128 snapshots <code>{ receiveTime, tick, position }</code></li>
+<li><strong>Adaptive render delay</strong> based on network conditions:
+<ul>
+<li>Formula: <code>oneWayRtt * 0.35 + jitterEWMA * 0.5 + skippedTicksPenalty</code></li>
+<li>Bounds: min 20ms, max 250ms</li>
+</ul>
+</li>
+<li>Linear interpolation between the two surrounding snapshots</li>
+</ul>
+<hr>
+<h2 id="full-system-data-flow">
+  Full System Data Flow
+  <a href="#full-system-data-flow" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<pre class="mermaid">
+flowchart TD
+    subgraph Physical["Physical World"]
+        CAM["Camera"]
+        BLE["BLE Controllers"]
+    end
+
+    subgraph ROS2["ROS2 System"]
+        PD["player_detection node"]
+        BTN["button node"]
+        TCP["ros_tcp_endpoint\nTCP :10000"]
+    end
+
+    subgraph Lobby["Lobby Server"]
+        LS["FastAPI :8080"]
+    end
+
+    subgraph Unity["Unity Game"]
+        LM["Lobby Manager"]
+        DS["Dedicated Server"]
+        CA["Client A"]
+        CB["Client B"]
+    end
+
+    CAM --> PD
+    BLE --> BTN
+    PD -->|"pos_raw"| TCP
+    BTN -->|"kick_size"| TCP
+    TCP --> LM
+
+    LS <-->|"HTTP REST"| LM
+    LM -->|"Spawn + Token"| DS
+    DS <-->|"Heartbeat 5s"| LS
+
+    CA -->|"ApplyVelocityServerRpc"| DS
+    DS -->|"NetworkTransform"| CA
+    DS -->|"NetworkTransform"| CB
+    DS -->|"NetworkVariables"| CA
+    DS -->|"NetworkVariables"| CB
+
+</pre>
+
+
+
+<hr>
+<h2 id="lobby-server-configuration">
+  Lobby Server Configuration
+  <a href="#lobby-server-configuration" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Key configuration values in the lobby server (<code>lobby.py</code>):</p>
+<table>
+  <thead>
+      <tr>
+          <th>Setting</th>
+          <th>Default</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>DS_BASE_PORT</code></td>
+          <td>7777</td>
+          <td>Starting port for DS allocation</td>
+      </tr>
+      <tr>
+          <td><code>PUBLIC_LOBBY_URL</code></td>
+          <td><code>http://127.0.0.1:8080</code></td>
+          <td>DS heartbeat callback URL</td>
+      </tr>
+      <tr>
+          <td><code>SHARED_SECRET</code></td>
+          <td><code>&quot;dev_secret_change_me&quot;</code></td>
+          <td>Token signing secret (<strong>change in production</strong>)</td>
+      </tr>
+      <tr>
+          <td><code>ROOM_TTL_SEC</code></td>
+          <td>3600</td>
+          <td>Stale room auto-delete (seconds)</td>
+      </tr>
+      <tr>
+          <td><code>DS_HEARTBEAT_TIMEOUT_SEC</code></td>
+          <td>20</td>
+          <td>Seconds before room marked error</td>
+      </tr>
+      <tr>
+          <td><code>DS_HEARTBEAT_INTERVAL_SEC</code></td>
+          <td>5</td>
+          <td>DS heartbeat frequency (seconds)</td>
+      </tr>
+      <tr>
+          <td><code>DS_EMPTY_SHUTDOWN_GRACE_SEC</code></td>
+          <td>10</td>
+          <td>Idle seconds before DS auto-quits</td>
+      </tr>
+      <tr>
+          <td><code>SERVER_VIEW</code></td>
+          <td>True</td>
+          <td>Show spectator window on DS</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="runtime-debug-toggles">
+  Runtime Debug Toggles
+  <a href="#runtime-debug-toggles" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The <strong>NetworkFeaturesController</strong> provides runtime toggles accessible during gameplay:</p>
+<ul>
+<li><strong>Prediction On/Off</strong> — Enable or disable client-side prediction</li>
+<li><strong>Interpolation On/Off</strong> — Enable or disable snapshot interpolation</li>
+</ul>
+<p>These are useful for debugging network behavior and measuring the impact of prediction/interpolation on gameplay feel.</p>
+<hr>
+<h2 id="key-scripts-reference">
+  Key Scripts Reference
+  <a href="#key-scripts-reference" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<h3 id="network-api-sdk-network-api">
+  Network API SDK (network-api)
+  <a href="#network-api-sdk-network-api" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>LobbyClient</td>
+          <td>REST wrapper for lobby endpoints</td>
+      </tr>
+      <tr>
+          <td>LobbySession</td>
+          <td>Stateful session manager (create/join/start/poll)</td>
+      </tr>
+      <tr>
+          <td>DsLifecycleReporter</td>
+          <td>DS→Lobby REST client (heartbeat, started, ended)</td>
+      </tr>
+      <tr>
+          <td>DsLifecycleController</td>
+          <td>DS lifecycle state machine</td>
+      </tr>
+      <tr>
+          <td>SharedModels</td>
+          <td>Request/response models and validators</td>
+      </tr>
+      <tr>
+          <td>lobby.py</td>
+          <td>FastAPI lobby server with DS process management</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="unity-game-scripts">
+  Unity Game Scripts
+  <a href="#unity-game-scripts" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Script</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>SimpleLobbyManager.cs</td>
+          <td>Lobby UI integration, connection approval</td>
+      </tr>
+      <tr>
+          <td>DedicatedServerLifecycle.cs</td>
+          <td>DS heartbeat, idle shutdown, lobby reporting</td>
+      </tr>
+      <tr>
+          <td>RelayManager.cs</td>
+          <td>Unity Relay / LAN direct mode toggle</td>
+      </tr>
+      <tr>
+          <td>NetworkLatencyUI.cs</td>
+          <td>RTT measurement via ping/pong RPCs</td>
+      </tr>
+      <tr>
+          <td>hockeyctr.cs</td>
+          <td>Ball authority, prediction, reconciliation, snapshots</td>
+      </tr>
+      <tr>
+          <td>CircleController.cs</td>
+          <td>Paddle collision, hit velocity, display name sync</td>
+      </tr>
+      <tr>
+          <td>HockeyNetworkTransform.cs</td>
+          <td>NetworkTransform extension for ball callbacks</td>
+      </tr>
+      <tr>
+          <td>GameManager.cs</td>
+          <td>Match lifecycle, scores, timer, mode sync</td>
+      </tr>
+      <tr>
+          <td>PaddleSpawnBridge.cs</td>
+          <td>Server-authoritative paddle spawn/despawn RPCs</td>
+      </tr>
+      <tr>
+          <td>NetworkedCircleController.cs</td>
+          <td>Abstract base for paddle position sources</td>
+      </tr>
+      <tr>
+          <td>PositionSimulator.cs</td>
+          <td>Mouse-based paddle input (testing)</td>
+      </tr>
+      <tr>
+          <td>PosMessageNetworked.cs</td>
+          <td>ROS-based paddle input (production)</td>
+      </tr>
+      <tr>
+          <td>NetworkFeaturesController.cs</td>
+          <td>Runtime prediction/interpolation toggles</td>
+      </tr>
+      <tr>
+          <td>TraceSession.cs</td>
+          <td>Trace recording/replay session manager</td>
+      </tr>
+      <tr>
+          <td>TraceRecorder.cs</td>
+          <td>Writes trace commands to CSV</td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="http://localhost:1313/posts/materials/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Materials</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="http://localhost:1313/posts/player-detection-script/">
+                  <span class="button__text">Player Detection Code</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </article>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/posts/home/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >airplay wiki</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2026 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span><a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+      
+    </div>
+
+  </body>
+</html>

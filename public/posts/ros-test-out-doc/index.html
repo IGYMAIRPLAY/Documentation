@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+      <title>
+        unity-networking Documentation ::
+        AiRPlay Wiki
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Introduction#Welcome to the unity-networking documentation! This is the repository for the Unity part of the iGYM system. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.
+"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/posts/ros-test-out-doc/" />
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.css" />
+
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
+
+
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="unity-networking Documentation">
+  <meta name="twitter:description" content="Introduction#Welcome to the unity-networking documentation! This is the repository for the Unity part of the iGYM system. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.">
+
+
+
+<meta property="og:url" content="http://localhost:1313/posts/ros-test-out-doc/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="unity-networking Documentation">
+  <meta property="og:description" content="Introduction#Welcome to the unity-networking documentation! This is the repository for the Unity part of the iGYM system. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/posts/home/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >airplay wiki</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <article class="post">
+    <h1 class="post-title">unity-networking Documentation</h1>
+    <div class="post-meta">
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <h2 id="introduction">
+  Introduction
+  <a href="#introduction" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Welcome to the unity-networking documentation! This is the repository for the Unity part of the <a href="https://www.igym.solutions/">iGYM system</a>. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.</p>
+<p>The game uses <strong>Unity Netcode for GameObjects (NGO)</strong> for multiplayer networking with a <strong>dedicated server architecture</strong>. A Python FastAPI lobby server (see <a href="/posts/networking/">network-api</a>) handles matchmaking, room management, and dedicated server process orchestration.</p>
+<p>Currently implemented:</p>
+<ul>
+<li><a href="/posts/airhockey/">Air Hockey</a> — Fully networked with dedicated server, client prediction, and server reconciliation</li>
+<li><a href="/posts/shapecatcher/">Shape Catcher</a> — Legacy single-machine mode (not yet networked)</li>
+</ul>
+<h2 id="system-requirements">
+  System Requirements
+  <a href="#system-requirements" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<ul>
+<li>Unity (with Netcode for GameObjects package)</li>
+<li>Windows 10/11</li>
+<li>Python 3.8+ (for lobby server)</li>
+</ul>
+<h2 id="development">
+  Development
+  <a href="#development" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<h3 id="branches">
+  Branches
+  <a href="#branches" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><strong>dedicated-server</strong>: The primary development branch with full networking support (dedicated server, lobby integration, client prediction, interpolation)</li>
+</ul>
+<h3 id="architecture">
+  Architecture
+  <a href="#architecture" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The system separates networking into two planes:</p>
+<ul>
+<li><strong>Control Plane</strong>: REST API lobby server (Python FastAPI) for matchmaking and DS orchestration</li>
+<li><strong>Game Plane</strong>: Unity Netcode for GameObjects for real-time gameplay</li>
+</ul>
+<p>See the <a href="/posts/networking/">Networking Architecture</a> page for full details on:</p>
+<ul>
+<li>Lobby system endpoints and room lifecycle</li>
+<li>Dedicated server spawning and lifecycle management</li>
+<li>Connection approval and token authentication</li>
+<li>Client-side prediction and server reconciliation</li>
+<li>Snapshot interpolation</li>
+<li>State machine diagrams</li>
+</ul>
+<h3 id="game-structure">
+  Game Structure
+  <a href="#game-structure" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><a href="/posts/tutorialscenes/">Tutorial scenes</a></li>
+<li><a href="/posts/gamescene/">Game scene</a></li>
+</ul>
+<h3 id="folder-structure">
+  Folder Structure
+  <a href="#folder-structure" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><a href="/posts/materials/">Materials</a></li>
+<li><a href="/posts/prefabs/">Prefabs</a></li>
+<li><a href="/posts/resources/">Resources</a></li>
+<li><a href="/posts/rosmessages/">RosMessages</a></li>
+<li><a href="/posts/scenes/">Scenes</a></li>
+<li><a href="/posts/folderstructure/">Scripts</a></li>
+</ul>
+<h3 id="networking--configuration">
+  Networking &amp; Configuration
+  <a href="#networking--configuration" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><a href="/posts/networking/">Networking Architecture</a> — Complete networking documentation with state machines</li>
+<li><a href="/posts/parameters/">Tunable Parameters</a> — All configurable parameters across every script, with default values and descriptions</li>
+</ul>
+<h3 id="latency--diagnostics">
+  Latency &amp; Diagnostics
+  <a href="#latency--diagnostics" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><strong>RTT Measurement</strong>: Ping/pong RPC-based, updated every 1 second via <code>NetworkLatencyUI.CurrentRTT</code></li>
+<li><strong>Hit Position Discrepancy</strong> <code>[HIT_POS_DISC]</code>: Logs visual vs. true position gap at hit time</li>
+<li><strong>Raw Position Delta</strong> <code>[RAW_TRUE_POS_DELTA]</code>: Per-server-update position delta with tick gaps</li>
+<li><strong>Aggregate Stats</strong> <code>[TRUE_POS_DELTA]</code>: Max deltas and buffer stats between RTT updates</li>
+<li>All metrics include ISO 8601 UTC timestamps, monotonic timer, RTT, and tick information</li>
+</ul>
+<h3 id="trace-recording--replay">
+  Trace Recording &amp; Replay
+  <a href="#trace-recording--replay" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><strong>F7</strong> = Start recording, <strong>F8</strong> = Replay, <strong>F6</strong> = Off</li>
+<li>Records per-tick: paddle positions, hit info (ID, velocity), ball resets</li>
+<li>Stored as CSV for deterministic replay and post-session analysis</li>
+<li>Useful for debugging network issues or analyzing player behavior</li>
+</ul>
+<h3 id="tutorial-implementation">
+  Tutorial Implementation
+  <a href="#tutorial-implementation" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><strong>Interactable</strong>: These are the objects that the user interacts with throughout the tutorial, like buttons or tasks</li>
+<li><strong>Interactable Object</strong>: These are the GameObjects that hold onto an Interactable to be found by the Tutorial Manager and enabled/disabled as necessary</li>
+<li><strong>Scene Object</strong>: These are the Scriptable Objects that contain all of the information about a particular &lsquo;scene&rsquo;. They hold lists of all of the Interactables that need to be enabled or disabled, what the background image needs to be, and what the next &lsquo;scene&rsquo; will be after a particular Interactable Object has been selected.</li>
+<li><strong>Tutorial Manager</strong>: This is the script that reads in all of the Interactable Objects and performs the operations outlined by the Scene Object. It does this via EventBus (Pub/Sub) events being published and methods being called via UnityEvents on the Interactable Objects.</li>
+<li><strong>Canvas Manager</strong>: Currently just controls the setting of the image that the Tutorial Manager gets from the current Scene Object. This is done via EventBus with the Tutorial Manager publishing an UpdateImageEvent for the Canvas to respond to.</li>
+</ul>
+<h2 id="contact">
+  Contact
+  <a href="#contact" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p><a href="mailto:helloigym@umich.edu">helloigym@umich.edu</a></p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="http://localhost:1313/posts/tutorialscenes/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Tutorial Scenes</span>
+                </a>
+              </span>
+            
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </article>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/posts/home/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >airplay wiki</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2026 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span><a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+      
+    </div>
+
+  </body>
+</html>

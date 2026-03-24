@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         Game Scene ::
-        AiRPlay Wiki — A simple theme for Hugo
+        AiRPlay Wiki
       </title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content=" Scene Objects # Cameras Calibrates camera position Left Camera - displays the left side of the field Right Camera - displays the right side of the field Controller Reads position and updates player peripersonal boundary Handles kick button logic Field Draws field lines using LineRenderer Canvas Displays UI including timer and score AudioManager Handles audio logic including: Boundary Goal Win Start GameManager Handles game logic Starts up Unity-ROS connection and runs player detection code "
+  content="Scene Objects#Networking#NetworkManager Unity Netcode for GameObjects NetworkManager component Configured with UnityTransport (UDP) Handles connection approval, player spawning, and tick synchronization (30 Hz) SimpleLobbyManager Manages lobby UI and HTTP communication with the FastAPI lobby server Handles room creation, joining, starting, and connection approval token validation DedicatedServerLifecycle Present on dedicated server instances only Manages heartbeat to lobby, idle shutdown, and graceful termination Cameras#Calibrates camera position for projector display Left Camera - displays the left side of the field Right Camera - displays the right side of the field Paddles (CircleController)#Client-owned NetworkObjects representing player paddles Reads position from either mouse input (PositionSimulator) or ROS/CV (PosMessageNetworked) Handles collision detection with ball and hit velocity calculation Display name synced via NetworkVariable Ball (hockeyctr)#Server-authoritative Rigidbody2D physics simulation Position synced via HockeyNetworkTransform at 30 ticks/sec Clients use snapshot interpolation for smooth rendering Hit-applying clients use client-side prediction with reconciliation Field#Draws field lines using LineRenderer Canvas#Displays UI including timer, scores, and game mode Score and timer values driven by NetworkVariables from server Lobby UI panels for room browsing, creation, and player list AudioManager#Handles audio logic including: Boundary hit Goal scored Win celebration Game start GameManager#Networked match lifecycle controller Syncs game state via NetworkVariables: isRunning, syncedTime, syncedMode, syncedScoreLeft, syncedScoreRight Server-only write permission on all game state Tracks room owner client ID for permission checks "
 />
 <meta
   name="keywords"
   content=""
 />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://airplay-wiki.netlify.app/posts/gamescene/" />
+<link rel="canonical" href="http://localhost:1313/posts/gamescene/" />
 
 
 
@@ -28,11 +28,11 @@
 
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://airplay-wiki.netlify.app/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://airplay-wiki.netlify.app/img/apple-touch-icon-144-precomposed.png" />
-<link rel="shortcut icon" href="https://airplay-wiki.netlify.app/img/favicon.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
 
 
 <link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
@@ -43,18 +43,20 @@
 <link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Game Scene"/>
-<meta name="twitter:description" content=" Scene Objects # Cameras Calibrates camera position Left Camera - displays the left side of the field Right Camera - displays the right side of the field Controller Reads position and updates player peripersonal boundary Handles kick button logic Field Draws field lines using LineRenderer Canvas Displays UI including timer and score AudioManager Handles audio logic including: Boundary Goal Win Start GameManager Handles game logic Starts up Unity-ROS connection and runs player detection code "/>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Game Scene">
+  <meta name="twitter:description" content="Scene Objects#Networking#NetworkManager Unity Netcode for GameObjects NetworkManager component Configured with UnityTransport (UDP) Handles connection approval, player spawning, and tick synchronization (30 Hz) SimpleLobbyManager Manages lobby UI and HTTP communication with the FastAPI lobby server Handles room creation, joining, starting, and connection approval token validation DedicatedServerLifecycle Present on dedicated server instances only Manages heartbeat to lobby, idle shutdown, and graceful termination Cameras#Calibrates camera position for projector display Left Camera - displays the left side of the field Right Camera - displays the right side of the field Paddles (CircleController)#Client-owned NetworkObjects representing player paddles Reads position from either mouse input (PositionSimulator) or ROS/CV (PosMessageNetworked) Handles collision detection with ball and hit velocity calculation Display name synced via NetworkVariable Ball (hockeyctr)#Server-authoritative Rigidbody2D physics simulation Position synced via HockeyNetworkTransform at 30 ticks/sec Clients use snapshot interpolation for smooth rendering Hit-applying clients use client-side prediction with reconciliation Field#Draws field lines using LineRenderer Canvas#Displays UI including timer, scores, and game mode Score and timer values driven by NetworkVariables from server Lobby UI panels for room browsing, creation, and player list AudioManager#Handles audio logic including: Boundary hit Goal scored Win celebration Game start GameManager#Networked match lifecycle controller Syncs game state via NetworkVariables: isRunning, syncedTime, syncedMode, syncedScoreLeft, syncedScoreRight Server-only write permission on all game state Tracks room owner client ID for permission checks">
 
 
 
-<meta property="og:title" content="Game Scene" />
-<meta property="og:description" content=" Scene Objects # Cameras Calibrates camera position Left Camera - displays the left side of the field Right Camera - displays the right side of the field Controller Reads position and updates player peripersonal boundary Handles kick button logic Field Draws field lines using LineRenderer Canvas Displays UI including timer and score AudioManager Handles audio logic including: Boundary Goal Win Start GameManager Handles game logic Starts up Unity-ROS connection and runs player detection code " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://airplay-wiki.netlify.app/posts/gamescene/" /><meta property="article:section" content="posts" />
-
-
+<meta property="og:url" content="http://localhost:1313/posts/gamescene/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="Game Scene">
+  <meta property="og:description" content="Scene Objects#Networking#NetworkManager Unity Netcode for GameObjects NetworkManager component Configured with UnityTransport (UDP) Handles connection approval, player spawning, and tick synchronization (30 Hz) SimpleLobbyManager Manages lobby UI and HTTP communication with the FastAPI lobby server Handles room creation, joining, starting, and connection approval token validation DedicatedServerLifecycle Present on dedicated server instances only Manages heartbeat to lobby, idle shutdown, and graceful termination Cameras#Calibrates camera position for projector display Left Camera - displays the left side of the field Right Camera - displays the right side of the field Paddles (CircleController)#Client-owned NetworkObjects representing player paddles Reads position from either mouse input (PositionSimulator) or ROS/CV (PosMessageNetworked) Handles collision detection with ball and hit velocity calculation Display name synced via NetworkVariable Ball (hockeyctr)#Server-authoritative Rigidbody2D physics simulation Position synced via HockeyNetworkTransform at 30 ticks/sec Clients use snapshot interpolation for smooth rendering Hit-applying clients use client-side prediction with reconciliation Field#Draws field lines using LineRenderer Canvas#Displays UI including timer, scores, and game mode Score and timer values driven by NetworkVariables from server Lobby UI panels for room browsing, creation, and player list AudioManager#Handles audio logic including: Boundary hit Goal scored Win celebration Game start GameManager#Networked match lifecycle controller Syncs game state via NetworkVariables: isRunning, syncedTime, syncedMode, syncedScoreLeft, syncedScoreRight Server-only write permission on all game state Tracks room owner client ID for permission checks">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
 
 
 
@@ -133,50 +135,99 @@
   Scene Objects
   <a href="#scene-objects" class="h-anchor" aria-hidden="true">#</a>
 </h2>
+<h3 id="networking">
+  Networking
+  <a href="#networking" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <ul>
-<li>Cameras
+<li><strong>NetworkManager</strong>
 <ul>
-<li>Calibrates camera position</li>
-<li>Left Camera - displays the left side of the field
-<img src="/gamescene_pic1.png" alt="Left Camera"></li>
-<li>Right Camera - displays the right side of the field
-<img src="/gamescene_pic2.png" alt="Right Camera"></li>
+<li>Unity Netcode for GameObjects NetworkManager component</li>
+<li>Configured with UnityTransport (UDP)</li>
+<li>Handles connection approval, player spawning, and tick synchronization (30 Hz)</li>
 </ul>
 </li>
-<li>Controller
+<li><strong>SimpleLobbyManager</strong>
 <ul>
-<li>Reads position and updates player peripersonal boundary</li>
-<li>Handles kick button logic</li>
+<li>Manages lobby UI and HTTP communication with the FastAPI lobby server</li>
+<li>Handles room creation, joining, starting, and connection approval token validation</li>
 </ul>
 </li>
-<li>Field
+<li><strong>DedicatedServerLifecycle</strong>
+<ul>
+<li>Present on dedicated server instances only</li>
+<li>Manages heartbeat to lobby, idle shutdown, and graceful termination</li>
+</ul>
+</li>
+</ul>
+<h3 id="cameras">
+  Cameras
+  <a href="#cameras" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li>Calibrates camera position for projector display</li>
+<li>Left Camera - displays the left side of the field</li>
+<li>Right Camera - displays the right side of the field</li>
+</ul>
+<h3 id="paddles-circlecontroller">
+  Paddles (CircleController)
+  <a href="#paddles-circlecontroller" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li>Client-owned NetworkObjects representing player paddles</li>
+<li>Reads position from either mouse input (PositionSimulator) or ROS/CV (PosMessageNetworked)</li>
+<li>Handles collision detection with ball and hit velocity calculation</li>
+<li>Display name synced via NetworkVariable</li>
+</ul>
+<h3 id="ball-hockeyctr">
+  Ball (hockeyctr)
+  <a href="#ball-hockeyctr" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li>Server-authoritative Rigidbody2D physics simulation</li>
+<li>Position synced via HockeyNetworkTransform at 30 ticks/sec</li>
+<li>Clients use snapshot interpolation for smooth rendering</li>
+<li>Hit-applying clients use client-side prediction with reconciliation</li>
+</ul>
+<h3 id="field">
+  Field
+  <a href="#field" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <ul>
 <li>Draws field lines using LineRenderer</li>
 </ul>
-</li>
-<li>Canvas
+<h3 id="canvas">
+  Canvas
+  <a href="#canvas" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <ul>
-<li>Displays UI including timer and score</li>
+<li>Displays UI including timer, scores, and game mode</li>
+<li>Score and timer values driven by NetworkVariables from server</li>
+<li>Lobby UI panels for room browsing, creation, and player list</li>
 </ul>
-</li>
-<li>AudioManager
+<h3 id="audiomanager">
+  AudioManager
+  <a href="#audiomanager" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <ul>
 <li>Handles audio logic including:
 <ul>
-<li>Boundary</li>
-<li>Goal</li>
-<li>Win</li>
-<li>Start</li>
+<li>Boundary hit</li>
+<li>Goal scored</li>
+<li>Win celebration</li>
+<li>Game start</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>GameManager
+<h3 id="gamemanager">
+  GameManager
+  <a href="#gamemanager" class="h-anchor" aria-hidden="true">#</a>
+</h3>
 <ul>
-<li>Handles game logic</li>
-<li>Starts up Unity-ROS connection and runs player detection code</li>
-</ul>
-</li>
+<li>Networked match lifecycle controller</li>
+<li>Syncs game state via NetworkVariables: isRunning, syncedTime, syncedMode, syncedScoreLeft, syncedScoreRight</li>
+<li>Server-only write permission on all game state</li>
+<li>Tracks room owner client ID for permission checks</li>
 </ul>
 
     </div>
@@ -192,15 +243,15 @@
           <div class="pagination__buttons">
             
               <span class="button previous">
-                <a href="https://airplay-wiki.netlify.app/posts/airhockey/">
+                <a href="http://localhost:1313/posts/button-script/">
                   <span class="button__icon">←</span>
-                  <span class="button__text">Air Hockey</span>
+                  <span class="button__text">Button Script</span>
                 </a>
               </span>
             
             
               <span class="button next">
-                <a href="https://airplay-wiki.netlify.app/posts/home/">
+                <a href="http://localhost:1313/posts/home/">
                   <span class="button__text">Home</span>
                   <span class="button__icon">→</span>
                 </a>
@@ -243,7 +294,7 @@
 </a>
 
       <div class="copyright">
-        <span>© 2023 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>© 2026 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
         <span><a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
       </div>
     
@@ -260,6 +311,5 @@
       
     </div>
 
-    
   </body>
 </html>

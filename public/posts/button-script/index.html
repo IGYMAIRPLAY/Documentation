@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+      <title>
+        Button Script ::
+        AiRPlay Wiki
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content=" Note: The kick button system has not been used in a long time and is untested with the current networking architecture. This documentation is preserved for reference but the feature should be considered unsupported until verified.
+button.cpp#The button node handles Bluetooth Low Energy (BLE) wireless kick controller input for the iGYM system.
+How It Works#The node scans for and connects to SimpleBLE devices (2 BLE clickers identified by MAC address). It reads button press state from a specific BLE characteristic and publishes the state to the kick_size topic.
+"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/posts/button-script/" />
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.css" />
+
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
+
+
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Button Script">
+  <meta name="twitter:description" content="Note: The kick button system has not been used in a long time and is untested with the current networking architecture. This documentation is preserved for reference but the feature should be considered unsupported until verified.
+button.cpp#The button node handles Bluetooth Low Energy (BLE) wireless kick controller input for the iGYM system.
+How It Works#The node scans for and connects to SimpleBLE devices (2 BLE clickers identified by MAC address). It reads button press state from a specific BLE characteristic and publishes the state to the kick_size topic.">
+
+
+
+<meta property="og:url" content="http://localhost:1313/posts/button-script/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="Button Script">
+  <meta property="og:description" content="Note: The kick button system has not been used in a long time and is untested with the current networking architecture. This documentation is preserved for reference but the feature should be considered unsupported until verified.
+button.cpp#The button node handles Bluetooth Low Energy (BLE) wireless kick controller input for the iGYM system.
+How It Works#The node scans for and connects to SimpleBLE devices (2 BLE clickers identified by MAC address). It reads button press state from a specific BLE characteristic and publishes the state to the kick_size topic.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/posts/home/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >airplay wiki</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <article class="post">
+    <h1 class="post-title">Button Script</h1>
+    <div class="post-meta">
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <blockquote>
+<p><strong>Note:</strong> The kick button system has not been used in a long time and is untested with the current networking architecture. This documentation is preserved for reference but the feature should be considered unsupported until verified.</p>
+</blockquote>
+<h2 id="buttoncpp">
+  button.cpp
+  <a href="#buttoncpp" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The button node handles Bluetooth Low Energy (BLE) wireless kick controller input for the iGYM system.</p>
+<h3 id="how-it-works">
+  How It Works
+  <a href="#how-it-works" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>The node scans for and connects to SimpleBLE devices (2 BLE clickers identified by MAC address). It reads button press state from a specific BLE characteristic and publishes the state to the <code>kick_size</code> topic.</p>
+<h3 id="multi-threaded-architecture">
+  Multi-Threaded Architecture
+  <a href="#multi-threaded-architecture" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Thread</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Kick Control Thread</strong></td>
+          <td>Reads button state from BLE devices every 10ms</td>
+      </tr>
+      <tr>
+          <td><strong>Publisher Thread</strong></td>
+          <td>Publishes button states at ~60Hz (16.67ms timer)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="ble-configuration">
+  BLE Configuration
+  <a href="#ble-configuration" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><strong>Library</strong>: SimpleBLE</li>
+<li><strong>BLE Characteristic UUID</strong>: <code>beb5483e-36e1-4688-b7f5-ea07361b26a8</code></li>
+<li><strong>Devices</strong>: 2 BLE clickers connected by MAC address</li>
+<li>Players must press the button on startup of the game for successful BLE connection</li>
+</ul>
+<h3 id="published-topic">
+  Published Topic
+  <a href="#published-topic" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p><strong><code>kick_size</code></strong> (message type: <code>ap_interfaces/Button</code>):</p>
+<ul>
+<li><code>kick[32]</code> — Boolean array of button states for up to 32 players</li>
+</ul>
+<h3 id="subscribed-topic">
+  Subscribed Topic
+  <a href="#subscribed-topic" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p><strong><code>control</code></strong> (<code>std_msgs/String</code>): Control messages for configuring the button node at runtime.</p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="http://localhost:1313/posts/frontend/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">airplay-frontend Documentation</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="http://localhost:1313/posts/gamescene/">
+                  <span class="button__text">Game Scene</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </article>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/posts/home/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >airplay wiki</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2026 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span><a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+      
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<pre class="mermaid">
+  {{- .Inner | safeHTML }}
+</pre>
+
+{{ if not (.Page.Scratch.Get "mermaid") }}
+  {{ .Page.Scratch.Set "mermaid" true }}
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark',
+      themeVariables: {
+        darkMode: true,
+        background: '#1a1a1a',
+        primaryColor: '#3b82f6',
+        primaryTextColor: '#f0f0f0',
+        primaryBorderColor: '#60a5fa',
+        lineColor: '#9ca3af',
+        secondaryColor: '#1e293b',
+        tertiaryColor: '#0f172a'
+      }
+    });
+  </script>
+{{ end }}

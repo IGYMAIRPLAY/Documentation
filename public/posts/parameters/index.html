@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+      <title>
+        Tunable Parameters ::
+        AiRPlay Wiki
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Every configurable parameter in the iGYM system, grouped by what they affect. Inspector = editable in Unity Inspector. Static = global flag set at runtime.
+Ball Physics &amp; Difficulty#In gameMgr.cs, applied by ApplyMode() when the server syncs syncedMode.
+Per-Mode Values#Mode ballSpeed ballRadius goalSize friction Easy (0) 0.15 4.0 2215 0.4 Medium (1) 0.50 2.0 2211 0.4 Hard (2) 0.75 1.0 2200 0.4 goalSize encodes four values: 1000×leftGoal &#43; 100×leftExpansion &#43; 10×rightGoal &#43; rightExpansion.
+"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/posts/parameters/" />
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.css" />
+
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
+
+
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tunable Parameters">
+  <meta name="twitter:description" content="Every configurable parameter in the iGYM system, grouped by what they affect. Inspector = editable in Unity Inspector. Static = global flag set at runtime.
+Ball Physics &amp; Difficulty#In gameMgr.cs, applied by ApplyMode() when the server syncs syncedMode.
+Per-Mode Values#Mode ballSpeed ballRadius goalSize friction Easy (0) 0.15 4.0 2215 0.4 Medium (1) 0.50 2.0 2211 0.4 Hard (2) 0.75 1.0 2200 0.4 goalSize encodes four values: 1000×leftGoal &#43; 100×leftExpansion &#43; 10×rightGoal &#43; rightExpansion.">
+
+
+
+<meta property="og:url" content="http://localhost:1313/posts/parameters/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="Tunable Parameters">
+  <meta property="og:description" content="Every configurable parameter in the iGYM system, grouped by what they affect. Inspector = editable in Unity Inspector. Static = global flag set at runtime.
+Ball Physics &amp; Difficulty#In gameMgr.cs, applied by ApplyMode() when the server syncs syncedMode.
+Per-Mode Values#Mode ballSpeed ballRadius goalSize friction Easy (0) 0.15 4.0 2215 0.4 Medium (1) 0.50 2.0 2211 0.4 Hard (2) 0.75 1.0 2200 0.4 goalSize encodes four values: 1000×leftGoal &#43; 100×leftExpansion &#43; 10×rightGoal &#43; rightExpansion.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/posts/home/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >airplay wiki</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <article class="post">
+    <h1 class="post-title">Tunable Parameters</h1>
+    <div class="post-meta">
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>Every configurable parameter in the iGYM system, grouped by what they affect. <strong>Inspector</strong> = editable in Unity Inspector. <strong>Static</strong> = global flag set at runtime.</p>
+<hr>
+<h2 id="ball-physics--difficulty">
+  Ball Physics &amp; Difficulty
+  <a href="#ball-physics--difficulty" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>In <code>gameMgr.cs</code>, applied by <code>ApplyMode()</code> when the server syncs <code>syncedMode</code>.</p>
+<h3 id="per-mode-values">
+  Per-Mode Values
+  <a href="#per-mode-values" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Mode</th>
+          <th><code>ballSpeed</code></th>
+          <th><code>ballRadius</code></th>
+          <th><code>goalSize</code></th>
+          <th><code>friction</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Easy (0)</td>
+          <td><code>0.15</code></td>
+          <td><code>4.0</code></td>
+          <td><code>2215</code></td>
+          <td><code>0.4</code></td>
+      </tr>
+      <tr>
+          <td>Medium (1)</td>
+          <td><code>0.50</code></td>
+          <td><code>2.0</code></td>
+          <td><code>2211</code></td>
+          <td><code>0.4</code></td>
+      </tr>
+      <tr>
+          <td>Hard (2)</td>
+          <td><code>0.75</code></td>
+          <td><code>1.0</code></td>
+          <td><code>2200</code></td>
+          <td><code>0.4</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><code>goalSize</code> encodes four values: <code>1000×leftGoal + 100×leftExpansion + 10×rightGoal + rightExpansion</code>.</p>
+<h3 id="additional-physics-parameters">
+  Additional Physics Parameters
+  <a href="#additional-physics-parameters" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p><strong><code>hockeyctr.cs</code></strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>kickFactor</code></td>
+          <td><code>1.0</code></td>
+          <td>Yes</td>
+          <td>Global multiplier on kick velocity</td>
+      </tr>
+      <tr>
+          <td><code>startpoint</code></td>
+          <td>Scene-set</td>
+          <td>Yes</td>
+          <td>Ball spawn position on reset</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong><code>gameMgr.cs</code></strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>buttonSpeed</code></td>
+          <td><code>1.0</code></td>
+          <td>No</td>
+          <td>Speed multiplier for button kicks</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong><code>PlayerControl.cs</code></strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>kickForce</code></td>
+          <td><code>10.0</code></td>
+          <td>Yes</td>
+          <td>Base kick force magnitude</td>
+      </tr>
+      <tr>
+          <td><code>kickFactorPreset</code></td>
+          <td><code>[1.0, 2.0]</code></td>
+          <td>Yes</td>
+          <td>Per-preset kick multipliers</td>
+      </tr>
+      <tr>
+          <td><code>localScalePreset</code></td>
+          <td><code>[0.7×, 1.0×]</code></td>
+          <td>Yes</td>
+          <td>Paddle scale per preset</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="client-side-prediction">
+  Client-Side Prediction
+  <a href="#client-side-prediction" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>All in <code>hockeyctr.cs</code>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>reconcileSnapThreshold</code></td>
+          <td><code>0.05</code> units</td>
+          <td>Yes</td>
+          <td>Snap to authority below this distance</td>
+      </tr>
+      <tr>
+          <td><code>reconcileHalfLifeSec</code></td>
+          <td><code>0.08</code> s</td>
+          <td>Yes</td>
+          <td>Exponential blend rate during reconciliation</td>
+      </tr>
+      <tr>
+          <td><code>reconcileMaxSpeed</code></td>
+          <td><code>20.0</code> units/s</td>
+          <td>Yes</td>
+          <td>Max correction speed toward authority</td>
+      </tr>
+      <tr>
+          <td><code>showPredictionColors</code></td>
+          <td><code>false</code></td>
+          <td>Yes</td>
+          <td>Tints ball by visual state for debugging</td>
+      </tr>
+      <tr>
+          <td><code>debugmode</code></td>
+          <td><code>false</code></td>
+          <td>Yes</td>
+          <td>Enables debug overlay visualizations</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="snapshot-interpolation">
+  Snapshot Interpolation
+  <a href="#snapshot-interpolation" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>All in <code>hockeyctr.cs</code>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>minRenderDelaySec</code></td>
+          <td><code>0.020</code> s</td>
+          <td>Yes</td>
+          <td>Minimum adaptive render delay</td>
+      </tr>
+      <tr>
+          <td><code>maxRenderDelaySec</code></td>
+          <td><code>0.250</code> s</td>
+          <td>Yes</td>
+          <td>Maximum adaptive render delay</td>
+      </tr>
+      <tr>
+          <td><code>renderDelaySmoothSec</code></td>
+          <td><code>0.300</code> s</td>
+          <td>Yes</td>
+          <td>How slowly render delay adapts to jitter</td>
+      </tr>
+      <tr>
+          <td><code>discSameEpsilon</code></td>
+          <td><code>0.0005</code></td>
+          <td>Yes</td>
+          <td>Epsilon for position discrepancy logging</td>
+      </tr>
+      <tr>
+          <td><code>MaxBufferCapacity</code></td>
+          <td><code>128</code></td>
+          <td>No (const)</td>
+          <td>Max snapshots in the circular buffer</td>
+      </tr>
+  </tbody>
+</table>
+<p>Adaptive delay formula: <code>oneWayRtt × 0.35 + jitterEWMA × 0.5 + skippedTicksPenalty</code>, clamped to <code>[min, max]</code>.</p>
+<hr>
+<h2 id="network-simulation-testing">
+  Network Simulation (Testing)
+  <a href="#network-simulation-testing" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>In <code>NetDelaySlider.cs</code>. Simulates bad network conditions without a real WAN link.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>delayMsSlider</code></td>
+          <td>UI-driven</td>
+          <td>Yes</td>
+          <td>Artificial one-way packet delay (ms)</td>
+      </tr>
+      <tr>
+          <td><code>jitterMsSlider</code></td>
+          <td>UI-driven</td>
+          <td>Yes</td>
+          <td>Random jitter around the delay (ms)</td>
+      </tr>
+      <tr>
+          <td><code>lossPercentSlider</code></td>
+          <td>UI-driven</td>
+          <td>Yes</td>
+          <td>Simulated packet loss (%)</td>
+      </tr>
+      <tr>
+          <td><code>delaySeconds</code></td>
+          <td><code>5.0</code> s</td>
+          <td>Yes</td>
+          <td>Delay before simulator activates at startup</td>
+      </tr>
+      <tr>
+          <td><code>stepMs</code></td>
+          <td><code>10</code> ms</td>
+          <td>No</td>
+          <td>Step size for keyboard slider adjustment</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="rtt-measurement">
+  RTT Measurement
+  <a href="#rtt-measurement" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>In <code>NetworkLatencyUI.cs</code>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>pingInterval</code></td>
+          <td><code>1.0</code> s</td>
+          <td>Yes</td>
+          <td>How often ping/pong RPC is measured</td>
+      </tr>
+      <tr>
+          <td><code>CurrentRTT</code> (static)</td>
+          <td><code>50.0</code> ms</td>
+          <td>No</td>
+          <td>Current round-trip time in ms; read globally</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="game-rules--timer">
+  Game Rules &amp; Timer
+  <a href="#game-rules--timer" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>In <code>GameManager.cs</code>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>totalTime</code></td>
+          <td>Scene-set</td>
+          <td>Yes</td>
+          <td>Total match duration in seconds</td>
+      </tr>
+      <tr>
+          <td><code>timeRemaining</code></td>
+          <td><code>= totalTime</code></td>
+          <td>Yes</td>
+          <td>Countdown; synced via <code>syncedTime</code> NetworkVariable</td>
+      </tr>
+      <tr>
+          <td><code>syncedMode</code></td>
+          <td><code>1</code> (Medium)</td>
+          <td>No</td>
+          <td>Difficulty pushed from server: 0=Easy, 1=Medium, 2=Hard</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="runtime-feature-flags">
+  Runtime Feature Flags
+  <a href="#runtime-feature-flags" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>In <code>NetworkFeaturesController.cs</code>. Global static flags toggled via UI at runtime.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Flag</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>isInterpolationEnabled</code></td>
+          <td><code>true</code></td>
+          <td>When false, clients jump directly to server positions</td>
+      </tr>
+      <tr>
+          <td><code>isPredictionEnabled</code></td>
+          <td><code>true</code></td>
+          <td>When false, clients wait for server before moving ball</td>
+      </tr>
+      <tr>
+          <td><code>isDebugModeEnabled</code></td>
+          <td><code>true</code></td>
+          <td>Controls debug visualization across the game</td>
+      </tr>
+  </tbody>
+</table>
+<p>Toggle from code: <code>NetworkFeaturesController.isInterpolationEnabled = false</code>.</p>
+<hr>
+<h2 id="lobby--connection">
+  Lobby &amp; Connection
+  <a href="#lobby--connection" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>In <code>SimpleLobbyManager.cs</code>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>lobbyBaseUrl</code></td>
+          <td><code>http://127.0.0.1:8080</code></td>
+          <td>Yes</td>
+          <td>FastAPI lobby server URL</td>
+      </tr>
+      <tr>
+          <td><code>dedicatedServerPort</code></td>
+          <td><code>7777</code></td>
+          <td>Yes</td>
+          <td>DS bind port (overridden by <code>-port</code> CLI arg)</td>
+      </tr>
+      <tr>
+          <td><code>dedicatedBindAddress</code></td>
+          <td><code>0.0.0.0</code></td>
+          <td>Yes</td>
+          <td>DS listen address</td>
+      </tr>
+      <tr>
+          <td><code>gameplaySceneName</code></td>
+          <td><code>&quot;AirHockey&quot;</code></td>
+          <td>Yes</td>
+          <td>Scene to load once all players connect</td>
+      </tr>
+      <tr>
+          <td><code>useConnectionApproval</code></td>
+          <td><code>true</code></td>
+          <td>Yes</td>
+          <td>Token-based approval; disable only for local testing</td>
+      </tr>
+      <tr>
+          <td><code>sharedSecret</code></td>
+          <td><code>&quot;dev_secret_change_me&quot;</code></td>
+          <td>Yes</td>
+          <td>Token HMAC secret — <strong>change in production</strong></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="dedicated-server-lifecycle">
+  Dedicated Server Lifecycle
+  <a href="#dedicated-server-lifecycle" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>In <code>DedicatedServerLifecycle.cs</code>. CLI args override inspector defaults at launch.</p>
+<h3 id="inspector-defaults">
+  Inspector Defaults
+  <a href="#inspector-defaults" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>heartbeatIntervalSeconds</code></td>
+          <td><code>5.0</code> s</td>
+          <td>Yes</td>
+          <td>How often DS POSTs heartbeat to lobby</td>
+      </tr>
+      <tr>
+          <td><code>idleShutdownSecondsDefault</code></td>
+          <td><code>10.0</code> s</td>
+          <td>Yes</td>
+          <td>Seconds with no clients before DS self-quits</td>
+      </tr>
+      <tr>
+          <td><code>initialDelaySeconds</code></td>
+          <td><code>0.5</code> s</td>
+          <td>Yes</td>
+          <td>Delay before first <code>/ds/started</code> call</td>
+      </tr>
+      <tr>
+          <td><code>tryReadFromGameManager</code></td>
+          <td><code>true</code></td>
+          <td>Yes</td>
+          <td>Reads match state from GameManager for heartbeat</td>
+      </tr>
+      <tr>
+          <td><code>forceEnableInEditor</code></td>
+          <td><code>false</code></td>
+          <td>Yes</td>
+          <td>Force DS lifecycle active in editor</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="command-line-arguments">
+  Command-Line Arguments
+  <a href="#command-line-arguments" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>-server</code> / <code>-dedicated</code></td>
+          <td>flag</td>
+          <td>Activates dedicated server mode</td>
+      </tr>
+      <tr>
+          <td><code>-serverView</code></td>
+          <td>flag</td>
+          <td>Enables spectator window on server</td>
+      </tr>
+      <tr>
+          <td><code>-roomId</code></td>
+          <td>string</td>
+          <td>Room ID for lifecycle API calls</td>
+      </tr>
+      <tr>
+          <td><code>-port</code></td>
+          <td>int</td>
+          <td>UDP port to listen on</td>
+      </tr>
+      <tr>
+          <td><code>-lobbyUrl</code></td>
+          <td>string</td>
+          <td>Lobby base URL for callbacks</td>
+      </tr>
+      <tr>
+          <td><code>-dsSecret</code></td>
+          <td>string</td>
+          <td>Bearer token for DS→lobby auth</td>
+      </tr>
+      <tr>
+          <td><code>-idleShutdownSeconds</code></td>
+          <td>float</td>
+          <td>Overrides idle shutdown timeout</td>
+      </tr>
+      <tr>
+          <td><code>-maxPlayers</code></td>
+          <td>int</td>
+          <td>Maximum players allowed</td>
+      </tr>
+      <tr>
+          <td><code>-ownerPlayerId</code></td>
+          <td>string</td>
+          <td>Player ID of the room owner</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="position-source--cv-coordinate-mapping">
+  Position Source &amp; CV Coordinate Mapping
+  <a href="#position-source--cv-coordinate-mapping" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>In <code>PosMessageNetworked.cs</code> and <code>NetworkedCircleController.cs</code>.</p>
+<p><strong><code>PosMessageNetworked.cs</code></strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>cv_width</code></td>
+          <td><code>917.0</code></td>
+          <td>Yes</td>
+          <td>CV frame width (px) for X normalization</td>
+      </tr>
+      <tr>
+          <td><code>cv_height</code></td>
+          <td><code>609.0</code></td>
+          <td>Yes</td>
+          <td>CV frame height (px) for Y normalization</td>
+      </tr>
+      <tr>
+          <td><code>doLatencyTest</code></td>
+          <td><code>false</code></td>
+          <td>Yes</td>
+          <td>Enables CSV latency logging</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong><code>NetworkedCircleController.cs</code></strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>expansionT</code></td>
+          <td><code>0.8</code></td>
+          <td>Yes</td>
+          <td>Interpolation param for boundary expansion</td>
+      </tr>
+      <tr>
+          <td><code>Hardcode</code></td>
+          <td><code>true</code></td>
+          <td>Yes</td>
+          <td>Use hardcoded instead of dynamic expansion</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>PlayerPrefs overrides</strong> (persist between sessions): <code>&quot;CV_Width&quot;</code>, <code>&quot;CV_Height&quot;</code>. See <code>CVDimensionsOverride.cs</code> for a runtime UI.</p>
+<hr>
+<h2 id="display--screen-setup">
+  Display &amp; Screen Setup
+  <a href="#display--screen-setup" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>In <code>DisplaySetup.cs</code> and <code>ScreenConfigSO.cs</code>.</p>
+<p><strong><code>ScreenConfigSO</code></strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>projectorWidth</code></td>
+          <td><code>768.0</code> px</td>
+          <td>Yes</td>
+          <td>Projector width for field scaling</td>
+      </tr>
+      <tr>
+          <td><code>projectorHeight</code></td>
+          <td><code>1024.0</code> px</td>
+          <td>Yes</td>
+          <td>Projector height</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong><code>DisplaySetup.cs</code></strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>refreshRate</code></td>
+          <td><code>60</code> Hz</td>
+          <td>Yes</td>
+          <td>Target display refresh rate</td>
+      </tr>
+      <tr>
+          <td><code>activateAdditionalDisplays</code></td>
+          <td><code>false</code></td>
+          <td>Yes</td>
+          <td>Activates secondary Unity displays</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong><code>PositionSourceSO</code></strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>currentSource</code></td>
+          <td><code>Ros2</code></td>
+          <td>Yes</td>
+          <td>Input source: <code>Mouse</code> (testing) or <code>Ros2</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="trace-recording--replay">
+  Trace Recording &amp; Replay
+  <a href="#trace-recording--replay" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>In <code>TraceSession.cs</code>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Mode</code></td>
+          <td><code>Off</code></td>
+          <td>Yes</td>
+          <td><code>Off</code> / <code>Record</code> / <code>Replay</code></td>
+      </tr>
+      <tr>
+          <td><code>RecordFileName</code></td>
+          <td><code>&quot;&quot;</code> (auto)</td>
+          <td>Yes</td>
+          <td>Output CSV filename; auto-timestamped if empty</td>
+      </tr>
+      <tr>
+          <td><code>ReplayFileName</code></td>
+          <td><code>&quot;&quot;</code></td>
+          <td>Yes</td>
+          <td>Input CSV filename to replay</td>
+      </tr>
+      <tr>
+          <td><code>UseNgoTick</code></td>
+          <td><code>true</code></td>
+          <td>Yes</td>
+          <td>Use NGO tick as timestamp for reproducible replay</td>
+      </tr>
+      <tr>
+          <td><code>FallbackTickRate</code></td>
+          <td><code>50</code></td>
+          <td>Yes</td>
+          <td>Tick rate if NGO unavailable</td>
+      </tr>
+      <tr>
+          <td><code>ReplayTickRate</code></td>
+          <td><code>50</code></td>
+          <td>Yes</td>
+          <td>Playback tick rate during replay</td>
+      </tr>
+      <tr>
+          <td><code>ReplayUseFixedTickClock</code></td>
+          <td><code>true</code></td>
+          <td>Yes</td>
+          <td>Fixed-tick clock for deterministic replay</td>
+      </tr>
+      <tr>
+          <td><code>EnableHotkeys</code></td>
+          <td><code>true</code></td>
+          <td>Yes</td>
+          <td>Enables F6/F7/F8 shortcuts</td>
+      </tr>
+      <tr>
+          <td><code>SetOffKey</code></td>
+          <td><code>F6</code></td>
+          <td>Yes</td>
+          <td>Stop tracing</td>
+      </tr>
+      <tr>
+          <td><code>SetRecordKey</code></td>
+          <td><code>F7</code></td>
+          <td>Yes</td>
+          <td>Start recording</td>
+      </tr>
+      <tr>
+          <td><code>SetReplayKey</code></td>
+          <td><code>F8</code></td>
+          <td>Yes</td>
+          <td>Start replay</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="position-simulator-mouse--testing-only">
+  Position Simulator (Mouse — Testing Only)
+  <a href="#position-simulator-mouse--testing-only" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>In <code>PositionSimulator.cs</code>. Used when <code>currentSource = Mouse</code>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Default</th>
+          <th>Inspector</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>radius</code></td>
+          <td><code>50.0</code></td>
+          <td>No</td>
+          <td>Simulated circle radius in screen pixels</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="quick-reference">
+  Quick Reference
+  <a href="#quick-reference" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Goal</th>
+          <th>Parameter</th>
+          <th>Script</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Ball too fast / slow</td>
+          <td><code>ballSpeed</code> (via mode)</td>
+          <td><code>gameMgr.cs</code></td>
+      </tr>
+      <tr>
+          <td>Kick too weak / strong</td>
+          <td><code>kickFactor</code></td>
+          <td><code>hockeyctr.cs</code></td>
+      </tr>
+      <tr>
+          <td>Prediction feels wrong</td>
+          <td><code>reconcileHalfLifeSec</code>, <code>reconcileMaxSpeed</code></td>
+          <td><code>hockeyctr.cs</code></td>
+      </tr>
+      <tr>
+          <td>Remote ball stutters</td>
+          <td><code>minRenderDelaySec</code>, <code>maxRenderDelaySec</code></td>
+          <td><code>hockeyctr.cs</code></td>
+      </tr>
+      <tr>
+          <td>Snap jumps visible</td>
+          <td><code>reconcileSnapThreshold</code></td>
+          <td><code>hockeyctr.cs</code></td>
+      </tr>
+      <tr>
+          <td>RTT measurement rate</td>
+          <td><code>pingInterval</code></td>
+          <td><code>NetworkLatencyUI.cs</code></td>
+      </tr>
+      <tr>
+          <td>Match duration</td>
+          <td><code>totalTime</code></td>
+          <td><code>GameManager.cs</code></td>
+      </tr>
+      <tr>
+          <td>CV coords off</td>
+          <td><code>cv_width</code>, <code>cv_height</code></td>
+          <td><code>PosMessageNetworked.cs</code></td>
+      </tr>
+      <tr>
+          <td>DS shuts down too fast</td>
+          <td><code>idleShutdownSecondsDefault</code></td>
+          <td><code>DedicatedServerLifecycle.cs</code></td>
+      </tr>
+      <tr>
+          <td>Lobby URL</td>
+          <td><code>lobbyBaseUrl</code></td>
+          <td><code>SimpleLobbyManager.cs</code></td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="http://localhost:1313/posts/shapecatcher/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Shapes Catcher</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="http://localhost:1313/posts/tutorialscenes/">
+                  <span class="button__text">Tutorial Scenes</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </article>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/posts/home/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >airplay wiki</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2026 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span><a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+      
+    </div>
+
+  </body>
+</html>

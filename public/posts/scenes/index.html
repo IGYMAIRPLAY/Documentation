@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         Scenes ::
-        AiRPlay Wiki — A simple theme for Hugo
+        AiRPlay Wiki
       </title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content=" Scenes # AirHockey
-AirHockey - The main game scene for the Air Hockey game TutorialScenes - A folder containing all the tutorial scenes. Some of these scenes must be run before the main game scene in order for the player detection code to work. Look at Tutorial Scenes for more details. ShapeCatcher
-ShapeCatcher - The main game scene for the Shape Catcher game. "
+  content="Scenes#AirHockey
+AirHockey — The main networked game scene for the Air Hockey game. Contains the NetworkManager, lobby UI, dedicated server lifecycle components, and all gameplay objects (ball, paddles, field, goals). TutorialScenes — A folder containing all the tutorial scenes. Some of these scenes must be run before the main game scene for calibration and setup. See Tutorial Scenes for details. ShapeCatcher
+ShapeCatcher — The main game scene for the Shape Catcher game. Currently runs in legacy single-machine mode (not yet networked). "
 />
 <meta
   name="keywords"
   content=""
 />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://airplay-wiki.netlify.app/posts/scenes/" />
+<link rel="canonical" href="http://localhost:1313/posts/scenes/" />
 
 
 
@@ -30,11 +30,11 @@ ShapeCatcher - The main game scene for the Shape Catcher game. "
 
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://airplay-wiki.netlify.app/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://airplay-wiki.netlify.app/img/apple-touch-icon-144-precomposed.png" />
-<link rel="shortcut icon" href="https://airplay-wiki.netlify.app/img/favicon.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
 
 
 <link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
@@ -45,22 +45,24 @@ ShapeCatcher - The main game scene for the Shape Catcher game. "
 <link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Scenes"/>
-<meta name="twitter:description" content=" Scenes # AirHockey
-AirHockey - The main game scene for the Air Hockey game TutorialScenes - A folder containing all the tutorial scenes. Some of these scenes must be run before the main game scene in order for the player detection code to work. Look at Tutorial Scenes for more details. ShapeCatcher
-ShapeCatcher - The main game scene for the Shape Catcher game. "/>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Scenes">
+  <meta name="twitter:description" content="Scenes#AirHockey
+AirHockey — The main networked game scene for the Air Hockey game. Contains the NetworkManager, lobby UI, dedicated server lifecycle components, and all gameplay objects (ball, paddles, field, goals). TutorialScenes — A folder containing all the tutorial scenes. Some of these scenes must be run before the main game scene for calibration and setup. See Tutorial Scenes for details. ShapeCatcher
+ShapeCatcher — The main game scene for the Shape Catcher game. Currently runs in legacy single-machine mode (not yet networked).">
 
 
 
-<meta property="og:title" content="Scenes" />
-<meta property="og:description" content=" Scenes # AirHockey
-AirHockey - The main game scene for the Air Hockey game TutorialScenes - A folder containing all the tutorial scenes. Some of these scenes must be run before the main game scene in order for the player detection code to work. Look at Tutorial Scenes for more details. ShapeCatcher
-ShapeCatcher - The main game scene for the Shape Catcher game. " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://airplay-wiki.netlify.app/posts/scenes/" /><meta property="article:section" content="posts" />
-
-
+<meta property="og:url" content="http://localhost:1313/posts/scenes/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="Scenes">
+  <meta property="og:description" content="Scenes#AirHockey
+AirHockey — The main networked game scene for the Air Hockey game. Contains the NetworkManager, lobby UI, dedicated server lifecycle components, and all gameplay objects (ball, paddles, field, goals). TutorialScenes — A folder containing all the tutorial scenes. Some of these scenes must be run before the main game scene for calibration and setup. See Tutorial Scenes for details. ShapeCatcher
+ShapeCatcher — The main game scene for the Shape Catcher game. Currently runs in legacy single-machine mode (not yet networked).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
 
 
 
@@ -141,12 +143,12 @@ ShapeCatcher - The main game scene for the Shape Catcher game. " />
 </h2>
 <p><strong>AirHockey</strong></p>
 <ul>
-<li><strong>AirHockey</strong> - The main game scene for the <a href="https://airplay-wiki.netlify.app/posts/airhockey/">Air Hockey</a> game</li>
-<li><strong>TutorialScenes</strong> - A folder containing all the tutorial scenes. Some of these scenes must be run before the main game scene in order for the player detection code to work. Look at <a href="https://airplay-wiki.netlify.app/posts/tutorialscenes/">Tutorial Scenes</a> for more details.</li>
+<li><strong>AirHockey</strong> — The main networked game scene for the <a href="/posts/airhockey/">Air Hockey</a> game. Contains the NetworkManager, lobby UI, dedicated server lifecycle components, and all gameplay objects (ball, paddles, field, goals).</li>
+<li><strong>TutorialScenes</strong> — A folder containing all the tutorial scenes. Some of these scenes must be run before the main game scene for calibration and setup. See <a href="/posts/tutorialscenes/">Tutorial Scenes</a> for details.</li>
 </ul>
 <p><strong>ShapeCatcher</strong></p>
 <ul>
-<li><strong>ShapeCatcher</strong> - The main game scene for the <a href="https://airplay-wiki.netlify.app/posts/shapecatcher/">Shape Catcher</a> game.</li>
+<li><strong>ShapeCatcher</strong> — The main game scene for the <a href="/posts/shapecatcher/">Shape Catcher</a> game. Currently runs in legacy single-machine mode (not yet networked).</li>
 </ul>
 
     </div>
@@ -162,15 +164,15 @@ ShapeCatcher - The main game scene for the Shape Catcher game. " />
           <div class="pagination__buttons">
             
               <span class="button previous">
-                <a href="https://airplay-wiki.netlify.app/posts/rosmessages/">
+                <a href="http://localhost:1313/posts/ros2-emulation/">
                   <span class="button__icon">←</span>
-                  <span class="button__text">ROS Messages</span>
+                  <span class="button__text">ros2-emulation Documentation</span>
                 </a>
               </span>
             
             
               <span class="button next">
-                <a href="https://airplay-wiki.netlify.app/posts/folderstructure/">
+                <a href="http://localhost:1313/posts/folderstructure/">
                   <span class="button__text">Scripts</span>
                   <span class="button__icon">→</span>
                 </a>
@@ -213,7 +215,7 @@ ShapeCatcher - The main game scene for the Shape Catcher game. " />
 </a>
 
       <div class="copyright">
-        <span>© 2023 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>© 2026 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
         <span><a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
       </div>
     
@@ -230,6 +232,5 @@ ShapeCatcher - The main game scene for the Shape Catcher game. " />
       
     </div>
 
-    
   </body>
 </html>

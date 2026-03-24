@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+      <title>
+        iGym System Setup Guide (Windows) ::
+        AiRPlay Wiki
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content=" Last updated: 19 November 2025. View original Google Doc
+Quick Version Checklist#All versions must match exactly.
+Component Version Unity (non-networked) 2020.3.16f1 Unity (networked) 6000.0.53f1 Python 3.8.10 OpenSSL 1.1.1n (Win64 full installer) ROS 2 Foxy (binary for Windows) OpenCV 4.11.0 VC16 x64 Spinnaker SDK 4.2 Visual Studio 2022 Community &#43; Desktop development with C&#43;&#43; 1. Install Unity#Download Unity Hub and install.
+In Hub → Installs → Add, choose 2020.3.16f1 (required — get from the archive page). For the networked version use 6000.0.53f1.
+"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/posts/setup/" />
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.css" />
+
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
+
+
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="iGym System Setup Guide (Windows)">
+  <meta name="twitter:description" content="Last updated: 19 November 2025. View original Google Doc
+Quick Version Checklist#All versions must match exactly.
+Component Version Unity (non-networked) 2020.3.16f1 Unity (networked) 6000.0.53f1 Python 3.8.10 OpenSSL 1.1.1n (Win64 full installer) ROS 2 Foxy (binary for Windows) OpenCV 4.11.0 VC16 x64 Spinnaker SDK 4.2 Visual Studio 2022 Community &#43; Desktop development with C&#43;&#43; 1. Install Unity#Download Unity Hub and install.
+In Hub → Installs → Add, choose 2020.3.16f1 (required — get from the archive page). For the networked version use 6000.0.53f1.">
+
+
+
+<meta property="og:url" content="http://localhost:1313/posts/setup/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="iGym System Setup Guide (Windows)">
+  <meta property="og:description" content="Last updated: 19 November 2025. View original Google Doc
+Quick Version Checklist#All versions must match exactly.
+Component Version Unity (non-networked) 2020.3.16f1 Unity (networked) 6000.0.53f1 Python 3.8.10 OpenSSL 1.1.1n (Win64 full installer) ROS 2 Foxy (binary for Windows) OpenCV 4.11.0 VC16 x64 Spinnaker SDK 4.2 Visual Studio 2022 Community &#43; Desktop development with C&#43;&#43; 1. Install Unity#Download Unity Hub and install.
+In Hub → Installs → Add, choose 2020.3.16f1 (required — get from the archive page). For the networked version use 6000.0.53f1.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/posts/home/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >airplay wiki</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <article class="post">
+    <h1 class="post-title">iGym System Setup Guide (Windows)</h1>
+    <div class="post-meta">
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <blockquote>
+<p>Last updated: 19 November 2025. <a href="https://docs.google.com/document/d/1TMLHn8tC8T075ESRzFUgJOSfceofNwoGGtoi9QKcri8/edit?tab=t.0">View original Google Doc</a></p>
+</blockquote>
+<h2 id="quick-version-checklist">
+  Quick Version Checklist
+  <a href="#quick-version-checklist" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>All versions must match exactly.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Version</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Unity (non-networked)</td>
+          <td>2020.3.16f1</td>
+      </tr>
+      <tr>
+          <td>Unity (networked)</td>
+          <td>6000.0.53f1</td>
+      </tr>
+      <tr>
+          <td>Python</td>
+          <td>3.8.10</td>
+      </tr>
+      <tr>
+          <td>OpenSSL</td>
+          <td>1.1.1n (Win64 full installer)</td>
+      </tr>
+      <tr>
+          <td>ROS 2</td>
+          <td>Foxy (binary for Windows)</td>
+      </tr>
+      <tr>
+          <td>OpenCV</td>
+          <td>4.11.0 VC16 x64</td>
+      </tr>
+      <tr>
+          <td>Spinnaker SDK</td>
+          <td>4.2</td>
+      </tr>
+      <tr>
+          <td>Visual Studio</td>
+          <td>2022 Community + Desktop development with C++</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="1-install-unity">
+  1. Install Unity
+  <a href="#1-install-unity" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Download <a href="https://unity.com/unity-hub">Unity Hub</a> and install.</p>
+<p>In Hub → Installs → Add, choose <strong>2020.3.16f1</strong> (required — get from the archive page).
+For the networked version use <strong>6000.0.53f1</strong>.</p>
+<p>Enable the following modules:</p>
+<ul>
+<li>Windows Build Support (IL2CPP)</li>
+<li>Visual Studio Editor</li>
+</ul>
+<blockquote>
+<p><strong>Networking note:</strong> When you launch the networked project, all needed packages should auto-install.</p>
+</blockquote>
+<hr>
+<h2 id="2-install-visual-studio-2022">
+  2. Install Visual Studio 2022
+  <a href="#2-install-visual-studio-2022" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Download <a href="https://visualstudio.microsoft.com/downloads/">Visual Studio 2022 Community</a> and run the installer.</p>
+<p>Select the following workloads:</p>
+<ul>
+<li><strong>Desktop development with C++</strong> (MSVC v143, CMake tools)</li>
+<li><strong>Game development with Unity</strong></li>
+<li><strong>.NET desktop build tools</strong></li>
+</ul>
+<p>After install, open <strong>&ldquo;x64 Native Tools Command Prompt for VS 2022&rdquo;</strong> to confirm it exists.</p>
+<hr>
+<h2 id="3-install-teledyne-spinnaker-sdk-42-if-using-flir-cam">
+  3. Install Teledyne Spinnaker SDK 4.2 <em>(if using FLIR cam)</em>
+  <a href="#3-install-teledyne-spinnaker-sdk-42-if-using-flir-cam" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Download <a href="https://www.teledynevisionsolutions.com/products/spinnaker-sdk/?model=Spinnaker%20SDK&amp;vertical=machine%20vision&amp;segment=iis">Spinnaker SDK 4.2 Windows Full</a> and run the installer.</p>
+<p>Choose <strong>Application Development</strong> during setup.</p>
+<p>Confirm <code>C:\Program Files\Teledyne\Spinnaker</code> exists — this will be <code>Spinnaker_DIR</code>.</p>
+<hr>
+<h2 id="4-install-ros-2-foxy--dependencies">
+  4. Install ROS 2 Foxy + Dependencies
+  <a href="#4-install-ros-2-foxy--dependencies" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Follow the <a href="https://docs.ros.org/en/foxy/Installation/Windows-Install-Binary.html">official Windows installation guide</a>. The guide says Windows 10 only — ignore that, it works on Windows 11.</p>
+<p>Key requirements:</p>
+<ul>
+<li><strong>Python 3.8.10</strong> must be the first <code>python.exe</code> in your PATH. Any newer version will break <code>colcon</code> and <code>rclpy</code>.</li>
+<li><strong>OpenSSL 1.1.1n</strong> (Win64 full installer) is required for Foxy&rsquo;s security checks. It is outdated and must be downloaded from the Internet Archive:
+<a href="https://web.archive.org/web/20220316070710/https://slproweb.com/download/Win64OpenSSL-1_1_1n.exe">Win64OpenSSL-1_1_1n.exe</a></li>
+<li><strong>Do not follow their OpenCV guide</strong> — a newer version is installed separately in step 5.</li>
+<li>Install this specific ROS 2 Foxy release: <a href="https://github.com/ros2/ros2/releases/tag/release-foxy-20230620">release-foxy-20230620</a></li>
+</ul>
+<p>Note the root of the ROS 2 install as <code>ROS2_ROOT</code>. The rest of the installation steps are straightforward as long as the above requirements are set correctly.</p>
+<hr>
+<h2 id="5-install-opencv-4110">
+  5. Install OpenCV 4.11.0
+  <a href="#5-install-opencv-4110" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Download and install <a href="https://opencv.org/releases/">OpenCV 4.11.0</a>.</p>
+<p>Note the install location — this will be <code>OpenCV_DIR</code>.</p>
+<hr>
+<h2 id="6-build-simpleble-openbluetoothtoolbox">
+  6. Build SimpleBLE (OpenBluetoothToolbox)
+  <a href="#6-build-simpleble-openbluetoothtoolbox" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Some code still relies on this library.</p>
+<p>Clone the repo:</p>
+<pre tabindex="0"><code>https://github.com/simpleble/simpleble
+</code></pre><p>From a folder like <code>C:\Desktop\iGym\simpleble\simpleble</code> (where the first <code>simpleble</code> is the repo root), run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span><span style="color:#66d9ef">mkdir</span> build
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> build
+</span></span><span style="display:flex;"><span>cmake .. -DCMAKE_INSTALL_PREFIX=../install -DSIMPLEBLE_BACKEND=Windows
+</span></span><span style="display:flex;"><span>cmake --build . --config Release --target install
+</span></span></code></pre></div><p>Confirm <code>simpleble\install</code> exists — this will be <code>simpleble_DIR</code>.</p>
+<hr>
+<h2 id="7-clone-project-repos">
+  7. Clone Project Repos
+  <a href="#7-clone-project-repos" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Clone the ROS2 repo:</p>
+<pre tabindex="0"><code>https://github.com/IGYMAIRPLAY/ros2_emulation
+</code></pre><p>The location of the highest <code>src</code> folder will be <code>REPO_PATH</code> (e.g. <code>...\ros2_emulation\src</code>).</p>
+<p>Then clone the Unity project:</p>
+<ul>
+<li><strong>Non-networked:</strong> <code>https://github.com/IGYMAIRPLAY/ros-test-out</code></li>
+<li><strong>Networked:</strong> <code>https://github.com/IGYMAIRPLAY/unity-networking</code></li>
+</ul>
+<hr>
+<h2 id="8-find-your-ip-address">
+  8. Find Your IP Address
+  <a href="#8-find-your-ip-address" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Run <code>ipconfig</code> and grab the IPv4 of <strong>Ethernet adapter vEthernet</strong> or your USB-Ethernet adapter. Paste it into <code>IP_ADDRESS</code> in the batch file.</p>
+<blockquote>
+<p><strong>Tip:</strong> You can use <code>127.0.0.1</code> which is much simpler.</p>
+</blockquote>
+<hr>
+<h2 id="9-build-ros_tcp_endpoint">
+  9. Build ros_tcp_endpoint
+  <a href="#9-build-ros_tcp_endpoint" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span><span style="color:#66d9ef">call</span> C:\dev\ros2_foxy\setup.bat
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> C:\Users\&lt;you&gt;\...\ros2_emulation\src
+</span></span><span style="display:flex;"><span>colcon build --merge-install --packages-select ros_tcp_endpoint
+</span></span></code></pre></div><p>If <code>colcon</code> is not installed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span>pip install -U colcon-common-extensions
+</span></span></code></pre></div><hr>
+<h2 id="10-configuration">
+  10. Configuration
+  <a href="#10-configuration" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Use this Python tool to help configure USB cameras. Save it somewhere accessible (e.g. <code>...\iGym\usb_cam_tool.py</code>):
+<a href="https://pastebin.com/8cAhj9UK">usb_cam_tool.py (Pastebin)</a></p>
+<p>You will need to manually update:</p>
+<ul>
+<li>Zoom values in <code>CameraOpenCV.cpp</code></li>
+<li>Size values in <code>player_detection.cpp</code></li>
+</ul>
+<hr>
+<h2 id="11-create-run_systembat">
+  11. Create run_system.bat
+  <a href="#11-create-run_systembat" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>Create a <code>.bat</code> script using the template below, updating environment variables based on what you noted during setup:
+<a href="https://pastebin.com/4hmLu5qW">run_system.bat template (Pastebin)</a></p>
+<h3 id="python-version-troubleshooting">
+  Python Version Troubleshooting
+  <a href="#python-version-troubleshooting" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>If you have issues with Python versions, run the following to verify and fix:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span><span style="color:#75715e">REM 1. Ensure Python 3.8 is active</span>
+</span></span><span style="display:flex;"><span>python --version
+</span></span><span style="display:flex;"><span><span style="color:#75715e">REM Should show 3.8.x</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">REM 2. Reinstall correct empy version for ROS2 Foxy</span>
+</span></span><span style="display:flex;"><span>pip uninstall -y empy
+</span></span><span style="display:flex;"><span>pip install empy==3.3.4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">REM 3. Remove previous build artifacts</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> C:\Users\&lt;you&gt;\Desktop\iGym\ros2_emulation\src
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">rd</span> /s /q build
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">rd</span> /s /q install
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">rd</span> /s /q log
+</span></span></code></pre></div>
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="http://localhost:1313/posts/home/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Home</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="http://localhost:1313/posts/materials/">
+                  <span class="button__text">Materials</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </article>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/posts/home/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >airplay wiki</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2026 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span><a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+      
+    </div>
+
+  </body>
+</html>

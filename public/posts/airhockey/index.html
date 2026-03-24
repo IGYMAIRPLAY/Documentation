@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <title>
         Air Hockey ::
-        AiRPlay Wiki — A simple theme for Hugo
+        AiRPlay Wiki
       </title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Overview # Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to virtually kick the ball. The peripersonal boundaries can either be expanded by extending their limbs, or by pressing a Bluetooth kick button if they have limited mobility.
-Rules # After going through the quick tutorials, the game begins when the moderator starts the timer."
+  content="Overview#Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to hit the ball by physically moving into it, the boundaries expand as they extend their limbs. Bluetooth kick buttons were an earlier input method for players with limited mobility but have not been used in a long time and are untested with the current networking architecture.
+"
 />
 <meta
   name="keywords"
   content=""
 />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://airplay-wiki.netlify.app/posts/airhockey/" />
+<link rel="canonical" href="http://localhost:1313/posts/airhockey/" />
 
 
 
@@ -29,11 +29,11 @@ Rules # After going through the quick tutorials, the game begins when the modera
 
 <link rel="stylesheet" href="/css/style.css" />
 
-<link rel="stylesheet" href="https://airplay-wiki.netlify.app/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/style.css" />
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://airplay-wiki.netlify.app/img/apple-touch-icon-144-precomposed.png" />
-<link rel="shortcut icon" href="https://airplay-wiki.netlify.app/img/favicon.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
 
 
 <link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
@@ -44,20 +44,20 @@ Rules # After going through the quick tutorials, the game begins when the modera
 <link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Air Hockey"/>
-<meta name="twitter:description" content="Overview # Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to virtually kick the ball. The peripersonal boundaries can either be expanded by extending their limbs, or by pressing a Bluetooth kick button if they have limited mobility.
-Rules # After going through the quick tutorials, the game begins when the moderator starts the timer."/>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Air Hockey">
+  <meta name="twitter:description" content="Overview#Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to hit the ball by physically moving into it, the boundaries expand as they extend their limbs. Bluetooth kick buttons were an earlier input method for players with limited mobility but have not been used in a long time and are untested with the current networking architecture.">
 
 
 
-<meta property="og:title" content="Air Hockey" />
-<meta property="og:description" content="Overview # Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to virtually kick the ball. The peripersonal boundaries can either be expanded by extending their limbs, or by pressing a Bluetooth kick button if they have limited mobility.
-Rules # After going through the quick tutorials, the game begins when the moderator starts the timer." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://airplay-wiki.netlify.app/posts/airhockey/" /><meta property="article:section" content="posts" />
-
-
+<meta property="og:url" content="http://localhost:1313/posts/airhockey/">
+  <meta property="og:site_name" content="AiRPlay Wiki">
+  <meta property="og:title" content="Air Hockey">
+  <meta property="og:description" content="Overview#Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to hit the ball by physically moving into it, the boundaries expand as they extend their limbs. Bluetooth kick buttons were an earlier input method for players with limited mobility but have not been used in a long time and are untested with the current networking architecture.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
 
 
 
@@ -136,12 +136,173 @@ Rules # After going through the quick tutorials, the game begins when the modera
   Overview
   <a href="#overview" class="h-anchor" aria-hidden="true">#</a>
 </h2>
-<p>Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to virtually kick the ball. The peripersonal boundaries can either be expanded by extending their limbs, or by pressing a Bluetooth kick button if they have limited mobility.</p>
+<p>Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to hit the ball by physically moving into it, the boundaries expand as they extend their limbs. Bluetooth kick buttons were an earlier input method for players with limited mobility but have not been used in a long time and are untested with the current networking architecture.</p>
+<p>The game runs on a <strong>dedicated server architecture</strong> using Unity Netcode for GameObjects. The server is authoritative over ball physics, while clients use <strong>client-side prediction</strong> for responsive hit feedback and <strong>interpolation</strong> for smooth remote ball rendering.</p>
+<h2 id="networked-gameplay">
+  Networked Gameplay
+  <a href="#networked-gameplay" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<h3 id="how-it-works">
+  How It Works
+  <a href="#how-it-works" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ol>
+<li>Players join a match through the <strong>lobby system</strong> (HTTP-based room management)</li>
+<li>The lobby spawns a <strong>dedicated server</strong> instance with authentication tokens</li>
+<li>Each player connects as a client; the server validates their identity via connection approval</li>
+<li>The server runs the physics simulation (Rigidbody2D) and broadcasts ball position at 30 ticks/sec</li>
+<li>When a player hits the ball, the client <strong>predicts</strong> the result immediately and sends the hit to the server via RPC</li>
+<li>The server applies the hit and broadcasts the authoritative state</li>
+<li>If the client&rsquo;s prediction diverges from the server, it <strong>reconciles</strong> using exponential blending</li>
+</ol>
+<h3 id="client-side-prediction">
+  Client-Side Prediction
+  <a href="#client-side-prediction" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>When a paddle collides with the ball:</p>
+<ul>
+<li>The client immediately applies the predicted velocity locally (no waiting for server)</li>
+<li>A <code>PredictHit()</code> call stores the predicted state and sets a prediction gate (~1 RTT)</li>
+<li>The hit is sent to the server via <code>ApplyVelocityServerRpc()</code></li>
+<li>The server acknowledges the hit, and the client transitions back to following server authority</li>
+</ul>
+<h3 id="server-reconciliation">
+  Server Reconciliation
+  <a href="#server-reconciliation" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>When the predicted position diverges from the server&rsquo;s truth:</p>
+<ul>
+<li><strong>Exponential blending</strong> smoothly corrects the position</li>
+<li><strong>Max reconciliation speed</strong> is clamped at 20 units/sec to prevent jarring snaps</li>
+<li>When the error drops below 0.05 units, the client snaps to the authoritative position</li>
+</ul>
+<h3 id="interpolation">
+  Interpolation
+  <a href="#interpolation" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<p>For rendering the ball between server updates:</p>
+<ul>
+<li>A <strong>buffered snapshot system</strong> (circular buffer, max 128 entries) stores incoming server positions</li>
+<li><strong>Adaptive render delay</strong> adjusts based on network jitter</li>
+<li>Linear interpolation between snapshots prevents visible stuttering</li>
+</ul>
+<h2 id="game-modes">
+  Game Modes
+  <a href="#game-modes" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The game supports three difficulty modes, synced via <code>NetworkVariable</code>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Mode</th>
+          <th>Ball Radius</th>
+          <th>Ball Speed</th>
+          <th>Friction</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Easy</td>
+          <td>4.0</td>
+          <td>0.15</td>
+          <td>0.4</td>
+      </tr>
+      <tr>
+          <td>Medium</td>
+          <td>2.0</td>
+          <td>0.50</td>
+          <td>0.4</td>
+      </tr>
+      <tr>
+          <td>Hard</td>
+          <td>1.0</td>
+          <td>0.75</td>
+          <td>0.4</td>
+      </tr>
+  </tbody>
+</table>
+<p>Goal sizes also vary by mode, with easier modes having larger goals.</p>
 <h2 id="rules">
   Rules
   <a href="#rules" class="h-anchor" aria-hidden="true">#</a>
 </h2>
-<p>After going through the quick tutorials, the game begins when the moderator starts the timer. A timer will be correspondingly displayed at the center of the field. Players with the kick button should be assigned to the left side of the field and all players should try to stay on their side of the field. This is because the algorithm is programmed to only expand peripersonal boundaries on the left side of the field. By kicking the ball into the goal on the other side, the player scores a point. At the end of the timer, the winner, or the side with the most points, will have a crown displayed on their field.</p>
+<p>After connecting to a match, the game begins when the server starts the timer. Players move onto the field and hit the ball by physically making contact with it, their peripersonal boundary expands as they extend their limbs. By hitting the ball into the goal on the other side, the player scores a point. Scores are synced via NetworkVariables and displayed to all clients in real time. At the end of the timer, the winner, or the side with the most points, will have a crown displayed on their field.</p>
+<blockquote>
+<p><strong>Note:</strong> Bluetooth kick buttons were an earlier input method that has not been used in a long time. The kick button code path is likely untested with the current networking architecture and should be treated as unsupported until verified.</p>
+</blockquote>
+<h2 id="key-scripts">
+  Key Scripts
+  <a href="#key-scripts" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Script</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>hockeyctr.cs</strong></td>
+          <td>Ball authority, client prediction, reconciliation, snapshot buffering, metrics logging</td>
+      </tr>
+      <tr>
+          <td><strong>CircleController.cs</strong></td>
+          <td>Paddle representation, collision detection, hit velocity calculation</td>
+      </tr>
+      <tr>
+          <td><strong>GameManager.cs</strong></td>
+          <td>Match lifecycle (start/stop), score tracking, timer, mode syncing via NetworkVariables</td>
+      </tr>
+      <tr>
+          <td><strong>HockeyNetworkTransform.cs</strong></td>
+          <td>Extends NetworkTransform to notify hockeyctr of authoritative position updates</td>
+      </tr>
+      <tr>
+          <td><strong>PaddleSpawnBridge.cs</strong></td>
+          <td>Server-authoritative paddle spawning/despawning via RPC</td>
+      </tr>
+      <tr>
+          <td><strong>GoalControl.cs</strong></td>
+          <td>Goal collision detection and score sound effects</td>
+      </tr>
+      <tr>
+          <td><strong>WallControl.cs</strong></td>
+          <td>Wall collision sound effects</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="hit-system">
+  Hit System
+  <a href="#hit-system" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<ul>
+<li><strong>CircleController.OnCollisionEnter2D</strong> detects paddle-ball contact</li>
+<li>Velocity is calculated as: <code>direction * (baseSpeed * kickFactor * ballSpeed)</code></li>
+<li>A unique hit ID is assigned for latency correlation and metrics</li>
+<li>Cooldown enforcement: minimum 1 RTT between hits to prevent double-hits</li>
+</ul>
+<h2 id="metrics--diagnostics">
+  Metrics &amp; Diagnostics
+  <a href="#metrics--diagnostics" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The game logs detailed networking metrics for performance analysis:</p>
+<ul>
+<li><strong>Hit Position Discrepancy</strong> <code>[HIT_POS_DISC]</code>: Visual vs. true position gap at hit time, normalized by field diagonal</li>
+<li><strong>Raw Position Delta</strong> <code>[RAW_TRUE_POS_DELTA]</code>: Per-update position delta with tick gaps and network stats</li>
+<li><strong>Aggregate Stats</strong> <code>[TRUE_POS_DELTA]</code>: Max deltas, buffer counts, and network time offsets between RTT updates</li>
+<li><strong>RTT Measurement</strong>: Ping/pong RPC-based, updated every 1 second, accessible via <code>NetworkLatencyUI.CurrentRTT</code></li>
+</ul>
+<h2 id="trace-recording--replay">
+  Trace Recording &amp; Replay
+  <a href="#trace-recording--replay" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The game includes a full trace recording system for debugging and analysis:</p>
+<ul>
+<li><strong>F7</strong> = Start recording, <strong>F8</strong> = Replay, <strong>F6</strong> = Off</li>
+<li>Records per-tick: paddle positions, hit info (ID, velocity), ball resets</li>
+<li>Stored as CSV for deterministic replay</li>
+</ul>
 
     </div>
     
@@ -157,8 +318,8 @@ Rules # After going through the quick tutorials, the game begins when the modera
             
             
               <span class="button next">
-                <a href="https://airplay-wiki.netlify.app/posts/gamescene/">
-                  <span class="button__text">Game Scene</span>
+                <a href="http://localhost:1313/posts/frontend/">
+                  <span class="button__text">airplay-frontend Documentation</span>
                   <span class="button__icon">→</span>
                 </a>
               </span>
@@ -200,7 +361,7 @@ Rules # After going through the quick tutorials, the game begins when the modera
 </a>
 
       <div class="copyright">
-        <span>© 2023 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>© 2026 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
         <span><a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
       </div>
     
@@ -217,6 +378,5 @@ Rules # After going through the quick tutorials, the game begins when the modera
       
     </div>
 
-    
   </body>
 </html>
