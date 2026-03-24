@@ -46,12 +46,20 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="AiRPlay Wiki">
+  <meta name="twitter:description" content="Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.
+📧 Contact: helloigym@umich.edu
+Getting Started#New to the project? Start here:
+System Setup Guide (Windows) — Install all dependencies and get the system running ROS2 Emulation Documentation — Running the ROS2 vision and input layer Unity Networking Project — The main Unity game project System Architecture#The iGYM system has three main layers:">
 
 
 
 <meta property="og:url" content="http://localhost:1313/">
   <meta property="og:site_name" content="AiRPlay Wiki">
   <meta property="og:title" content="AiRPlay Wiki">
+  <meta property="og:description" content="Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.
+📧 Contact: helloigym@umich.edu
+Getting Started#New to the project? Start here:
+System Setup Guide (Windows) — Install all dependencies and get the system running ROS2 Emulation Documentation — Running the ROS2 vision and input layer Unity Networking Project — The main Unity game project System Architecture#The iGYM system has three main layers:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
@@ -118,6 +126,153 @@
   
   
 
+  
+    <div class="index-content ">
+      <p>Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.</p>
+<p>📧 Contact: <a href="mailto:helloigym@umich.edu">helloigym@umich.edu</a></p>
+<hr>
+<h2 id="getting-started">
+  Getting Started
+  <a href="#getting-started" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>New to the project? Start here:</p>
+<ul>
+<li><a href="/posts/setup/"><strong>System Setup Guide (Windows)</strong></a> — Install all dependencies and get the system running</li>
+<li><a href="/posts/ros2-emulation/"><strong>ROS2 Emulation Documentation</strong></a> — Running the ROS2 vision and input layer</li>
+<li><a href="/posts/ros-test-out-doc/"><strong>Unity Networking Project</strong></a> — The main Unity game project</li>
+</ul>
+<hr>
+<h2 id="system-architecture">
+  System Architecture
+  <a href="#system-architecture" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>The iGYM system has three main layers:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Layer</th>
+          <th>Technology</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Computer Vision &amp; Hardware</td>
+          <td>ROS2</td>
+          <td>Camera-based player detection, Kalman filtering</td>
+      </tr>
+      <tr>
+          <td>Networking &amp; Game Server</td>
+          <td>Unity Netcode for GameObjects</td>
+          <td>Dedicated server, client-side prediction, lobby system</td>
+      </tr>
+      <tr>
+          <td>Game Client</td>
+          <td>Unity</td>
+          <td>Rendering, input, local prediction</td>
+      </tr>
+  </tbody>
+</table>
+<p>Players connect through a lobby system that spawns a dedicated server. The server runs authoritative physics while clients predict locally and reconcile with server state.</p>
+<hr>
+<h2 id="documentation">
+  Documentation
+  <a href="#documentation" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<h3 id="unity-game-networked">
+  Unity Game (Networked)
+  <a href="#unity-game-networked" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><a href="/posts/airhockey/">Air Hockey</a> — Game rules, networking, hit system, and diagnostics</li>
+<li><a href="/posts/networking/">Networking Architecture</a> — Dedicated server model, prediction, reconciliation</li>
+<li><a href="/posts/scenes/">Scenes Overview</a> — Scene structure and flow</li>
+<li><a href="/posts/gamescene/">Game Scene</a> — Main game scene details</li>
+<li><a href="/posts/tutorialscenes/">Tutorial Scenes</a> — Non-networked tutorial content</li>
+<li><a href="/posts/prefabs/">Prefabs</a> — Prefab reference</li>
+<li><a href="/posts/folderstructure/">Folder Structure</a> — Project layout</li>
+</ul>
+<h3 id="ros2-system">
+  ROS2 System
+  <a href="#ros2-system" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><a href="/posts/ros2-emulation/">ROS2 Emulation</a> — Full ROS2 setup, nodes, and launch process</li>
+<li><a href="/posts/player-detection-script/">Player Detection Script</a> — Camera-based detection pipeline</li>
+<li><a href="/posts/rosmessages/">ROS Messages</a> — Custom message types</li>
+<li><a href="/posts/shapecatcher/">Shape Catcher</a> — Shape detection node</li>
+<li><a href="/posts/parameters/">Parameters</a> — Configurable system parameters</li>
+<li><a href="/posts/button-script/">Button Script</a> — BLE kick button node <em>(legacy, untested with current networking)</em></li>
+</ul>
+<h3 id="other">
+  Other
+  <a href="#other" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><a href="/posts/frontend/">Frontend</a> — Web control interface <em>(not used with networked version)</em></li>
+<li><a href="/posts/materials/">Materials</a> — Unity materials reference</li>
+<li><a href="/posts/resources/">Resources</a> — Additional resources</li>
+</ul>
+<hr>
+<h2 id="repositories">
+  Repositories
+  <a href="#repositories" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Repo</th>
+          <th>Description</th>
+          <th>Links</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/unity-networking">unity-networking</a></td>
+          <td>Main networked Unity game</td>
+          <td><a href="/posts/ros-test-out-doc/">Docs</a></td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/ros2_emulation">ros2_emulation</a></td>
+          <td>ROS2 vision &amp; input layer</td>
+          <td><a href="/posts/ros2-emulation/">Docs</a></td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/AIRPLAY-frontend">AIRPLAY-frontend</a></td>
+          <td>Web control interface (legacy)</td>
+          <td><a href="/posts/frontend/">Docs</a></td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/Airplay_KickButton">Airplay_KickButton</a></td>
+          <td>BLE kick button (legacy)</td>
+          <td>README</td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/UWB">UWB</a></td>
+          <td>Player identification via UWB</td>
+          <td>README</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="onboarding">
+  Onboarding
+  <a href="#onboarding" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p><strong>New to Unity?</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=XtQMytORBmM">Flappy Bird tutorial</a> — good intro to Unity basics</li>
+<li>Familiarity with NetworkManager, NetworkVariables, and RPCs is recommended for the networked project</li>
+</ul>
+<p><strong>New to ROS2?</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=7TVWlADXwRw">Brief ROS2 intro video</a></li>
+<li><a href="https://docs.ros.org/en/foxy/Tutorials.html">Official ROS2 Foxy beginner tutorials</a> — complete CLI tools + Client libraries sections</li>
+<li><a href="/posts/setup/">System Setup Guide</a> — covers the full Windows install</li>
+</ul>
+<p><strong>First hands-on step:</strong> Switch <code>ros2_emulation</code> to the <code>video_test</code> branch and follow the <a href="/posts/ros2-emulation/">ROS2 Emulation docs</a> to run the video version.</p>
+
+    </div>
   
 
   <div class="posts">

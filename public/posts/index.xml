@@ -211,43 +211,6 @@
     </item>
     
     <item>
-      <title>Home</title>
-      <link>http://localhost:1313/posts/home/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/home/</guid>
-      <description>
-        
-          
-          
-          
-        
-
-        
-          &lt;p&gt;Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.&lt;/p&gt;
-&lt;p&gt;📧 Contact: &lt;a href=&#34;mailto:helloigym@umich.edu&#34;&gt;helloigym@umich.edu&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;getting-started&#34;&gt;
-  Getting Started
-  &lt;a href=&#34;#getting-started&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;New to the project? Start here:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/setup/&#34;&gt;&lt;strong&gt;System Setup Guide (Windows)&lt;/strong&gt;&lt;/a&gt; — Install all dependencies and get the system running&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/ros2-emulation/&#34;&gt;&lt;strong&gt;ROS2 Emulation Documentation&lt;/strong&gt;&lt;/a&gt; — Running the ROS2 vision and input layer&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/ros-test-out-doc/&#34;&gt;&lt;strong&gt;Unity Networking Project&lt;/strong&gt;&lt;/a&gt; — The main Unity game project&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;system-architecture&#34;&gt;
-  System Architecture
-  &lt;a href=&#34;#system-architecture&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;The iGYM system has three main layers:&lt;/p&gt;
-          
-        
-        </description>
-    </item>
-    
-    <item>
       <title>iGym System Setup Guide (Windows)</title>
       <link>http://localhost:1313/posts/setup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

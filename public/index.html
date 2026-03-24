@@ -46,12 +46,20 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="AiRPlay Wiki">
+  <meta name="twitter:description" content="Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.
+📧 Contact: helloigym@umich.edu
+Getting Started#New to the project? Start here:
+System Setup Guide (Windows) — Install all dependencies and get the system running ROS2 Emulation Documentation — Running the ROS2 vision and input layer Unity Networking Project — The main Unity game project System Architecture#The iGYM system has three main layers:">
 
 
 
 <meta property="og:url" content="http://localhost:1313/">
   <meta property="og:site_name" content="AiRPlay Wiki">
   <meta property="og:title" content="AiRPlay Wiki">
+  <meta property="og:description" content="Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.
+📧 Contact: helloigym@umich.edu
+Getting Started#New to the project? Start here:
+System Setup Guide (Windows) — Install all dependencies and get the system running ROS2 Emulation Documentation — Running the ROS2 vision and input layer Unity Networking Project — The main Unity game project System Architecture#The iGYM system has three main layers:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
@@ -67,7 +75,7 @@
       <header class="header">
   <span class="header__inner">
     <a
-  href="/posts/home/"
+  href="/"
   class="logo"
   style="text-decoration: none;"
 >
@@ -109,163 +117,9 @@
 
       <div class="content">
         
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-
-  <div class="posts">
-    
-    <article class="post on-list">
-      <h1 class="post-title"><a href="http://localhost:1313/posts/airhockey/">Air Hockey</a></h1>
-      <div class="post-meta">
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            <h2 id="overview">
-  Overview
-  <a href="#overview" class="h-anchor" aria-hidden="true">#</a>
-</h2>
-<p>Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to hit the ball by physically moving into it, the boundaries expand as they extend their limbs. Bluetooth kick buttons were an earlier input method for players with limited mobility but have not been used in a long time and are untested with the current networking architecture.</p>
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/airhockey/">Read more →</a></div>
-      
-    </article>
-    
-    <article class="post on-list">
-      <h1 class="post-title"><a href="http://localhost:1313/posts/frontend/">airplay-frontend Documentation</a></h1>
-      <div class="post-meta">
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            <h2 id="introduction">
-  Introduction
-  <a href="#introduction" class="h-anchor" aria-hidden="true">#</a>
-</h2>
-<p>AIRPLAY-frontend is the web frontend for the <a href="https://www.igym.solutions/">iGYM system</a>.</p>
-<blockquote>
-<p><strong>Note:</strong> The frontend has not been used with the networked version of the game and is primarily associated with tutorial/non-networked scenes. It has not been maintained since the Unity 6 update and should be considered unsupported with the current architecture.</p>
-</blockquote>
-<p>The frontend provides a web-based control interface accessible from a mobile device (via the VITE dev server) for managing the game system during on-site sessions. <em>(Originally used at Packard&rsquo;s Field, which no longer exists.)</em></p>
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/frontend/">Read more →</a></div>
-      
-    </article>
-    
-    <article class="post on-list">
-      <h1 class="post-title"><a href="http://localhost:1313/posts/button-script/">Button Script</a></h1>
-      <div class="post-meta">
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            <blockquote>
-<p><strong>Note:</strong> The kick button system has not been used in a long time and is untested with the current networking architecture. This documentation is preserved for reference but the feature should be considered unsupported until verified.</p>
-</blockquote>
-<h2 id="buttoncpp">
-  button.cpp
-  <a href="#buttoncpp" class="h-anchor" aria-hidden="true">#</a>
-</h2>
-<p>The button node handles Bluetooth Low Energy (BLE) wireless kick controller input for the iGYM system.</p>
-<h3 id="how-it-works">
-  How It Works
-  <a href="#how-it-works" class="h-anchor" aria-hidden="true">#</a>
-</h3>
-<p>The node scans for and connects to SimpleBLE devices (2 BLE clickers identified by MAC address). It reads button press state from a specific BLE characteristic and publishes the state to the <code>kick_size</code> topic.</p>
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/button-script/">Read more →</a></div>
-      
-    </article>
-    
-    <article class="post on-list">
-      <h1 class="post-title"><a href="http://localhost:1313/posts/gamescene/">Game Scene</a></h1>
-      <div class="post-meta">
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/gamescene/">Read more →</a></div>
-      
-    </article>
-    
-    <article class="post on-list">
-      <h1 class="post-title"><a href="http://localhost:1313/posts/home/">Home</a></h1>
-      <div class="post-meta">
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            <p>Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.</p>
+  <article class="post">
+    <div class="post-content">
+      <p>Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.</p>
 <p>📧 Contact: <a href="mailto:helloigym@umich.edu">helloigym@umich.edu</a></p>
 <hr>
 <h2 id="getting-started">
@@ -284,273 +138,133 @@
   <a href="#system-architecture" class="h-anchor" aria-hidden="true">#</a>
 </h2>
 <p>The iGYM system has three main layers:</p>
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/home/">Read more →</a></div>
-      
-    </article>
-    
-    <article class="post on-list">
-      <h1 class="post-title"><a href="http://localhost:1313/posts/setup/">iGym System Setup Guide (Windows)</a></h1>
-      <div class="post-meta">
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            <blockquote>
-<p>Last updated: 19 November 2025. <a href="https://docs.google.com/document/d/1TMLHn8tC8T075ESRzFUgJOSfceofNwoGGtoi9QKcri8/edit?tab=t.0">View original Google Doc</a></p>
-</blockquote>
-<h2 id="quick-version-checklist">
-  Quick Version Checklist
-  <a href="#quick-version-checklist" class="h-anchor" aria-hidden="true">#</a>
-</h2>
-<p>All versions must match exactly.</p>
 <table>
   <thead>
       <tr>
-          <th>Component</th>
-          <th>Version</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Unity (non-networked)</td>
-          <td>2020.3.16f1</td>
-      </tr>
-      <tr>
-          <td>Unity (networked)</td>
-          <td>6000.0.53f1</td>
-      </tr>
-      <tr>
-          <td>Python</td>
-          <td>3.8.10</td>
-      </tr>
-      <tr>
-          <td>OpenSSL</td>
-          <td>1.1.1n (Win64 full installer)</td>
-      </tr>
-      <tr>
-          <td>ROS 2</td>
-          <td>Foxy (binary for Windows)</td>
-      </tr>
-      <tr>
-          <td>OpenCV</td>
-          <td>4.11.0 VC16 x64</td>
-      </tr>
-      <tr>
-          <td>Spinnaker SDK</td>
-          <td>4.2</td>
-      </tr>
-      <tr>
-          <td>Visual Studio</td>
-          <td>2022 Community + Desktop development with C++</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="1-install-unity">
-  1. Install Unity
-  <a href="#1-install-unity" class="h-anchor" aria-hidden="true">#</a>
-</h2>
-<p>Download <a href="https://unity.com/unity-hub">Unity Hub</a> and install.</p>
-<p>In Hub → Installs → Add, choose <strong>2020.3.16f1</strong> (required — get from the archive page).
-For the networked version use <strong>6000.0.53f1</strong>.</p>
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/setup/">Read more →</a></div>
-      
-    </article>
-    
-    <article class="post on-list">
-      <h1 class="post-title"><a href="http://localhost:1313/posts/materials/">Materials</a></h1>
-      <div class="post-meta">
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            <h2 id="physics">
-  Physics:
-  <a href="#physics" class="h-anchor" aria-hidden="true">#</a>
-</h2>
-<p>Each game has its own different 2D physics material that dictate the motion of the GameObjects.</p>
-<ul>
-<li>
-<p>ball_physics: A 2D physics material applied to the ball object for the Air Hockey game. Its friction is set to 0.4 and bounciness to 0.8
-<img src="/materials_pic1.png" alt="Ball Physics"></p>
-</li>
-<li>
-<p>shapesPhysics: A 2D physics material applied to the shapes for the Shapes Catcher game. Its friction is set to 0 and bounciness to 0.8
-<img src="/materials_pic2.png" alt="Shapes Physics"></p>
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/materials/">Read more →</a></div>
-      
-    </article>
-    
-    <article class="post on-list">
-      <h1 class="post-title"><a href="http://localhost:1313/posts/networking/">Networking Architecture</a></h1>
-      <div class="post-meta">
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            <h2 id="overview">
-  Overview
-  <a href="#overview" class="h-anchor" aria-hidden="true">#</a>
-</h2>
-<p>The iGYM games use a <strong>dedicated server architecture</strong> built on <strong>Unity Netcode for GameObjects (NGO)</strong>. The system separates networking into two planes:</p>
-<ul>
-<li><strong>Control Plane</strong> — A Python FastAPI lobby server handles matchmaking, room management, and dedicated server orchestration via REST API</li>
-<li><strong>Game Plane</strong> — Unity Netcode for GameObjects handles real-time gameplay networking (physics, state sync, RPCs)</li>
-</ul>
-<p><strong>Transport</strong>: UnityTransport (UDP) for direct connections, with optional Unity Relay Service for online play</p>
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/networking/">Read more →</a></div>
-      
-    </article>
-    
-    <article class="post on-list">
-      <h1 class="post-title"><a href="http://localhost:1313/posts/player-detection-script/">Player Detection Code</a></h1>
-      <div class="post-meta">
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            <h2 id="player_detectioncpp">
-  player_detection.cpp
-  <a href="#player_detectioncpp" class="h-anchor" aria-hidden="true">#</a>
-</h2>
-<p>The player detection node is the core computer vision component that detects and tracks players on the physical game field. It uses background subtraction, contour detection, and Kalman filtering to produce real-time player positions.</p>
-<h3 id="multi-threaded-architecture">
-  Multi-Threaded Architecture
-  <a href="#multi-threaded-architecture" class="h-anchor" aria-hidden="true">#</a>
-</h3>
-<p>The node uses three concurrent threads for maximum throughput:</p>
-<table>
-  <thead>
-      <tr>
-          <th>Thread</th>
+          <th>Layer</th>
+          <th>Technology</th>
           <th>Purpose</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td><strong>Capture Thread</strong></td>
-          <td>Reads frames from camera (FLIR Spinnaker or USB/OpenCV)</td>
+          <td>Computer Vision &amp; Hardware</td>
+          <td>ROS2</td>
+          <td>Camera-based player detection, Kalman filtering</td>
       </tr>
       <tr>
-          <td><strong>Detection Thread</strong></td>
-          <td>Processes frames: background subtraction → contour detection → Kalman tracking</td>
+          <td>Networking &amp; Game Server</td>
+          <td>Unity Netcode for GameObjects</td>
+          <td>Dedicated server, client-side prediction, lobby system</td>
       </tr>
       <tr>
-          <td><strong>Publisher Thread</strong></td>
-          <td>Publishes tracking results to <code>pos_raw</code> topic</td>
+          <td>Game Client</td>
+          <td>Unity</td>
+          <td>Rendering, input, local prediction</td>
       </tr>
   </tbody>
 </table>
-<h3 id="pipeline-functions">
-  Pipeline Functions
-  <a href="#pipeline-functions" class="h-anchor" aria-hidden="true">#</a>
+<p>Players connect through a lobby system that spawns a dedicated server. The server runs authoritative physics while clients predict locally and reconcile with server state.</p>
+<hr>
+<h2 id="documentation">
+  Documentation
+  <a href="#documentation" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<h3 id="unity-game-networked">
+  Unity Game (Networked)
+  <a href="#unity-game-networked" class="h-anchor" aria-hidden="true">#</a>
 </h3>
 <ul>
-<li>
-<p><strong>init_background()</strong> — Initializes the background image. Can either capture the initial frame as background (when <code>enable_flag</code> is set to 1) or load a background image from a file.</p>
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/player-detection-script/">Read more →</a></div>
-      
-    </article>
-    
-    <article class="post on-list">
-      <h1 class="post-title"><a href="http://localhost:1313/posts/prefabs/">Prefabs</a></h1>
-      <div class="post-meta">
-        
+<li><a href="/posts/airhockey/">Air Hockey</a> — Game rules, networking, hit system, and diagnostics</li>
+<li><a href="/posts/networking/">Networking Architecture</a> — Dedicated server model, prediction, reconciliation</li>
+<li><a href="/posts/scenes/">Scenes Overview</a> — Scene structure and flow</li>
+<li><a href="/posts/gamescene/">Game Scene</a> — Main game scene details</li>
+<li><a href="/posts/tutorialscenes/">Tutorial Scenes</a> — Non-networked tutorial content</li>
+<li><a href="/posts/prefabs/">Prefabs</a> — Prefab reference</li>
+<li><a href="/posts/folderstructure/">Folder Structure</a> — Project layout</li>
+</ul>
+<h3 id="ros2-system">
+  ROS2 System
+  <a href="#ros2-system" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><a href="/posts/ros2-emulation/">ROS2 Emulation</a> — Full ROS2 setup, nodes, and launch process</li>
+<li><a href="/posts/player-detection-script/">Player Detection Script</a> — Camera-based detection pipeline</li>
+<li><a href="/posts/rosmessages/">ROS Messages</a> — Custom message types</li>
+<li><a href="/posts/shapecatcher/">Shape Catcher</a> — Shape detection node</li>
+<li><a href="/posts/parameters/">Parameters</a> — Configurable system parameters</li>
+<li><a href="/posts/button-script/">Button Script</a> — BLE kick button node <em>(legacy, untested with current networking)</em></li>
+</ul>
+<h3 id="other">
+  Other
+  <a href="#other" class="h-anchor" aria-hidden="true">#</a>
+</h3>
+<ul>
+<li><a href="/posts/frontend/">Frontend</a> — Web control interface <em>(not used with networked version)</em></li>
+<li><a href="/posts/materials/">Materials</a> — Unity materials reference</li>
+<li><a href="/posts/resources/">Resources</a> — Additional resources</li>
+</ul>
+<hr>
+<h2 id="repositories">
+  Repositories
+  <a href="#repositories" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Repo</th>
+          <th>Description</th>
+          <th>Links</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/unity-networking">unity-networking</a></td>
+          <td>Main networked Unity game</td>
+          <td><a href="/posts/ros-test-out-doc/">Docs</a></td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/ros2_emulation">ros2_emulation</a></td>
+          <td>ROS2 vision &amp; input layer</td>
+          <td><a href="/posts/ros2-emulation/">Docs</a></td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/AIRPLAY-frontend">AIRPLAY-frontend</a></td>
+          <td>Web control interface (legacy)</td>
+          <td><a href="/posts/frontend/">Docs</a></td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/Airplay_KickButton">Airplay_KickButton</a></td>
+          <td>BLE kick button (legacy)</td>
+          <td>README</td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/IGYMAIRPLAY/UWB">UWB</a></td>
+          <td>Player identification via UWB</td>
+          <td>README</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="onboarding">
+  Onboarding
+  <a href="#onboarding" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p><strong>New to Unity?</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=XtQMytORBmM">Flappy Bird tutorial</a> — good intro to Unity basics</li>
+<li>Familiarity with NetworkManager, NetworkVariables, and RPCs is recommended for the networked project</li>
+</ul>
+<p><strong>New to ROS2?</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=7TVWlADXwRw">Brief ROS2 intro video</a></li>
+<li><a href="https://docs.ros.org/en/foxy/Tutorials.html">Official ROS2 Foxy beginner tutorials</a> — complete CLI tools + Client libraries sections</li>
+<li><a href="/posts/setup/">System Setup Guide</a> — covers the full Windows install</li>
+</ul>
+<p><strong>First hands-on step:</strong> Switch <code>ros2_emulation</code> to the <code>video_test</code> branch and follow the <a href="/posts/ros2-emulation/">ROS2 Emulation docs</a> to run the video version.</p>
 
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/prefabs/">Read more →</a></div>
-      
-    </article>
-    
-    <div class="pagination">
-  <div class="pagination__buttons">
-    
-    
-      <span class="button next">
-        <a href="/page/2/">
-          <span class="button__text">Older posts</span>
-          <span class="button__icon">→</span>
-        </a>
-      </span>
-    
-  </div>
-</div>
-
-  </div>
+    </div>
+  </article>
 
       </div>
 
@@ -559,7 +273,7 @@ For the networked version use <strong>6000.0.53f1</strong>.</p>
   <div class="footer__inner">
     
       <a
-  href="/posts/home/"
+  href="/"
   class="logo"
   style="text-decoration: none;"
 >

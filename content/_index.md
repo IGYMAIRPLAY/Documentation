@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "AiRPlay Wiki"
 ---
 
 Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.

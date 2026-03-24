@@ -49,7 +49,7 @@ paginate = 5
 
     [languages.en.params.logo]
       logoText = "airplay wiki"
-      logoHomeLink = "/posts/home/"
+      logoHomeLink = "/"
     # or
     #
     # path = "/img/your-example-logo.svg"
