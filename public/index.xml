@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AiRPlay Wiki</title>
+
     
-    
-    
+
     <link>http://localhost:1313/</link>
     <description>Recent content on AiRPlay Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -24,7 +24,7 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;overview&#34;&gt;
   Overview
@@ -47,7 +47,7 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;introduction&#34;&gt;
   Introduction
@@ -74,7 +74,7 @@
           
           
         
-        
+
         
           &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The kick button system has not been used in a long time and is untested with the current networking architecture. This documentation is preserved for reference but the feature should be considered unsupported until verified.&lt;/p&gt;
@@ -105,7 +105,7 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;scene-objects&#34;&gt;
   Scene Objects
@@ -221,7 +221,7 @@
           
           
         
-        
+
         
           &lt;p&gt;Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.&lt;/p&gt;
 &lt;p&gt;📧 Contact: &lt;a href=&#34;mailto:helloigym@umich.edu&#34;&gt;helloigym@umich.edu&lt;/a&gt;&lt;/p&gt;
@@ -258,7 +258,7 @@
           
           
         
-        
+
         
           &lt;blockquote&gt;
 &lt;p&gt;Last updated: 19 November 2025. &lt;a href=&#34;https://docs.google.com/document/d/1TMLHn8tC8T075ESRzFUgJOSfceofNwoGGtoi9QKcri8/edit?tab=t.0&#34;&gt;View original Google Doc&lt;/a&gt;&lt;/p&gt;
@@ -334,7 +334,7 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
           
           
         
-        
+
         
           &lt;h2 id=&#34;physics&#34;&gt;
   Physics:
@@ -365,7 +365,7 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
           
           
         
-        
+
         
           &lt;h2 id=&#34;overview&#34;&gt;
   Overview
@@ -393,7 +393,7 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
           
           
         
-        
+
         
           &lt;h2 id=&#34;player_detectioncpp&#34;&gt;
   player_detection.cpp
@@ -450,7 +450,7 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
           
           
         
-        
+
         
           &lt;h2 id=&#34;air-hockey&#34;&gt;
   Air Hockey
@@ -487,7 +487,7 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
           
           
         
-        
+
         
           &lt;h2 id=&#34;air-hockey&#34;&gt;
   Air Hockey
@@ -561,7 +561,7 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
           
           
         
-        
+
         
           &lt;h2 id=&#34;custom-message-definitions&#34;&gt;
   Custom Message Definitions
@@ -640,7 +640,7 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
           
           
         
-        
+
         
           &lt;h2 id=&#34;introduction&#34;&gt;
   Introduction
@@ -663,7 +663,7 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
           
           
         
-        
+
         
           &lt;h2 id=&#34;scenes&#34;&gt;
   Scenes
@@ -694,7 +694,7 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
           
           
         
-        
+
         
           &lt;h1 id=&#34;folder-structure&#34;&gt;
   Folder Structure
@@ -767,9 +767,9 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
 &lt;li&gt;&lt;strong&gt;CV Dimensions Override&lt;/strong&gt; — Override computer vision field dimensions&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;gameMgr&lt;/strong&gt; — Non-networked game parameters (ball speed, radius, friction, goal sizes per difficulty mode)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;shapes-catcher-legacy--not-yet-networked&#34;&gt;
-  Shapes Catcher (Legacy — not yet networked)
-  &lt;a href=&#34;#shapes-catcher-legacy--not-yet-networked&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;h2 id=&#34;shapes-catcher-legacy-not-yet-networked&#34;&gt;
+  Shapes Catcher (Legacy, not yet networked)
+  &lt;a href=&#34;#shapes-catcher-legacy-not-yet-networked&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Emitter&lt;/strong&gt; — Spawns random shapes at a specified time interval in random directions to both sides of the field&lt;/li&gt;
@@ -796,7 +796,7 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
           
           
         
-        
+
         
           &lt;h2 id=&#34;overview&#34;&gt;
   Overview
@@ -820,7 +820,7 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
           
           
         
-        
+
         
           &lt;p&gt;Every configurable parameter in the iGYM system, grouped by what they affect. &lt;strong&gt;Inspector&lt;/strong&gt; = editable in Unity Inspector. &lt;strong&gt;Static&lt;/strong&gt; = global flag set at runtime.&lt;/p&gt;
 &lt;hr&gt;
@@ -884,7 +884,7 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
           
           
         
-        
+
         
           &lt;p&gt;There are multiple scenes that have been created to guide first-time users of the system. Each scene corresponds to their own keyboard input so the moderator can freely skip between them as they see fit.&lt;/p&gt;
 &lt;ul&gt;
@@ -914,7 +914,7 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
           
           
         
-        
+
         
           &lt;h2 id=&#34;introduction&#34;&gt;
   Introduction

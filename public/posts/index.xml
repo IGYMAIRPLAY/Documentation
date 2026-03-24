@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on AiRPlay Wiki</title>
+
     
-    
-    
+
     <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on AiRPlay Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -24,13 +24,13 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;overview&#34;&gt;
   Overview
   &lt;a href=&#34;#overview&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to hit the ball by physically moving into it — the boundaries expand as they extend their limbs. Bluetooth kick buttons were an earlier input method for players with limited mobility but have not been used in a long time and are untested with the current networking architecture.&lt;/p&gt;
+&lt;p&gt;Players interact with an augmented reality projected ball and attempt to score on the other side of the field. Players have expandable peripersonal boundaries that allow them to hit the ball by physically moving into it, the boundaries expand as they extend their limbs. Bluetooth kick buttons were an earlier input method for players with limited mobility but have not been used in a long time and are untested with the current networking architecture.&lt;/p&gt;
           
         
         </description>
@@ -47,13 +47,17 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;introduction&#34;&gt;
   Introduction
   &lt;a href=&#34;#introduction&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Welcome to the AIRPLAY-frontend wiki! AIRPLAY-frontend is the repository for the frontend part of the entire &lt;a href=&#34;https://www.igym.solutions/&#34;&gt;iGYM system&lt;/a&gt;. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.&lt;/p&gt;
+&lt;p&gt;AIRPLAY-frontend is the web frontend for the &lt;a href=&#34;https://www.igym.solutions/&#34;&gt;iGYM system&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The frontend has not been used with the networked version of the game and is primarily associated with tutorial/non-networked scenes. It has not been maintained since the Unity 6 update and should be considered unsupported with the current architecture.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The frontend provides a web-based control interface accessible from a mobile device (via the VITE dev server) for managing the game system during on-site sessions. &lt;em&gt;(Originally used at Packard&amp;rsquo;s Field, which no longer exists.)&lt;/em&gt;&lt;/p&gt;
           
         
         </description>
@@ -70,7 +74,7 @@
           
           
         
-        
+
         
           &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The kick button system has not been used in a long time and is untested with the current networking architecture. This documentation is preserved for reference but the feature should be considered unsupported until verified.&lt;/p&gt;
@@ -101,7 +105,7 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;scene-objects&#34;&gt;
   Scene Objects
@@ -217,18 +221,103 @@
           
           
         
+
         
-        
-          &lt;h2 id=&#34;introduction&#34;&gt;
-  Introduction
-  &lt;a href=&#34;#introduction&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+          &lt;p&gt;Welcome to the AiRPlay / iGYM documentation. iGYM builds inclusive games for people of all abilities using projectors to display a virtual game field that players physically interact with.&lt;/p&gt;
+&lt;p&gt;📧 Contact: &lt;a href=&#34;mailto:helloigym@umich.edu&#34;&gt;helloigym@umich.edu&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;getting-started&#34;&gt;
+  Getting Started
+  &lt;a href=&#34;#getting-started&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Welcome to the documentation website for AiRPlay! iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.&lt;/p&gt;
+&lt;p&gt;New to the project? Start here:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/setup/&#34;&gt;&lt;strong&gt;System Setup Guide (Windows)&lt;/strong&gt;&lt;/a&gt; — Install all dependencies and get the system running&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/ros2-emulation/&#34;&gt;&lt;strong&gt;ROS2 Emulation Documentation&lt;/strong&gt;&lt;/a&gt; — Running the ROS2 vision and input layer&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/ros-test-out-doc/&#34;&gt;&lt;strong&gt;Unity Networking Project&lt;/strong&gt;&lt;/a&gt; — The main Unity game project&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;system-architecture&#34;&gt;
   System Architecture
   &lt;a href=&#34;#system-architecture&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The iGYM system consists of three main layers:&lt;/p&gt;
+&lt;p&gt;The iGYM system has three main layers:&lt;/p&gt;
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>iGym System Setup Guide (Windows)</title>
+      <link>http://localhost:1313/posts/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/setup/</guid>
+      <description>
+        
+          
+          
+          
+        
+
+        
+          &lt;blockquote&gt;
+&lt;p&gt;Last updated: 19 November 2025. &lt;a href=&#34;https://docs.google.com/document/d/1TMLHn8tC8T075ESRzFUgJOSfceofNwoGGtoi9QKcri8/edit?tab=t.0&#34;&gt;View original Google Doc&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;quick-version-checklist&#34;&gt;
+  Quick Version Checklist
+  &lt;a href=&#34;#quick-version-checklist&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;All versions must match exactly.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Component&lt;/th&gt;
+          &lt;th&gt;Version&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Unity (non-networked)&lt;/td&gt;
+          &lt;td&gt;2020.3.16f1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Unity (networked)&lt;/td&gt;
+          &lt;td&gt;6000.0.53f1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Python&lt;/td&gt;
+          &lt;td&gt;3.8.10&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;OpenSSL&lt;/td&gt;
+          &lt;td&gt;1.1.1n (Win64 full installer)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ROS 2&lt;/td&gt;
+          &lt;td&gt;Foxy (binary for Windows)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;OpenCV&lt;/td&gt;
+          &lt;td&gt;4.11.0 VC16 x64&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Spinnaker SDK&lt;/td&gt;
+          &lt;td&gt;4.2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Visual Studio&lt;/td&gt;
+          &lt;td&gt;2022 Community + Desktop development with C++&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-install-unity&#34;&gt;
+  1. Install Unity
+  &lt;a href=&#34;#1-install-unity&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Download &lt;a href=&#34;https://unity.com/unity-hub&#34;&gt;Unity Hub&lt;/a&gt; and install.&lt;/p&gt;
+&lt;p&gt;In Hub → Installs → Add, choose &lt;strong&gt;2020.3.16f1&lt;/strong&gt; (required — get from the archive page).
+For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt;
           
         
         </description>
@@ -245,7 +334,7 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;physics&#34;&gt;
   Physics:
@@ -276,7 +365,7 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;overview&#34;&gt;
   Overview
@@ -304,7 +393,7 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;player_detectioncpp&#34;&gt;
   player_detection.cpp
@@ -361,7 +450,7 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;air-hockey&#34;&gt;
   Air Hockey
@@ -398,7 +487,7 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;air-hockey&#34;&gt;
   Air Hockey
@@ -472,7 +561,7 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;custom-message-definitions&#34;&gt;
   Custom Message Definitions
@@ -551,7 +640,7 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;introduction&#34;&gt;
   Introduction
@@ -574,7 +663,7 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;scenes&#34;&gt;
   Scenes
@@ -582,12 +671,12 @@
 &lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;AirHockey&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;AirHockey&lt;/strong&gt; — The main networked game scene for the &lt;a href=&#34;&#34;&gt;Air Hockey&lt;/a&gt; game. Contains the NetworkManager, lobby UI, dedicated server lifecycle components, and all gameplay objects (ball, paddles, field, goals).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;TutorialScenes&lt;/strong&gt; — A folder containing all the tutorial scenes. Some of these scenes must be run before the main game scene for calibration and setup. See &lt;a href=&#34;&#34;&gt;Tutorial Scenes&lt;/a&gt; for details.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AirHockey&lt;/strong&gt; — The main networked game scene for the &lt;a href=&#34;http://localhost:1313/posts/airhockey/&#34;&gt;Air Hockey&lt;/a&gt; game. Contains the NetworkManager, lobby UI, dedicated server lifecycle components, and all gameplay objects (ball, paddles, field, goals).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TutorialScenes&lt;/strong&gt; — A folder containing all the tutorial scenes. Some of these scenes must be run before the main game scene for calibration and setup. See &lt;a href=&#34;http://localhost:1313/posts/tutorialscenes/&#34;&gt;Tutorial Scenes&lt;/a&gt; for details.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;ShapeCatcher&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;ShapeCatcher&lt;/strong&gt; — The main game scene for the &lt;a href=&#34;&#34;&gt;Shape Catcher&lt;/a&gt; game. Currently runs in legacy single-machine mode (not yet networked).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ShapeCatcher&lt;/strong&gt; — The main game scene for the &lt;a href=&#34;http://localhost:1313/posts/shapecatcher/&#34;&gt;Shape Catcher&lt;/a&gt; game. Currently runs in legacy single-machine mode (not yet networked).&lt;/li&gt;
 &lt;/ul&gt;
           
         
@@ -605,7 +694,7 @@
           
           
         
-        
+
         
           &lt;h1 id=&#34;folder-structure&#34;&gt;
   Folder Structure
@@ -678,9 +767,9 @@
 &lt;li&gt;&lt;strong&gt;CV Dimensions Override&lt;/strong&gt; — Override computer vision field dimensions&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;gameMgr&lt;/strong&gt; — Non-networked game parameters (ball speed, radius, friction, goal sizes per difficulty mode)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;shapes-catcher-legacy--not-yet-networked&#34;&gt;
-  Shapes Catcher (Legacy — not yet networked)
-  &lt;a href=&#34;#shapes-catcher-legacy--not-yet-networked&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;h2 id=&#34;shapes-catcher-legacy-not-yet-networked&#34;&gt;
+  Shapes Catcher (Legacy, not yet networked)
+  &lt;a href=&#34;#shapes-catcher-legacy-not-yet-networked&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Emitter&lt;/strong&gt; — Spawns random shapes at a specified time interval in random directions to both sides of the field&lt;/li&gt;
@@ -707,7 +796,7 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;overview&#34;&gt;
   Overview
@@ -731,15 +820,54 @@
           
           
         
+
         
-        
-          &lt;p&gt;This page documents every configurable parameter in the iGYM system. Parameters are grouped by what they affect rather than by script file. &lt;strong&gt;Inspector&lt;/strong&gt; means the value is visible and editable in the Unity Inspector. &lt;strong&gt;Static&lt;/strong&gt; means it is a global flag set at runtime, not in the Inspector.&lt;/p&gt;
+          &lt;p&gt;Every configurable parameter in the iGYM system, grouped by what they affect. &lt;strong&gt;Inspector&lt;/strong&gt; = editable in Unity Inspector. &lt;strong&gt;Static&lt;/strong&gt; = global flag set at runtime.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;ball-physics--difficulty&#34;&gt;
   Ball Physics &amp;amp; Difficulty
   &lt;a href=&#34;#ball-physics--difficulty&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;These parameters live in &lt;code&gt;gameMgr.cs&lt;/code&gt; and are applied by &lt;code&gt;ApplyMode()&lt;/code&gt; when the server syncs &lt;code&gt;syncedMode&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In &lt;code&gt;gameMgr.cs&lt;/code&gt;, applied by &lt;code&gt;ApplyMode()&lt;/code&gt; when the server syncs &lt;code&gt;syncedMode&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;per-mode-values&#34;&gt;
+  Per-Mode Values
+  &lt;a href=&#34;#per-mode-values&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Mode&lt;/th&gt;
+          &lt;th&gt;&lt;code&gt;ballSpeed&lt;/code&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;code&gt;ballRadius&lt;/code&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;code&gt;goalSize&lt;/code&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;code&gt;friction&lt;/code&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Easy (0)&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;0.15&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;4.0&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;2215&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;0.4&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Medium (1)&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;0.50&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;2.0&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;2211&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;0.4&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Hard (2)&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;0.75&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;1.0&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;2200&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;0.4&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;goalSize&lt;/code&gt; encodes four values: &lt;code&gt;1000×leftGoal + 100×leftExpansion + 10×rightGoal + rightExpansion&lt;/code&gt;.&lt;/p&gt;
           
         
         </description>
@@ -756,7 +884,7 @@
           
           
         
-        
+
         
           &lt;p&gt;There are multiple scenes that have been created to guide first-time users of the system. Each scene corresponds to their own keyboard input so the moderator can freely skip between them as they see fit.&lt;/p&gt;
 &lt;ul&gt;
@@ -786,7 +914,7 @@
           
           
         
-        
+
         
           &lt;h2 id=&#34;introduction&#34;&gt;
   Introduction
