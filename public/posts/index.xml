@@ -8,7 +8,7 @@
     <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on AiRPlay Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     
 	<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -884,6 +884,42 @@ For the networked version use &lt;strong&gt;6000.0.53f1&lt;/strong&gt;.&lt;/p&gt
   &lt;a href=&#34;#introduction&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Welcome to the unity-networking documentation! This is the repository for the Unity part of the &lt;a href=&#34;https://www.igym.solutions/&#34;&gt;iGYM system&lt;/a&gt;. iGYM aims to build games that are inclusive and fun for people of all abilities. We use projectors to display a virtual game field for players to physically interact with. Through the implementation of peripersonal boundaries and kick buttons, we level the playing field between people with motor disabilities and their non-disabled peers.&lt;/p&gt;
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Video Tutorials</title>
+      <link>http://localhost:1313/posts/video-tutorials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/video-tutorials/</guid>
+      <description>
+        
+          
+          
+          
+        
+
+        
+          &lt;h2 id=&#34;video-tutorials&#34;&gt;
+  Video Tutorials
+  &lt;a href=&#34;#video-tutorials&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Short walkthroughs for key setup tasks.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;ros-camera-configuration&#34;&gt;
+  ROS Camera Configuration
+  &lt;a href=&#34;#ros-camera-configuration&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;How to configure the ROS camera for player detection.&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/LK8Wie8ELIM&#34; title=&#34;ROS Camera Configuration&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h3 id=&#34;starting-the-vultr-server&#34;&gt;
+  Starting the Vultr Server
+  &lt;a href=&#34;#starting-the-vultr-server&#34; class=&#34;h-anchor&#34; aria-hidden=&#34;true&#34;&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;How to start the Vultr dedicated game server.&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/exUMxnPUXvo&#34; title=&#34;Starting the Vultr Server&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
           
         
         </description>

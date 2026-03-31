@@ -26,10 +26,7 @@ Thread Purpose Capture Thread Reads frames from camera (FLIR Spinnaker or USB/Op
 
 
 
-
-
-
-<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="http://localhost:1313/css/style.css" />
 
 <link rel="stylesheet" href="http://localhost:1313/style.css" />
 
@@ -38,12 +35,12 @@ Thread Purpose Capture Thread Reads frames from camera (FLIR Spinnaker or USB/Op
 <link rel="shortcut icon" href="http://localhost:1313/img/favicon.png" />
 
 
-<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="http://localhost:1313/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="http://localhost:1313/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="http://localhost:1313/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="http://localhost:1313/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="http://localhost:1313/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="http://localhost:1313/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
 
@@ -61,7 +58,7 @@ Thread Purpose Capture Thread Reads frames from camera (FLIR Spinnaker or USB/Op
   <meta property="og:description" content="player_detection.cpp#The player detection node is the core computer vision component that detects and tracks players on the physical game field. It uses background subtraction, contour detection, and Kalman filtering to produce real-time player positions.
 Multi-Threaded Architecture#The node uses three concurrent threads for maximum throughput:
 Thread Purpose Capture Thread Reads frames from camera (FLIR Spinnaker or USB/OpenCV) Detection Thread Processes frames: background subtraction → contour detection → Kalman tracking Publisher Thread Publishes tracking results to pos_raw topic Pipeline Functions#init_background() — Initializes the background image. Can either capture the initial frame as background (when enable_flag is set to 1) or load a background image from a file.">
-  <meta property="og:locale" content="en_us">
+  <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
 

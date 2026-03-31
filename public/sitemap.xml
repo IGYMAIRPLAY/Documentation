@@ -45,5 +45,7 @@
     <loc>http://localhost:1313/posts/tutorialscenes/</loc>
   </url><url>
     <loc>http://localhost:1313/posts/ros-test-out-doc/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/video-tutorials/</loc>
   </url>
 </urlset>
