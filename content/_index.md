@@ -15,6 +15,7 @@ New to the project? Start here:
 - [**System Setup Guide (Windows)**](/posts/setup/) — Install all dependencies and get the system running
 - [**ROS2 Emulation Documentation**](/posts/ros2-emulation/) — Running the ROS2 vision and input layer
 - [**Unity Networking Project**](/posts/ros-test-out-doc/) — The main Unity game project
+- [**Video Tutorials**](/posts/video-tutorials/) — Camera config and Vultr server setup walkthroughs
 
 ---
 
