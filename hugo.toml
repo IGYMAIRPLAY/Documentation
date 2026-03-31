@@ -1,4 +1,9 @@
 baseURL = 'https://airplay-wiki.netlify.app'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 languageCode = 'en-us'
 title = 'Airplay-Wiki'
 publishDir = 'public'
